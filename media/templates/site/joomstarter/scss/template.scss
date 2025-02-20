@@ -9,19 +9,257 @@
 // Import this file to make columns work in com_content
 @import "_modifiers";
 
+//Fonts
+body,
+.outfit-regular {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
 
-//Your Imports Here
+h2,
+h3,
+h4,
+h5,
+h6,
+.outfit-bold,
+.subtitle {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
 
+h1,
+.gardein,
+.title {
+    font-family: gardein, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
 
-//Your CSS Here
+//Colors
 
-
-
-
-
+.theme-color {
+    &-travel {
+        &-original {
+            &-background {
+                background-color: #0114a5;
+            }
+            &-text {
+                color: #0114a5;
+            }
+        }
+        &-light {
+            &-background {
+                background-color: #0540f2;
+            }
+            &-text {
+                color: #0540f2;
+            }
+        }
+        &-lighter {
+            &-background {
+                background-color: #47cae5;
+            }
+            &-text {
+                color: #47cae5;
+            }
+        }
+    }
+    &-food-nature {
+        &-original {
+            &-background {
+                background-color: #1f6401;
+            }
+            &-text {
+                color: #1f6401;
+            }
+        }
+        &-light {
+            &-background {
+                background-color: #62bf04;
+            }
+            &-text {
+                color: #62bf04;
+            }
+        }
+        &-lighter {
+            &-background {
+                background-color: #a8eb4b;
+            }
+            &-text {
+                color: #a8eb4b;
+            }
+        }
+    }
+    &-energy {
+        &-original {
+            &-background {
+                background-color: #e09600;
+            }
+            &-text {
+                color: #e09600;
+            }
+        }
+        &-light {
+            &-background {
+                background-color: #ebca23;
+            }
+            &-text {
+                color: #ebca23;
+            }
+        }
+        &-lighter {
+            &-background {
+                background-color: #ffe600;
+            }
+            &-text {
+                color: #ffe600;
+            }
+        }
+    }
+    &-circularity {
+        &-original {
+            &-background {
+                background-color: #ea0101;
+            }
+            &-text {
+                color: #ea0101;
+            }
+        }
+        &-light {
+            &-background {
+                background-color: #f54d00;
+            }
+            &-text {
+                color: #f54d00;
+            }
+        }
+        &-lighter {
+            &-background {
+                background-color: #ff9100;
+            }
+            &-text {
+                color: #ff9100;
+            }
+        }
+    }
+    &-community-engagement {
+        &-original {
+            &-background {
+                background: rgb(1, 20, 165);
+                background: -moz-linear-gradient(
+                    45deg,
+                    rgba(1, 20, 165, 1) 24%,
+                    rgba(31, 100, 1, 1) 24.1%,
+                    rgba(31, 100, 1, 1) 49.9%,
+                    rgba(224, 150, 0, 1) 50%,
+                    rgba(224, 150, 0, 1) 74.9%,
+                    rgba(231, 49, 1, 1) 75%,
+                    rgba(234, 1, 1, 1) 100%
+                );
+                background: -webkit-linear-gradient(
+                    45deg,
+                    rgba(1, 20, 165, 1) 24%,
+                    rgba(31, 100, 1, 1) 24.1%,
+                    rgba(31, 100, 1, 1) 49.9%,
+                    rgba(224, 150, 0, 1) 50%,
+                    rgba(224, 150, 0, 1) 74.9%,
+                    rgba(231, 49, 1, 1) 75%,
+                    rgba(234, 1, 1, 1) 100%
+                );
+                background: linear-gradient(
+                    45deg,
+                    rgba(1, 20, 165, 1) 24%,
+                    rgba(31, 100, 1, 1) 24.1%,
+                    rgba(31, 100, 1, 1) 49.9%,
+                    rgba(224, 150, 0, 1) 50%,
+                    rgba(224, 150, 0, 1) 74.9%,
+                    rgba(231, 49, 1, 1) 75%,
+                    rgba(234, 1, 1, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0114a5",endColorstr="#ea0101",GradientType=1);
+            }
+        }
+        &-light {
+            &-background {
+                background: rgb(5, 64, 242);
+                background: -moz-linear-gradient(
+                    45deg,
+                    rgba(5, 64, 242, 1) 24%,
+                    rgba(98, 191, 4, 1) 24.1%,
+                    rgba(98, 191, 4, 1) 49.9%,
+                    rgba(235, 202, 35, 1) 50%,
+                    rgba(235, 202, 35, 1) 74.9%,
+                    rgba(245, 77, 0, 1) 75%,
+                    rgba(245, 77, 0, 1) 100%
+                );
+                background: -webkit-linear-gradient(
+                    45deg,
+                    rgba(5, 64, 242, 1) 24%,
+                    rgba(98, 191, 4, 1) 24.1%,
+                    rgba(98, 191, 4, 1) 49.9%,
+                    rgba(235, 202, 35, 1) 50%,
+                    rgba(235, 202, 35, 1) 74.9%,
+                    rgba(245, 77, 0, 1) 75%,
+                    rgba(245, 77, 0, 1) 100%
+                );
+                background: linear-gradient(
+                    45deg,
+                    rgba(5, 64, 242, 1) 24%,
+                    rgba(98, 191, 4, 1) 24.1%,
+                    rgba(98, 191, 4, 1) 49.9%,
+                    rgba(235, 202, 35, 1) 50%,
+                    rgba(235, 202, 35, 1) 74.9%,
+                    rgba(245, 77, 0, 1) 75%,
+                    rgba(245, 77, 0, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="#f54d00",GradientType=1);
+            }
+        }
+        &-lighter {
+            &-background {
+                background: rgb(71, 202, 229);
+                background: -moz-linear-gradient(
+                    45deg,
+                    rgba(71, 202, 229, 1) 24%,
+                    rgba(168, 235, 75, 1) 24.1%,
+                    rgba(168, 235, 75, 1) 49.9%,
+                    rgba(255, 230, 0, 1) 50%,
+                    rgba(255, 230, 0, 1) 74.9%,
+                    rgba(255, 145, 0, 1) 75%,
+                    rgba(255, 145, 0, 1) 100%
+                );
+                background: -webkit-linear-gradient(
+                    45deg,
+                    rgba(71, 202, 229, 1) 24%,
+                    rgba(168, 235, 75, 1) 24.1%,
+                    rgba(168, 235, 75, 1) 49.9%,
+                    rgba(255, 230, 0, 1) 50%,
+                    rgba(255, 230, 0, 1) 74.9%,
+                    rgba(255, 145, 0, 1) 75%,
+                    rgba(255, 145, 0, 1) 100%
+                );
+                background: linear-gradient(
+                    45deg,
+                    rgba(71, 202, 229, 1) 24%,
+                    rgba(168, 235, 75, 1) 24.1%,
+                    rgba(168, 235, 75, 1) 49.9%,
+                    rgba(255, 230, 0, 1) 50%,
+                    rgba(255, 230, 0, 1) 74.9%,
+                    rgba(255, 145, 0, 1) 75%,
+                    rgba(255, 145, 0, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47cae5",endColorstr="#ff9100",GradientType=1);
+            }
+        }
+    }
+}
 
 //Basic Responsive Images
-img{
+img {
     max-width: 100%;
     height: auto;
 }

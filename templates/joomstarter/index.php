@@ -78,7 +78,6 @@ if ($templateParams->get('use_fontawesome', 0)) {
 }
 
 //Register our web assets (Css/JS) with the Web Asset Manager
-//The files are defined in joomla.asset.json!!! If you don't want to use the included CSS or JS, just remove these lines or replace the CSS/JS files with your own code!
 $wa->useStyle('template.joomstarter.mainstyles');
 $wa->useStyle('template.joomstarter.user');
 $wa->useScript('template.joomstarter.scripts');
@@ -88,31 +87,18 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 ?>
 
-<?php // Everything below here is the actual "template" part of the template. Where we put our HTML code for the layout and such. 
-?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
-
-    <?php // Loads important metadata like the page title and viewport scaling 
-    ?>
     <jdoc:include type="metas" />
-
-    <?php // Loads the site's CSS and JS files from web asset manager 
-    ?>
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
-
-    <?php /** You can put links to CSS/JS just like any regular HTML page here too, and remove the jdoc:include script/style lines above if you want.
-     * Do not delete the metas line though
-     * 
-     * For example, if you want to manually link to a custom stylesheet or script, you can do it like this:
-     * <link rel="stylesheet" href="https://mysite.com/templates/mytemplate/mycss.css" type="text/css" />
-     * <script src="https://mysite.com/templates/mytemplate/myscript.js"></script>
-     * */
-    ?>
-
+    <link rel="stylesheet" href="https://use.typekit.net/pem0kto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <?php // you can change data-bs-theme to dark for dark mode  // 
@@ -134,7 +120,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
         </div>
         <?php // Generate a Bootstrap Navbar for the top of our website and put the site title on it 
         ?>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <nav class="navbar uk-background-default navbar-expand-lg">
             <div class="container">
                 <a href="" class="navbar-brand"><?php echo ($sitename); ?></a>
                 <?php // Update 1.14 - Added support for mobile menu with bootstrap 
