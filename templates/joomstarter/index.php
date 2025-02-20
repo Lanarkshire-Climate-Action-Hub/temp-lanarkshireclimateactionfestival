@@ -247,9 +247,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                         <jdoc:include type="modules" name="footer-logo" style="none" />
                     </div>
                 <?php endif; ?>
-                <?php if ($this->countModules('footer-policy-links')) : ?>
+                <?php if ($this->countModules('policy-menu')) : ?>
                     <div class="uk-width-1-3@m">
-                        <jdoc:include type="modules" name="footer-policy-links" style="none" />
+                        <jdoc:include type="modules" name="policy-menu" style="none" />
                     </div>
                 <?php endif; ?>
             </div>
