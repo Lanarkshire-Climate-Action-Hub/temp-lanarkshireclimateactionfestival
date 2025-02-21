@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>mod_videoplayer</name>
+    <author>Storm Web Design Ltd</author>
+    <creationDate>2025</creationDate>
+    <copyright>Copyright (C) Storm Web Design Ltd 2025</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.0</version>
+    <description>Module Description</description>
+
+    <files>
+        <filename module="mod_videoplayer">mod_videoplayer.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <media folder="media" destination="modules/mod_videoplayer/media">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="holding_image" type="media" directory="images" label="Holding Image" description="Select an image to display before the video plays." />
+                <field name="video" type="text" default="" label="Video File" description="Enter the video filename to play in the module" filter="raw" />
+                <field name="use_videojs" type="list" label="Use VideoJS Player" description="Enable VideoJS player instead of UIKit" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="autoplay" type="list" label="Autoplay" description="Enable video autoplay" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="loop" type="list" label="Loop Video" description="Loop the video playback" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="muted" type="list" label="Mute Video" description="Start video muted" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="controls" type="list" label="Show Controls" description="Display video player controls" default="1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

@@ -228,6 +228,7 @@ return [
 	'Joomla\\Plugin\\System\\PrivacyConsent\\' => [JPATH_PLUGINS . '\system/privacyconsent/src'],
 	'Joomla\\Plugin\\System\\Redirect\\' => [JPATH_PLUGINS . '\system/redirect/src'],
 	'Joomla\\Plugin\\System\\Remember\\' => [JPATH_PLUGINS . '\system/remember/src'],
+	'Joomla\\Plugin\\System\\Rsformconsole\\' => [JPATH_PLUGINS . '\system/rsformconsole/src'],
 	'Joomla\\Plugin\\System\\ScheduleRunner\\' => [JPATH_PLUGINS . '\system/schedulerunner/src'],
 	'Joomla\\Plugin\\System\\Schemaorg\\' => [JPATH_PLUGINS . '\system/schemaorg/src'],
 	'Joomla\\Plugin\\System\\Sef\\' => [JPATH_PLUGINS . '\system/sef/src'],

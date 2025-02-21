@@ -46,7 +46,9 @@ $facebook = $templateParams->get('facebook');
 $instagram = $templateParams->get('instagram');
 $linkedin = $templateParams->get('linkedin');
 $bluesky = $templateParams->get('bluesky');
-$footerLogos = $templateParams->get('footer-logos');
+$netzeroLogo = $templateParams->get('netzero-logo');
+$footerLogo = $templateParams->get('footer-logo');
+$logo = $templateParams->get('logo');
 
 //Get params from template styling
 //If you want to add your own parameters you may do so in templateDetails.xml
@@ -112,37 +114,46 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 ?>
 
 <body class="site <?php echo $pageclass; ?>" data-bs-theme="light">
-    <header>
+    <header uk-sticky>
         <?php // Load Header Module if Module Exists 
         ?>
         <div class="uk-background-primary">
-            <div uk-grid>
-                <div class="uk-width-1-6@m">
-                    <jdoc:include type="modules" name="top-search" style="none" />
-                </div>
-                <div class="uk-width-1-6@m">
-                    <jdoc:include type="modules" name="top-menu" style="none" />
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+                <div uk-grid class="uk-flex uk-flex-middle uk-flex-right">
+                    <div id="top-search" class="uk-width-1-6@m uk-margin uk-margin-remove-top uk-margin-remove-bottom">
+                        <jdoc:include type="modules" name="top-search" style="none" />
+                    </div>
+                    <div id="top-menu" class="uk-width-1-6@m uk-margin uk-margin-remove-top uk-margin-remove-bottom">
+                        <jdoc:include type="modules" name="top-menu" style="none" />
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <?php // Generate a Bootstrap Navbar for the top of our website and put the site title on it 
         ?>
         <nav class="navbar uk-background-default navbar-expand-lg">
-            <div class="container">
-                <a href="" class="navbar-brand"><?php echo ($sitename); ?></a>
-                <?php // Update 1.14 - Added support for mobile menu with bootstrap 
-                ?>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <?php // Put menu links in the navbar - main menu must be in the "menu" position!!! Only supports top level and 1 down, so no more than 1 level of child items 
-                ?>
-                <?php if ($this->countModules('menu')): ?>
-                    <div class="collapse navbar-collapse" id="mainmenu">
-                        <jdoc:include type="modules" name="menu" style="none" />
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-margin-medium-top uk-margin-medium-bottom uk-padding-top uk-padding-bottom">
+                <div uk-grid>
+                    <div class="uk-width-1-6@m">
+                        <a href="" class="navbar-brand"><img src="<?php echo '/images/logo/' . $logo; ?>" alt="logo" /></a>
+                        <?php // Update 1.14 - Added support for mobile menu with bootstrap 
+                        ?>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
-
-                <?php endif; ?>
+                    <div class="uk-width-5-6@m">
+                        <?php // Put menu links in the navbar - main menu must be in the "menu" position!!! Only supports top level and 1 down, so no more than 1 level of child items 
+                        ?>
+                        <?php if ($this->countModules('menu')): ?>
+                            <div class="collapse navbar-collapse" id="mainmenu">
+                                <jdoc:include type="modules" name="menu" style="none" />
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </nav>
         <?php // Load Header Module if Module Exists 
@@ -157,12 +168,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <?php // Generate the main content area of the website 
     ?>
     <div class="siteBody">
+
         <div class="uk-container-expand">
             <?php if ($this->countModules('hero')) : ?>
                 <div id="hero">
                     <jdoc:include type="modules" name="hero" style="none" />
                 </div>
             <?php endif; ?>
+        </div>
+
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <?php if ($this->countModules('topa')) : ?>
                 <div id="topa">
                     <jdoc:include type="modules" name="topa" style="none" />
@@ -228,50 +243,63 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <?php // Load Footer 
     ?>
     <div id="festivalFooter" class="uk-background-primary">
-        <div class="uk-container-expand">
-            <div uk-grid>
-                <div class="uk-width-1-3@m uk-padding-large text-white" id="socials">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div uk-grid class="uk-flex uk-flex-middle">
+                <div class="uk-width-1-3@m uk-padding text-white" id="socials">
                     <div id="contact">
-                        <a href="mailto:<?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?>" class="uk-text-decoration-none uk-text-large uk-text-white"><?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?></a>
+                        <a href="mailto:<?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?>"
+                            class="uk-text-decoration-none uk-text-large uk-text-white">
+                            <?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?>
+                        </a>
                     </div>
-                    <?php if ($facebook) : ?>
-                        <a href="<?php echo $facebook; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-facebook fa-4xl"></i></a>
-                    <?php endif; ?>
+                    <div id="social-links">
+                        <?php if ($facebook) : ?>
+                            <a href="<?php echo $facebook; ?>" target="_blank" class="uk-margin-small-right">
+                                <i class="fa-brands fa-square-facebook fa-4xl"></i>
+                            </a>
+                        <?php endif; ?>
 
-                    <?php if ($instagram) : ?>
-                        <a href="<?php echo $instagram; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-instagram fa-4xl"></i></a>
-                    <?php endif; ?>
+                        <?php if ($instagram) : ?>
+                            <a href="<?php echo $instagram; ?>" target="_blank" class="uk-margin-small-right">
+                                <i class="fa-brands fa-square-instagram fa-4xl"></i>
+                            </a>
+                        <?php endif; ?>
 
-                    <?php if ($linkedin) : ?>
-                        <a href="<?php echo $linkedin; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-linkedin fa-4xl"></i></a>
-                    <?php endif; ?>
+                        <?php if ($linkedin) : ?>
+                            <a href="<?php echo $linkedin; ?>" target="_blank" class="uk-margin-small-right">
+                                <i class="fa-brands fa-linkedin fa-4xl"></i>
+                            </a>
+                        <?php endif; ?>
 
-                    <?php if ($bluesky) : ?>
-                        <a href="<?php echo $bluesky; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-bluesky fa-4xl"></i></a>
-                    <?php endif; ?>
-
+                        <?php if ($bluesky) : ?>
+                            <a href="<?php echo $bluesky; ?>" target="_blank" class="uk-margin-small-right">
+                                <i class="fa-brands fa-square-bluesky fa-4xl"></i>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 </div>
-                <?php if ($this->countModules('footer-logo')) : ?>
-                    <div class="uk-width-1-3@m uk-padding-large">
-                        <jdoc:include type="modules" name="footer-logo" style="none" />
-                    </div>
-                <?php endif; ?>
+
+                <div class="uk-width-1-3@m uk-padding">
+                    <img src="<?php echo '/images/logo/' . $footerLogo; ?>" alt="logo" />
+                </div>
+
                 <?php if ($this->countModules('policy-menu')) : ?>
-                    <div class="uk-width-1-3@m uk-padding-large">
+                    <div class="uk-width-1-3@m uk-padding uk-padding-remove-right uk-flex uk-flex-right">
                         <jdoc:include type="modules" name="policy-menu" style="none" />
                     </div>
                 <?php endif; ?>
             </div>
         </div>
     </div>
+
     <footer id="copyrightFooter" class="footer mt-auto py-3 uk-background-default ">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
                 <div class="uk-width-1-2@m uk-padding">
-                    <img src="<?php echo '/images/logo/' . $footerLogos; ?>" alt="logo"/>
+                    <img src="<?php echo '/images/logo/' . $netzeroLogo; ?>" alt="logo" />
                 </div>
                 <?php if ($this->countModules('copyright-footer-copyright')) : ?>
-                    <div class="uk-width-1-2@m uk-padding">
+                    <div class="uk-width-1-2@m uk-padding uk-padding-remove-right">
                         <jdoc:include type="modules" name="copyright-footer-copyright" style="none" />
                     </div>
                 <?php endif; ?>

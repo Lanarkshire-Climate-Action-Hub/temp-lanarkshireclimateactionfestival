@@ -39,6 +39,9 @@ h1,
     font-weight: 800;
 }
 
+//Thickness
+$text-decoration-thickness: 0.125rem;
+$text-underline-offset: 1rem;
 //Colors
 $white: #f5fcfa;
 $grey: #707070;
@@ -298,8 +301,27 @@ html {
 .text-white > a,
 .text-white > i,
 #contact a,
-#festivalFooter .nav-link {
+#festivalFooter .nav-link,
+#social-links a {
     color: $white;
+}
+
+#social-links a {
+    text-decoration: unset;
+    &:hover {
+        color:$yellow;
+    }
+}
+
+.nav-item .nav-link {
+    color: $primary;
+    &:hover {
+        color: $secondary;
+    }
+}
+
+.nav-item.active .nav-link {
+    color: $secondary;
 }
 
 #festivalFooter {
@@ -312,17 +334,30 @@ header {
     .nav-link {
         font-size: 1.75rem;
         line-height: 1.5;
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: $text-decoration-thickness;
+            text-decoration-color: $yellow;
+            text-underline-offset: $text-underline-offset;
+        }
+    }
+    .nav-item.active .nav-link {
+        text-decoration: underline;
+        text-decoration-thickness: $text-decoration-thickness;
+        text-decoration-color: $yellow;
+        text-underline-offset: $text-underline-offset;
     }
 }
+#top-menu,
 #festivalFooter {
     .nav-link {
         font-size: 1.875rem;
         line-height: 1.5;
         &:hover {
             text-decoration: underline;
-            text-decoration-thickness: 0.25em;
+            text-decoration-thickness: $text-decoration-thickness;
             text-decoration-color: $yellow;
-            text-underline-offset: 0.125em;
+            text-underline-offset: $text-underline-offset;
         }
     }
 }
@@ -331,6 +366,25 @@ header {
     line-height: 1.5em;
     vertical-align: -0.28em;
 }
+
+//Menu Styling
+
+#top-menu {
+    .nav-item {
+        padding: 0 20px;
+        .nav-link {
+            color: $white;
+        }
+        &.active {
+            background-color: $yellow;
+            .nav-link {
+                color: $primary;
+                text-decoration-color: $primary;
+            }
+        }
+    }
+}
+
 //Font Styles
 .uk-navbar-nav.policy-nav > li > a {
     text-transform: initial;
@@ -341,3 +395,37 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+//Search module
+
+#top-search {
+    .mod-finder__search {
+        .awesomplete {
+            width: 75%;
+        }
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+        background-color: $white;
+        input.js-finder-search-query {
+            color: $primary;
+            font-size: 1.875rem;
+            line-height: 1.5;
+            background: transparent;
+            border: 0 none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+        button {
+            width: 25%;
+            border: 0 none;
+            i {
+                color: $primary;
+            }
+        }
+    }
+}
+
+//Import Responsive Styles
+@import "_responsive";
