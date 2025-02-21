@@ -19,6 +19,8 @@ use Joomla\CMS\Uri\Uri; // Uri class: Contains static methods to manipulate URIs
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
+$config = Factory::getConfig(); // Get the Joomla configuration object
+$fromEmail = $config->get('mailfrom'); // Get the email address that system emails will be sent from
 $app = Factory::getApplication();
 $templateParams = $app->getTemplate(true)->params;
 $wa  = $this->getWebAssetManager();  // Get the Web Asset Manager - used to load our CSS and JS files
@@ -40,6 +42,11 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 $useUIKit = $templateParams->get('use_uikit', 0);
 $useBootstrap = $templateParams->get('use_bootstrap', 0);
 $useFontAwesome = $templateParams->get('use_fontawesome', 0);
+$facebook = $templateParams->get('facebook');
+$instagram = $templateParams->get('instagram');
+$linkedin = $templateParams->get('linkedin');
+$bluesky = $templateParams->get('bluesky');
+$footerLogos = $templateParams->get('footer-logos');
 
 //Get params from template styling
 //If you want to add your own parameters you may do so in templateDetails.xml
@@ -223,34 +230,48 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <div id="festivalFooter" class="uk-background-primary">
         <div class="uk-container-expand">
             <div uk-grid>
-                <?php if ($this->countModules('footer-social')) : ?>
-                    <div class="uk-width-1-3@m">
-                        <jdoc:include type="modules" name="footer-social" style="none" />
+                <div class="uk-width-1-3@m uk-padding-large text-white" id="socials">
+                    <div id="contact">
+                        <a href="mailto:<?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?>" class="uk-text-decoration-none uk-text-large uk-text-white"><?php echo htmlspecialchars($fromEmail, ENT_QUOTES, 'UTF-8'); ?></a>
                     </div>
-                <?php endif; ?>
+                    <?php if ($facebook) : ?>
+                        <a href="<?php echo $facebook; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-facebook fa-4xl"></i></a>
+                    <?php endif; ?>
+
+                    <?php if ($instagram) : ?>
+                        <a href="<?php echo $instagram; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-instagram fa-4xl"></i></a>
+                    <?php endif; ?>
+
+                    <?php if ($linkedin) : ?>
+                        <a href="<?php echo $linkedin; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-linkedin fa-4xl"></i></a>
+                    <?php endif; ?>
+
+                    <?php if ($bluesky) : ?>
+                        <a href="<?php echo $bluesky; ?>" target="_blank" class="uk-margin-small-right"><i class="fa-brands fa-square-bluesky fa-4xl"></i></a>
+                    <?php endif; ?>
+
+                </div>
                 <?php if ($this->countModules('footer-logo')) : ?>
-                    <div class="uk-width-1-3@m">
+                    <div class="uk-width-1-3@m uk-padding-large">
                         <jdoc:include type="modules" name="footer-logo" style="none" />
                     </div>
                 <?php endif; ?>
                 <?php if ($this->countModules('policy-menu')) : ?>
-                    <div class="uk-width-1-3@m">
+                    <div class="uk-width-1-3@m uk-padding-large">
                         <jdoc:include type="modules" name="policy-menu" style="none" />
                     </div>
                 <?php endif; ?>
             </div>
         </div>
     </div>
-    <footer id="copyrightFooter" class="footer mt-auto py-3 bg-light ">
-        <div class="uk-container-expand">
+    <footer id="copyrightFooter" class="footer mt-auto py-3 uk-background-default ">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
-                <?php if ($this->countModules('copyright-footer-logos')) : ?>
-                    <div class="uk-width-1-2@m">
-                        <jdoc:include type="modules" name="copyright-footer-logos" style="none" />
-                    </div>
-                <?php endif; ?>
+                <div class="uk-width-1-2@m uk-padding">
+                    <img src="<?php echo '/images/logo/' . $footerLogos; ?>" alt="logo"/>
+                </div>
                 <?php if ($this->countModules('copyright-footer-copyright')) : ?>
-                    <div class="uk-width-1-2@m">
+                    <div class="uk-width-1-2@m uk-padding">
                         <jdoc:include type="modules" name="copyright-footer-copyright" style="none" />
                     </div>
                 <?php endif; ?>

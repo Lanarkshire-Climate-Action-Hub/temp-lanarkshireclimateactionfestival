@@ -40,6 +40,42 @@ h1,
 }
 
 //Colors
+$white: #f5fcfa;
+$grey: #707070;
+$muted: #202024;
+$primary: #0540f2;
+$secondary: #6aab05;
+$orange: #f54d00;
+$yellow: #f2cb05;
+
+html {
+    background: $white;
+}
+.uk-text-white {
+    color: $white !important;
+}
+.uk-text-grey {
+    color: $grey;
+}
+.uk-background-default {
+    background-color: $white;
+}
+.uk-background-muted {
+    background-color: $muted;
+}
+.uk-background-primary {
+    background-color: $primary;
+    color: $white;
+}
+.uk-background-secondary {
+    background-color: $secondary;
+}
+.uk-background-orange {
+    background-color: $orange;
+}
+.uk-background-yellow {
+    background-color: $yellow;
+}
 
 .theme-color {
     &-travel {
@@ -53,10 +89,10 @@ h1,
         }
         &-light {
             &-background {
-                background-color: #0540f2;
+                background-color: $primary;
             }
             &-text {
-                color: #0540f2;
+                color: $primary;
             }
         }
         &-lighter {
@@ -131,10 +167,10 @@ h1,
         }
         &-light {
             &-background {
-                background-color: #f54d00;
+                background-color: $orange;
             }
             &-text {
-                color: #f54d00;
+                color: $orange;
             }
         }
         &-lighter {
@@ -216,7 +252,7 @@ h1,
                     rgba(245, 77, 0, 1) 75%,
                     rgba(245, 77, 0, 1) 100%
                 );
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="#f54d00",GradientType=1);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="$orange",GradientType=1);
             }
         }
         &-lighter {
@@ -256,6 +292,48 @@ h1,
             }
         }
     }
+}
+
+.text-white,
+.text-white > a,
+.text-white > i,
+#contact a,
+#festivalFooter .nav-link {
+    color: $white;
+}
+
+#festivalFooter {
+    #contact {
+    }
+}
+
+//Font Sizes
+header {
+    .nav-link {
+        font-size: 1.75rem;
+        line-height: 1.5;
+    }
+}
+#festivalFooter {
+    .nav-link {
+        font-size: 1.875rem;
+        line-height: 1.5;
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 0.25em;
+            text-decoration-color: $yellow;
+            text-underline-offset: 0.125em;
+        }
+    }
+}
+#socials .fa-4xl {
+    font-size: 3.75rem;
+    line-height: 1.5em;
+    vertical-align: -0.28em;
+}
+//Font Styles
+.uk-navbar-nav.policy-nav > li > a {
+    text-transform: initial;
 }
 
 //Basic Responsive Images

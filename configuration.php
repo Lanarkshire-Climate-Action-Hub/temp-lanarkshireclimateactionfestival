@@ -33,7 +33,7 @@ class JConfig {
 	public $offset = 'UTC';
 	public $mailonline = true;
 	public $mailer = 'mail';
-	public $mailfrom = 'russell.english@stormit.co.uk';
+	public $mailfrom = 'info@climateactionlanarkshire.net';
 	public $fromname = 'Lanarkshire Climate Action Festival';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = false;
@@ -58,7 +58,7 @@ class JConfig {
 	public $feed_email = 'none';
 	public $log_path = 'C:\\wamp64\\www\\temp-lanarkshireclimateactionfestival\\administrator/logs';
 	public $tmp_path = 'C:\\wamp64\\www\\temp-lanarkshireclimateactionfestival/tmp';
-	public $lifetime = 15;
+	public $lifetime = 600;
 	public $session_handler = 'database';
 	public $shared_session = false;
 	public $session_metadata = true;

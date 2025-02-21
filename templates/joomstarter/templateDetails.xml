@@ -63,6 +63,11 @@
             		<option value="0">No</option>
             		<option value="1">Yes</option>
         		</field>
+				<field name="facebook" type="url" default="https://www.facebook.com/climateactionlanarkshire" label="Facebook" description="" size="10" />
+				<field name="instagram" type="url" default="https://www.instagram.com/climateactionlanarkshire/" label="Instagram" description="" size="10" />
+				<field name="linkedin" type="url" default="https://www.linkedin.com/company/climate-action-lanarkshire" label="LinkedIn" description="" size="10" />
+				<field name="bluesky" type="url" default="https://bsky.app/profile/cahlanarkshire.bsky.social" label="BlueSky" description="" size="10" />
+				<field name="footer-logos" type="imagelist" default="" label="Select an image" description="" directory="images/logo" exclude="" stripext="" />
 			</fieldset>
 		</fields>
 	</config>
