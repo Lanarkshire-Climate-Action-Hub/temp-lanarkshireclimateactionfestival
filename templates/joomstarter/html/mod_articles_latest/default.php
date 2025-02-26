@@ -19,7 +19,7 @@ $moduleTitle = $module->title;
 $headerTag = $params->get('header_tag', 'h3');
 
 ?>
-<div class="uk-background-primary">
+<div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right uk-background-primary">
     <?php if ($moduleTitle) : ?>
         <div class="uk-margin-large-left uk-margin-large-right">
             <<?php echo $headerTag; ?> class="uk-margin-bottom gardein uk-text-white oneHundred uk-width-1-1@s"><span><?php echo $moduleTitle; ?></span></<?php echo $headerTag; ?>>
