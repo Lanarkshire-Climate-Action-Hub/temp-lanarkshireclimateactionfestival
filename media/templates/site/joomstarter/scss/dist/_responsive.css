@@ -1,81 +1,70 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-    /* Styles */
+  /* Styles */
 }
-
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
-    /* Styles */
+  /* Styles */
 }
-
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
-    /* Styles */
+  /* Styles */
 }
-
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Styles */
+  /* Styles */
 }
-
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    /* Styles */
+  /* Styles */
 }
-
 /* iPads (portrait) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    /* Styles */
+  /* Styles */
 }
-
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
-    //Welcome module
-    img#mod-welcome-image {
-        max-width: 897px;
-    }
+  img#mod-welcome-image {
+    max-width: 897px;
+  }
 
-    //Font Sizes
-    h2 {
-        font-size: 3.125rem;
-    }
+  h2 {
+    font-size: 3.125rem;
+  }
 
-    .forty {
-        font-size: 2.5rem; //40px
-    }
-    .eighty {
-        font-size: 5rem; //80px
-        line-height: 1.47;
-    }
+  .forty {
+    font-size: 2.5rem;
+  }
 
-    .oneHundred {
-        font-size: 6.25rem; //100px
-    }
-    //Animate
-    .bounce-on-hover {
-        position: relative;
-        top: 0;
-        transition: top ease 0.5s;
-        &:hover {
-            top: -50px;
-        }
-    }
-    .yellow-circle {
-        width: 495px;
-        height: 495px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        margin: 0 auto;
-    }
+  .eighty {
+    font-size: 5rem;
+  }
+
+  .oneHundred {
+    font-size: 6.25rem;
+  }
+
+  .bounce-on-hover {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .bounce-on-hover:hover {
+    top: -50px;
+  }
+
+  .yellow-circle {
+    width: 495px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
 }
-
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
-    /* Styles */
+  /* Styles */
 }
-
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-    /* Styles */
+  /* Styles */
 }

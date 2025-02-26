@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>mod_signpost_event</name>
+    <author>Storm Web Design Ltd</author>
+    <creationDate>2025</creationDate>
+    <copyright>Copyright (C) 2025</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.1</version>
+    <description>Module built for the "I want to host an event..." on the homepage</description>
+
+    <files>
+        <filename module="mod_signpost_event">mod_signpost_event.php</filename>
+        <filename>index.html</filename>
+        <filename>extras.xml</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <media folder="media" destination="modules/mod_signpost_event/">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="background_color" type="list" default="" required="true" label="Select background colour" description="">
+                    <option value="">Please Select</option>
+                    <option value="0">Blue</option>
+                    <option value="1">Green</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
+                </field>
+                <field name="layout" type="list" default="default" required="true" label="Select layout" description="">
+                    <option value="">Please Select</option>
+                    <option value="default">Host an event</option>
+                    <option value="takepart">Take part in an event</option>
+                </field>
+                <field name="extras" type="subform" formsource="modules/mod_signpost_event/extras.xml" label="Details" multiple="true" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

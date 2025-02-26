@@ -50,7 +50,7 @@ class JConfig {
 	public $MetaAuthor = true;
 	public $MetaVersion = false;
 	public $robots = '';
-	public $sef = true;
+	public $sef = false;
 	public $sef_rewrite = false;
 	public $sef_suffix = false;
 	public $unicodeslugs = false;

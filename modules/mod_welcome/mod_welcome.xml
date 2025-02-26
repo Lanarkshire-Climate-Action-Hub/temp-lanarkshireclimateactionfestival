@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>mod_welcome</name>
+    <author>Storm Web Design</author>
+    <creationDate>2025</creationDate>
+    <copyright>Copyright (C) Storm Web Design Ltd 2025</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.0</version>
+    <description></description>
+
+    <files>
+        <filename module="mod_welcome">mod_welcome.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="image" type="accessiblemedia" label="Select an image" directory="" />
+                <field name="date" type="text" label="Enter the date" description="" default="" />
+                <field name="link_title" type="text" label="Enter the link title" description="" default="" />
+                <field name="link" type="menuitem" default="45" label="Select a menu item" description="" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

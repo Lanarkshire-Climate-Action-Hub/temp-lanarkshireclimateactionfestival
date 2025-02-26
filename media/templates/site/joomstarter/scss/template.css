@@ -12113,11 +12113,20 @@ textarea.form-control-lg {
 }
 
 body,
-.outfit-regular {
+.outfit-regular,
+.uk-button-yellow {
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+h1, .h1,
+.gardein,
+.title {
+  font-family: gardein, sans-serif;
+  font-style: normal;
+  font-weight: 800;
 }
 
 h2, .h2,
@@ -12137,16 +12146,17 @@ h6,
   font-style: normal;
 }
 
-h1, .h1,
-.gardein,
-.title {
-  font-family: gardein, sans-serif;
-  font-style: normal;
-  font-weight: 800;
+.remove-decoration,
+.remove-decoration:hover {
+  text-decoration: none;
 }
 
 html {
   background: #f5fcfa;
+}
+
+h2, .h2 {
+  color: #202024;
 }
 
 .uk-text-white {
@@ -12180,6 +12190,12 @@ html {
 
 .uk-background-yellow {
   background-color: #f2cb05;
+}
+
+.lcaf-background-blue-white {
+  background: rgb(5, 64, 242);
+  background: linear-gradient(180deg, rgb(5, 64, 242) 30%, rgb(255, 255, 255) 30%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="#ffffff",GradientType=1);
 }
 
 .theme-color-travel-original-background {
@@ -12274,38 +12290,142 @@ html {
 .text-white > a,
 .text-white > i,
 #contact a,
-#festivalFooter .nav-link {
+#festivalFooter .nav-link,
+#social-links a {
   color: #f5fcfa;
+}
+
+.lcaf-text-primary {
+  color: #0540f2;
+}
+.lcaf-text-secondary {
+  color: #6aab05;
+}
+
+#social-links a {
+  text-decoration: unset;
+}
+#social-links a:hover {
+  color: #f2cb05;
 }
 
 .nav-item .nav-link {
   color: #0540f2;
+}
+.nav-item .nav-link:hover {
+  color: #6aab05;
 }
 
 .nav-item.active .nav-link {
   color: #6aab05;
 }
 
+.signpost_border {
+  border-radius: 57px;
+}
+
+.signpost_border_top_left {
+  border-top-left-radius: 57px;
+}
+
+.signpost_border_top_right {
+  border-top-right-radius: 57px;
+}
+
+.signpost_border_bottom_left {
+  border-bottom-left-radius: 57px;
+}
+
+.signpost_border_bottom_right {
+  border-bottom-right-radius: 57px;
+}
+
 header .nav-link {
   font-size: 1.75rem;
   line-height: 1.5;
 }
+header .nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-decoration-color: #f2cb05;
+  text-underline-offset: 1rem;
+}
+header .nav-item.active .nav-link {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-decoration-color: #f2cb05;
+  text-underline-offset: 1rem;
+}
 
+#top-menu .nav-link,
 #festivalFooter .nav-link {
   font-size: 1.875rem;
   line-height: 1.5;
 }
+#top-menu .nav-link:hover,
 #festivalFooter .nav-link:hover {
   text-decoration: underline;
-  text-decoration-thickness: 0.25em;
+  text-decoration-thickness: 0.125rem;
   text-decoration-color: #f2cb05;
-  text-underline-offset: 0.125em;
+  text-underline-offset: 1rem;
 }
 
 #socials .fa-4xl {
   font-size: 3.75rem;
   line-height: 1.5em;
   vertical-align: -0.28em;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between; /* Distributes items evenly */
+  width: 100%; /* Ensures menu spans full width */
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  flex-grow: 1; /* Each item takes equal space */
+  text-align: center;
+}
+
+.nav-item.item-110 .nav-link {
+  background-color: #f2cb05;
+  border-radius: 8px;
+}
+.nav-item.item-110 .nav-link:hover, .nav-item.item-110.active .nav-link {
+  background-color: #0540f2;
+  color: #f5fcfa;
+  text-decoration: none;
+}
+
+.uk-button-yellow {
+  background-color: #f2cb05;
+  border-radius: 8px;
+  font-size: 3.125rem;
+  line-height: 1.5;
+  border-color: #f2cb05;
+  text-transform: unset;
+  color: #0540f2;
+}
+.uk-button-yellow:hover, .uk-button-yellow.active {
+  background-color: #0540f2;
+  border-color: #0540f2;
+  color: #f5fcfa;
+  text-decoration: none;
+}
+
+#top-menu .nav-item {
+  padding: 0 20px;
+}
+#top-menu .nav-item .nav-link {
+  color: #f5fcfa;
+}
+#top-menu .nav-item.active {
+  background-color: #f2cb05;
+}
+#top-menu .nav-item.active .nav-link {
+  color: #0540f2;
+  text-decoration-color: #0540f2;
 }
 
 .uk-navbar-nav.policy-nav > li > a {
@@ -12315,4 +12435,94 @@ header .nav-link {
 img {
   max-width: 100%;
   height: auto;
+}
+
+#top-search .mod-finder__search {
+  border-radius: 25px;
+  background-color: #f5fcfa;
+}
+#top-search .mod-finder__search .awesomplete {
+  width: 75%;
+}
+#top-search .mod-finder__search input.js-finder-search-query {
+  color: #0540f2;
+  font-size: 1.875rem;
+  line-height: 1.5;
+  background: transparent;
+  border: 0 none;
+  border-radius: 0;
+}
+#top-search .mod-finder__search button {
+  width: 25%;
+  border: 0 none;
+}
+#top-search .mod-finder__search button i {
+  color: #0540f2;
+}
+
+.mod-signpost_event-item a:hover {
+  color: #0540f2;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  img#mod-welcome-image {
+    max-width: 897px;
+  }
+  h2, .h2 {
+    font-size: 3.125rem;
+  }
+  .forty {
+    font-size: 2.5rem;
+  }
+  .eighty {
+    font-size: 5rem;
+  }
+  .oneHundred {
+    font-size: 6.25rem;
+  }
+  .bounce-on-hover {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .bounce-on-hover:hover {
+    top: -50px;
+  }
+  .yellow-circle {
+    width: 495px;
+    border-radius: 50%;
+  }
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
 }/*# sourceMappingURL=template.css.map */

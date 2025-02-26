@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="extras" label="Extras">
+		<field name="menuitem" type="menuitem" default="45" label="Select a menu item" description="Select a menu item" />
+		<field name="custom_menutitle" type="text" default="" label="Enter menu title" description="Leave blank to use menu item title" filter="raw" />
+		<field name="image" type="accessiblemedia" label="Select an image" directory="" /><!-- NEW: Layout selection for each extra -->
+        <field name="layout" type="list" default="default" required="true" label="Select layout" description="">
+            <option value="default">Default Layout</option>
+            <option value="card">Card Layout</option>
+			<option value="circle">Circle Layout</option>
+        </field>
+	</fieldset>
+</form>

@@ -1,5 +1,6 @@
 //This is where you can edit your CSS, or better yet, create additional scss files and import them.
-//You can compile this to css using the command: sass template.scss:..\css\template.min.css --style compressed
+//You can compile this to css using the command:
+// sass C:\wamp64\www\temp-lanarkshireclimateactionfestival\media\templates\site\joomstarter\scss\template.scss:..\css\template.min.css --style compressed
 
 // Load our local copy of Bootstrap 5.3.2
 @import "vendor/bootstrap-5.3.2/functions";
@@ -11,11 +12,20 @@
 
 //Fonts
 body,
-.outfit-regular {
+.outfit-regular,
+.uk-button-yellow {
     font-family: "Outfit", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+h1,
+.gardein,
+.title {
+    font-family: gardein, sans-serif;
+    font-style: normal;
+    font-weight: 800;
 }
 
 h2,
@@ -31,12 +41,9 @@ h6,
     font-style: normal;
 }
 
-h1,
-.gardein,
-.title {
-    font-family: gardein, sans-serif;
-    font-style: normal;
-    font-weight: 800;
+.remove-decoration,
+.remove-decoration:hover {
+    text-decoration: none;
 }
 
 //Thickness
@@ -53,6 +60,10 @@ $yellow: #f2cb05;
 
 html {
     background: $white;
+}
+
+h2 {
+    color: $muted;
 }
 .uk-text-white {
     color: $white !important;
@@ -78,6 +89,13 @@ html {
 }
 .uk-background-yellow {
     background-color: $yellow;
+}
+.lcaf-background-blue-white {
+    background: rgb(5, 64, 242);
+    background: -moz-linear-gradient(180deg, rgba(5, 64, 242, 1) 30%, rgba(255, 255, 255, 1) 30%);
+    background: -webkit-linear-gradient(180deg, rgba(5, 64, 242, 1) 30%, rgba(255, 255, 255, 1) 30%);
+    background: linear-gradient(180deg, rgba(5, 64, 242, 1) 30%, rgba(255, 255, 255, 1) 30%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="#ffffff",GradientType=1);
 }
 
 .theme-color {
@@ -306,10 +324,19 @@ html {
     color: $white;
 }
 
+.lcaf-text- {
+    &primary {
+        color: $primary;
+    }
+    &secondary {
+        color: $secondary;
+    }
+}
+
 #social-links a {
     text-decoration: unset;
     &:hover {
-        color:$yellow;
+        color: $yellow;
     }
 }
 
@@ -324,12 +351,39 @@ html {
     color: $secondary;
 }
 
-#festivalFooter {
-    #contact {
-    }
+//Border Radius
+
+.signpost_border {
+    -webkit-border-radius: 57px;
+    -moz-border-radius: 57px;
+    border-radius: 57px;
 }
 
+.signpost_border_top_left {
+    -webkit-border-top-left-radius: 57px;
+    -moz-border-radius-topleft: 57px;
+    border-top-left-radius: 57px;
+}
+
+.signpost_border_top_right {
+    -webkit-border-top-right-radius: 57px;
+    -moz-border-radius-topright: 57px;
+    border-top-right-radius: 57px;
+}
+
+.signpost_border_bottom_left {
+    -webkit-border-bottom-left-radius: 57px;
+    -moz-border-radius-bottomleft: 57px;
+    border-bottom-left-radius: 57px;
+}
+
+.signpost_border_bottom_right {
+    -webkit-border-bottom-right-radius: 57px;
+    -moz-border-radius-bottomright: 57px;
+    border-bottom-right-radius: 57px;
+}
 //Font Sizes
+
 header {
     .nav-link {
         font-size: 1.75rem;
@@ -368,6 +422,76 @@ header {
 }
 
 //Menu Styling
+.navbar-nav {
+    display: flex;
+    justify-content: space-between; /* Distributes items evenly */
+    width: 100%; /* Ensures menu spans full width */
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    flex-grow: 1; /* Each item takes equal space */
+    text-align: center;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    text-align: center; /* Ensure text is centered */
+    flex-direction: column; /* Stack elements vertically if needed */
+    height: 100%; /* Ensure it takes full height of the parent */
+}
+//Seperators
+.homePage {
+    #topd {
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 135px;
+            background-color: $primary;
+            background-image: url(/images/backgrounds/grass.png);
+            margin: 0 auto;
+        }
+    }
+}
+
+//Festival programme menu item
+.nav-item.item-110 {
+    .nav-link {
+        background-color: $yellow;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+    .nav-link:hover,
+    &.active .nav-link {
+        background-color: $primary;
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+//Festival programme menu item
+.uk-button-yellow {
+    background-color: $yellow;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 3.125rem;
+    line-height: 1.5;
+    border-color: $yellow;
+    text-transform: unset;
+    color: $primary;
+    &:hover,
+    &.active {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+        text-decoration: none;
+    }
+}
 
 #top-menu {
     .nav-item {
@@ -397,7 +521,6 @@ img {
 }
 
 //Search module
-
 #top-search {
     .mod-finder__search {
         .awesomplete {
@@ -424,6 +547,12 @@ img {
                 color: $primary;
             }
         }
+    }
+}
+
+.mod-signpost_event-item {
+    a:hover {
+        color: $primary;
     }
 }
 

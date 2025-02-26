@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>mod_funding_open</name>
+    <author>Storm Web Design</author>
+    <creationDate>2025</creationDate>
+    <copyright>Copyright (C) Storm Web Design Ltd 2025</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.0</version>
+    <description></description>
+
+    <files>
+        <filename module="mod_funding_open">mod_funding_open.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="image" type="accessiblemedia" label="Select an image" directory="" />
+                <field name="copy" type="text" label="Enter some text" description="" default="" />
+                <field name="link_title" type="text" label="Enter the link title" description="" default="" />
+                <field name="link" type="menuitem" default="45" label="Select a menu item" description="" />
+                <field name="background_color" type="list" default="" required="true" label="Select background colour" description="">
+                    <option value="">Please Select</option>
+                    <option value="0">Blue</option>
+                    <option value="1">Green</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

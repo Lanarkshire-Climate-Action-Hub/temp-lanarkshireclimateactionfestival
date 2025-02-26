@@ -13147,11 +13147,20 @@ textarea.form-control-lg {
 }
 
 body,
-.outfit-regular {
+.outfit-regular,
+.uk-button-yellow {
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+h1, .h1,
+.gardein,
+.title {
+  font-family: gardein, sans-serif;
+  font-style: normal;
+  font-weight: 800;
 }
 
 h2, .h2,
@@ -13171,16 +13180,17 @@ h6,
   font-style: normal;
 }
 
-h1, .h1,
-.gardein,
-.title {
-  font-family: gardein, sans-serif;
-  font-style: normal;
-  font-weight: 800;
+.remove-decoration,
+.remove-decoration:hover {
+  text-decoration: none;
 }
 
 html {
   background: #f5fcfa;
+}
+
+h2, .h2 {
+  color: #202024;
 }
 
 .uk-text-white {
@@ -13214,6 +13224,14 @@ html {
 
 .uk-background-yellow {
   background-color: #f2cb05;
+}
+
+.lcaf-background-blue-white {
+  background: #0540f2;
+  background: -moz-linear-gradient(180deg, #0540f2 30%, white 30%);
+  background: -webkit-linear-gradient(180deg, #0540f2 30%, white 30%);
+  background: linear-gradient(180deg, #0540f2 30%, white 30%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0540f2",endColorstr="#ffffff",GradientType=1);
 }
 
 .theme-color-travel-original-background {
@@ -13319,6 +13337,13 @@ html {
   color: #f5fcfa;
 }
 
+.lcaf-text-primary {
+  color: #0540f2;
+}
+.lcaf-text-secondary {
+  color: #6aab05;
+}
+
 #social-links a {
   text-decoration: unset;
 }
@@ -13335,6 +13360,36 @@ html {
 
 .nav-item.active .nav-link {
   color: #6aab05;
+}
+
+.signpost_border {
+  -webkit-border-radius: 57px;
+  -moz-border-radius: 57px;
+  border-radius: 57px;
+}
+
+.signpost_border_top_left {
+  -webkit-border-top-left-radius: 57px;
+  -moz-border-radius-topleft: 57px;
+  border-top-left-radius: 57px;
+}
+
+.signpost_border_top_right {
+  -webkit-border-top-right-radius: 57px;
+  -moz-border-radius-topright: 57px;
+  border-top-right-radius: 57px;
+}
+
+.signpost_border_bottom_left {
+  -webkit-border-bottom-left-radius: 57px;
+  -moz-border-radius-bottomleft: 57px;
+  border-bottom-left-radius: 57px;
+}
+
+.signpost_border_bottom_right {
+  -webkit-border-bottom-right-radius: 57px;
+  -moz-border-radius-bottomright: 57px;
+  border-bottom-right-radius: 57px;
 }
 
 header .nav-link {
@@ -13371,6 +13426,51 @@ header .nav-item.active .nav-link {
   font-size: 3.75rem;
   line-height: 1.5em;
   vertical-align: -0.28em;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  /* Distributes items evenly */
+  width: 100%;
+  /* Ensures menu spans full width */
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  flex-grow: 1;
+  /* Each item takes equal space */
+  text-align: center;
+}
+
+.nav-item.item-110 .nav-link {
+  background-color: #f2cb05;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.nav-item.item-110 .nav-link:hover, .nav-item.item-110.active .nav-link {
+  background-color: #0540f2;
+  color: #f5fcfa;
+  text-decoration: none;
+}
+
+.uk-button-yellow {
+  background-color: #f2cb05;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 3.125rem;
+  line-height: 1.5;
+  border-color: #f2cb05;
+  text-transform: unset;
+  color: #0540f2;
+}
+.uk-button-yellow:hover, .uk-button-yellow.active {
+  background-color: #0540f2;
+  border-color: #0540f2;
+  color: #f5fcfa;
+  text-decoration: none;
 }
 
 #top-menu .nav-item {
@@ -13421,4 +13521,72 @@ img {
 }
 #top-search .mod-finder__search button i {
   color: #0540f2;
+}
+
+.mod-signpost_event-item a:hover {
+  color: #0540f2;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  img#mod-welcome-image {
+    max-width: 897px;
+  }
+
+  h2, .h2 {
+    font-size: 3.125rem;
+  }
+
+  .forty {
+    font-size: 2.5rem;
+  }
+
+  .eighty {
+    font-size: 5rem;
+  }
+
+  .oneHundred {
+    font-size: 6.25rem;
+  }
+
+  .bounce-on-hover {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .bounce-on-hover:hover {
+    top: -50px;
+  }
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
 }

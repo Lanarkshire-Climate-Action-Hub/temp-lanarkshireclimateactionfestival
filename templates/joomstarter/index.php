@@ -177,67 +177,65 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
             <?php endif; ?>
         </div>
 
-        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-            <?php if ($this->countModules('topa')) : ?>
-                <div id="topa">
-                    <jdoc:include type="modules" name="topa" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('topb')) : ?>
-                <div id="topb">
-                    <jdoc:include type="modules" name="topb" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('topc')) : ?>
-                <div id="topc">
-                    <jdoc:include type="modules" name="topc" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('topd')) : ?>
-                <div id="topd">
-                    <jdoc:include type="modules" name="topd" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('tope')) : ?>
-                <div id="tope">
-                    <jdoc:include type="modules" name="tope" style="none" />
-                </div>
-            <?php endif; ?>
-            <main>
-                <?php // Load important Joomla system messages 
-                ?>
-                <jdoc:include type="message" />
-                <?php // Load the main component of the webpage 
-                ?>
-                <jdoc:include type="component" />
-            </main>
+        <?php if ($this->countModules('topa')) : ?>
+            <div id="topa">
+                <jdoc:include type="modules" name="topa" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('topb')) : ?>
+            <div id="topb">
+                <jdoc:include type="modules" name="topb" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('topc')) : ?>
+            <div id="topc">
+                <jdoc:include type="modules" name="topc" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('topd')) : ?>
+            <div id="topd">
+                <jdoc:include type="modules" name="topd" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('tope')) : ?>
+            <div id="tope">
+                <jdoc:include type="modules" name="tope" style="none" />
+            </div>
+        <?php endif; ?>
+        <main>
+            <?php // Load important Joomla system messages 
+            ?>
+            <jdoc:include type="message" />
+            <?php // Load the main component of the webpage 
+            ?>
+            <jdoc:include type="component" />
+        </main>
 
-            <?php if ($this->countModules('bottoma')) : ?>
-                <div id="bottoma">
-                    <jdoc:include type="modules" name="bottoma" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('bottomb')) : ?>
-                <div id="bottomb">
-                    <jdoc:include type="modules" name="bottomb" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('bottomc')) : ?>
-                <div id="bottomc">
-                    <jdoc:include type="modules" name="bottomc" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('bottomd')) : ?>
-                <div id="bottomd">
-                    <jdoc:include type="modules" name="bottomd" style="none" />
-                </div>
-            <?php endif; ?>
-            <?php if ($this->countModules('bottome')) : ?>
-                <div id="bottome">
-                    <jdoc:include type="modules" name="bottome" style="none" />
-                </div>
-            <?php endif; ?>
-        </div>
+        <?php if ($this->countModules('bottoma')) : ?>
+            <div id="bottoma">
+                <jdoc:include type="modules" name="bottoma" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('bottomb')) : ?>
+            <div id="bottomb">
+                <jdoc:include type="modules" name="bottomb" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('bottomc')) : ?>
+            <div id="bottomc">
+                <jdoc:include type="modules" name="bottomc" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('bottomd')) : ?>
+            <div id="bottomd">
+                <jdoc:include type="modules" name="bottomd" style="none" />
+            </div>
+        <?php endif; ?>
+        <?php if ($this->countModules('bottome')) : ?>
+            <div id="bottome">
+                <jdoc:include type="modules" name="bottome" style="none" />
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php // Load Footer 
