@@ -1,6 +1,7 @@
 //This is where you can edit your CSS, or better yet, create additional scss files and import them.
 //You can compile this to css using the command:
 // sass C:\wamp64\www\temp-lanarkshireclimateactionfestival\media\templates\site\joomstarter\scss\template.scss:..\css\template.min.css --style compressed
+// sass template.scss:..\css\template.min.css --style compressed
 
 // Load our local copy of Bootstrap 5.3.2
 @import "vendor/bootstrap-5.3.2/functions";
@@ -70,6 +71,9 @@ h2 {
 }
 .uk-text-grey {
     color: $grey;
+}
+.uk-text-primary {
+    color: $primary;
 }
 .uk-background-default {
     background-color: $white;
@@ -352,35 +356,67 @@ h2 {
 }
 
 //Border Radius
+$signpost_border_radius: 57px;
+$news_border_radius: 71px;
 
 .signpost_border {
-    -webkit-border-radius: 57px;
-    -moz-border-radius: 57px;
-    border-radius: 57px;
+    -webkit-border-radius: $signpost_border_radius;
+    -moz-border-radius: $signpost_border_radius;
+    border-radius: $signpost_border_radius;
 }
 
 .signpost_border_top_left {
-    -webkit-border-top-left-radius: 57px;
-    -moz-border-radius-topleft: 57px;
-    border-top-left-radius: 57px;
+    -webkit-border-top-left-radius: $signpost_border_radius;
+    -moz-border-radius-topleft: $signpost_border_radius;
+    border-top-left-radius: $signpost_border_radius;
 }
 
 .signpost_border_top_right {
-    -webkit-border-top-right-radius: 57px;
-    -moz-border-radius-topright: 57px;
-    border-top-right-radius: 57px;
+    -webkit-border-top-right-radius: $signpost_border_radius;
+    -moz-border-radius-topright: $signpost_border_radius;
+    border-top-right-radius: $signpost_border_radius;
 }
 
 .signpost_border_bottom_left {
-    -webkit-border-bottom-left-radius: 57px;
-    -moz-border-radius-bottomleft: 57px;
-    border-bottom-left-radius: 57px;
+    -webkit-border-bottom-left-radius: $signpost_border_radius;
+    -moz-border-radius-bottomleft: $signpost_border_radius;
+    border-bottom-left-radius: $signpost_border_radius;
 }
 
 .signpost_border_bottom_right {
-    -webkit-border-bottom-right-radius: 57px;
-    -moz-border-radius-bottomright: 57px;
-    border-bottom-right-radius: 57px;
+    -webkit-border-bottom-right-radius: $signpost_border_radius;
+    -moz-border-radius-bottomright: $signpost_border_radius;
+    border-bottom-right-radius: $signpost_border_radius;
+}
+
+.news_border {
+    -webkit-border-radius: $news_border_radius;
+    -moz-border-radius: $news_border_radius;
+    border-radius: $news_border_radius;
+}
+
+.news_border_top_left {
+    -webkit-border-top-left-radius: $news_border_radius;
+    -moz-border-radius-topleft: $news_border_radius;
+    border-top-left-radius: $news_border_radius;
+}
+
+.news_border_top_right {
+    -webkit-border-top-right-radius: $news_border_radius;
+    -moz-border-radius-topright: $news_border_radius;
+    border-top-right-radius: $news_border_radius;
+}
+
+.news_border_bottom_left {
+    -webkit-border-bottom-left-radius: $news_border_radius;
+    -moz-border-radius-bottomleft: $news_border_radius;
+    border-bottom-left-radius: $news_border_radius;
+}
+
+.news_border_bottom_right {
+    -webkit-border-bottom-right-radius: $news_border_radius;
+    -moz-border-radius-bottomright: $news_border_radius;
+    border-bottom-right-radius: $news_border_radius;
 }
 //Font Sizes
 

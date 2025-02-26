@@ -114,7 +114,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 ?>
 
 <body class="site <?php echo $pageclass; ?>" data-bs-theme="light">
-    <header uk-sticky>
+    <!-- <header uk-sticky> -->
+    <header>
         <?php // Load Header Module if Module Exists 
         ?>
         <div class="uk-background-primary">
