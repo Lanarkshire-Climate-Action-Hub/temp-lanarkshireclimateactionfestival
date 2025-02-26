@@ -9,6 +9,6 @@
 // no direct access
 defined('_JEXEC') or die;
 ?>
-<div class="rsform<?php echo $moduleclass_sfx; ?>">
+<div class="rsform uk-margin-large-left uk-margin-large-right<?php echo $moduleclass_sfx; ?>">
 	<?php echo RSFormProHelper::displayForm($formId, true); ?>
 </div>
