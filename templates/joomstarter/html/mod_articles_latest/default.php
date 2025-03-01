@@ -34,7 +34,7 @@ $headerTag = $params->get('header_tag', 'h3');
                     $introImage = isset($images->image_intro) ? $images->image_intro : '';
                 ?>
                     <li>
-                        <a href="<?php echo $item->link; ?>" class="remove-decoration article-card uk-display-block uk-card uk-box-shadow-hover-large uk-text-center uk-padding-small" itemscope itemtype="https://schema.org/Article">
+                        <a href="<?php echo $item->link; ?>" class="animate bounce-on-hover remove-decoration article-card uk-display-block uk-card uk-text-center uk-padding-small" itemscope itemtype="https://schema.org/Article">
                             <?php if ($introImage) : ?>
                                 <div class="uk-card-media-top">
                                     <img src="<?php echo htmlspecialchars($introImage, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>" itemprop="image" class="news_border_top_left news_border_top_right">

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>mod_image_carousel</name>
+    <author>Storm Web Design Ltd</author>
+    <creationDate>2025</creationDate>
+    <copyright>Copyright (C) 2025</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.1</version>
+    <description>Image Carousel Module</description>
+
+    <files>
+        <filename module="mod_image_carousel">mod_image_carousel.php</filename>
+        <filename>index.html</filename>
+        <filename>extras.xml</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <media folder="media" destination="modules/mod_image_carousel/">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="extras" type="subform" formsource="modules/mod_image_carousel/extras.xml" label="Images" multiple="true" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

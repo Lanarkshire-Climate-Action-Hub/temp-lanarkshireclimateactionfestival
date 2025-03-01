@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="extras" label="Images">
+		<field name="image" type="accessiblemedia" label="Select an image" directory="" />
+	</fieldset>
+</form>
