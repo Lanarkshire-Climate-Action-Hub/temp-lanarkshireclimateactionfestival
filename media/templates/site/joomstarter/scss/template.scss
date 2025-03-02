@@ -56,6 +56,7 @@ $grey: #707070;
 $muted: #202024;
 $primary: #0540f2;
 $secondary: #6aab05;
+$blue: #0441F2;
 $orange: #f54d00;
 $yellow: #f2cb05;
 
@@ -73,7 +74,7 @@ h2 {
     color: $grey;
 }
 .uk-text-primary {
-    color: $primary;
+    color: $primary !important;
 }
 .uk-background-default {
     background-color: $white;
@@ -356,8 +357,22 @@ h2 {
 }
 
 //Border Radius
+$submit-button-border: 20px;
+$getintouch_border_radius: 36px;
 $signpost_border_radius: 57px;
 $news_border_radius: 71px;
+
+.submit-button-border {
+    -webkit-border-radius: $submit-button-border;
+    -moz-border-radius: $submit-button-border;
+    border-radius: $submit-button-border;
+}
+
+.getintouch_border {
+    -webkit-border-radius: $getintouch_border_radius;
+    -moz-border-radius: $getintouch_border_radius;
+    border-radius: $getintouch_border_radius;
+}
 
 .signpost_border {
     -webkit-border-radius: $signpost_border_radius;
@@ -420,6 +435,16 @@ $news_border_radius: 71px;
 }
 //Font Sizes
 
+.heading-1 {
+    font-size: 6.25rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.875rem;
+    line-height: 1.5;
+}
+
 header {
     .nav-link {
         font-size: 1.75rem;
@@ -472,7 +497,7 @@ header {
 
 .vertical-center {
     display: flex;
-    align-items: center; /* Vertically center content */
+    // align-items: center; /* Vertically center content */
     justify-content: center; /* Horizontally center content */
     text-align: center; /* Ensure text is centered */
     flex-direction: column; /* Stack elements vertically if needed */
@@ -589,6 +614,32 @@ img {
 .mod-signpost_event-item {
     a:hover {
         color: $primary;
+    }
+}
+
+//Get in touch module
+#get-in-touch {
+    input,
+    textarea {
+        background: transparent;
+        border: 0 none;
+        color: $white;
+        font-size: 2.5rem;
+        font-weight: 700;
+        background-image: linear-gradient(transparent, transparent calc(4ch - 1px), $white 0px);
+        background-size: 100% 4ch;
+    }
+    input {
+        height: 4rem;
+    }
+    textarea {
+        resize: none;
+        line-height: 4ch;
+    }
+    .rsform-submit-button {
+        right: 70px;
+        bottom: -18px;
+        color: $muted;
     }
 }
 

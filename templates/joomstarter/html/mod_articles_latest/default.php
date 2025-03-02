@@ -25,7 +25,7 @@ $headerTag = $params->get('header_tag', 'h3');
             <<?php echo $headerTag; ?> class="uk-margin-bottom gardein uk-text-white oneHundred uk-width-1-1@s"><span><?php echo $moduleTitle; ?></span></<?php echo $headerTag; ?>>
         </div>
     <?php endif; ?>
-    <div class="mod-articleslatest uk-position-relative" uk-slider="finite: false; autoplay: true; pause-on-hover: true">
+    <div class="mod-articleslatest uk-position-relative uk-padding-large uk-padding-remove-top uk-padding-remove-right uk-padding-remove-left" uk-slider="finite: false; autoplay: true; pause-on-hover: true">
         <div class="uk-slider-container">
             <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-grid>
                 <?php foreach ($list as $item) :

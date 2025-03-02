@@ -16,13 +16,11 @@ $headerTag = $params->get('header_tag', 'h3');
 
 ?>
 
-<div class="uk-margin-large-bottom uk-margin-large-top uk-margin-large-right uk-margin-large-left">
+<div class="uk-margin-large-bottom uk-margin-top uk-margin-large-right uk-margin-large-left">
 	<div uk-grid>
 		<div class="uk-width-1-2@m">
 			<div class="uk-position-relative">
-				<div class="uk-position-absolute">
-					<img src="/images/assets/person_on_bike.png" alt="person on bike" />
-				</div>
+					<img class="uk-position-absolute bike-position" src="/images/assets/person_on_bike.png" alt="person on bike" />
 			</div>
 		</div>
 		<div class="uk-width-1-2@m uk-margin-large-bottom uk-margin-large-top">

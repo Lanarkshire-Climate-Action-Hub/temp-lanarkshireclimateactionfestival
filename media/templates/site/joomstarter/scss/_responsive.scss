@@ -1,6 +1,9 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     /* Styles */
+    .bike-position {
+        display: none;
+    }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -67,6 +70,20 @@
         -moz-border-radius: 50%;
         border-radius: 50%;
         margin: 0 auto;
+    }
+    .bike-position {
+        right: -55px;
+        z-index: 9999;
+        top: -60px;
+        transform: rotate(12deg);
+    }
+    .getintouch_module_margin {
+        margin-right: 70px !important;
+    }
+    .about-page {
+        .second-text-area-width {
+            width:815px;
+        }
     }
 }
 

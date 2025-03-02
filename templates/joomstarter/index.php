@@ -113,7 +113,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 <?php // you can change data-bs-theme to dark for dark mode  // 
 ?>
 
-<body class="site <?php echo $pageclass; ?>" data-bs-theme="light">
+<body class="site uk-background-default <?php echo $pageclass; ?>" data-bs-theme="light">
     <!-- <header uk-sticky> -->
     <header>
         <?php // Load Header Module if Module Exists 
@@ -169,14 +169,13 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <?php // Generate the main content area of the website 
     ?>
     <div class="siteBody">
-
-        <div class="uk-container-expand">
-            <?php if ($this->countModules('hero')) : ?>
+        <?php if ($this->countModules('hero')) : ?>
+            <div class="uk-container-expand">
                 <div id="hero">
                     <jdoc:include type="modules" name="hero" style="none" />
                 </div>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php endif; ?>
 
         <?php if ($this->countModules('topa')) : ?>
             <div id="topa">
@@ -208,8 +207,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
             ?>
             <jdoc:include type="message" />
             <?php // Load the main component of the webpage 
-            ?>
-            <jdoc:include type="component" />
+            ?><div class="uk-container-expand">
+                <jdoc:include type="component" />
+            </div>
         </main>
 
         <?php if ($this->countModules('bottoma')) : ?>
