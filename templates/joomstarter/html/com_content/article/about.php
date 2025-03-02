@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 
 /** @var \Joomla\Component\Content\Site\View\Article\HtmlView $this */
@@ -34,28 +35,58 @@ $fields = FieldsHelper::getFields('com_content.article', $this->item, true);
 $secondAboutImage = '';
 $secondTextArea = '';
 $secondTitle = '';
+$menuItemId = null;
+$introText = '';
+$interestedImage = '';
 
 foreach ($fields as $field) {
     if ($field->id == 8) { // ID for "second-about-image"
-        $imageData = json_decode($field->rawvalue); // Decode JSON
+        $imageData = json_decode($field->rawvalue);
         if (!empty($imageData->imagefile)) {
-            $secondAboutImage = $imageData->imagefile; // Extract image file path
+            $secondAboutImage = $imageData->imagefile;
         }
     }
     if ($field->id == 9) { // ID for "second-text-area"
-        $secondTextArea = $field->value; // Processed value for editor content
+        $secondTextArea = $field->value;
     }
     if ($field->id == 10) { // ID for "second-title"
-        $secondTitle = $field->value; // Processed value for editor content
+        $secondTitle = $field->value;
+    }
+    if ($field->id == 11) { // ID for "intro-text"
+        $introText = $field->value;
+    }
+    if ($field->id == 12) { // ID for "menu-item"
+        $menuItemId = (int) $field->rawvalue; // Get single menu item ID
+    }
+    if ($field->id == 13) { // ID for "interested-image"
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $interestedImage = $imageData->imagefile;
+        }
     }
 }
+
+// Fetch menu item details if a valid menu item ID is selected
+$menuItem = null;
+if ($menuItemId > 0) {
+    $db = Factory::getDbo();
+    $query = $db->getQuery(true)
+        ->select($db->quoteName(['id', 'title', 'link']))
+        ->from($db->quoteName('#__menu'))
+        ->where($db->quoteName('id') . ' = ' . $db->quote($menuItemId))
+        ->where($db->quoteName('published') . ' = 1')
+        ->setLimit(1);
+    $db->setQuery($query);
+    $menuItem = $db->loadObject();
+}
 ?>
+
 <div class="about-page">
     <div class="item-page<?php echo $this->pageclass_sfx; ?> uk-margin-large-left" uk-grid>
         <div class="uk-width-1-2@m">
             <?php if ($this->params->get('show_page_heading')) : ?>
                 <div class="page-header">
-                    <h1 class="uk-text-primary heading-1"> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+                    <h1 class="uk-text-primary heading-1"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
                 </div>
             <?php endif; ?>
             <?php echo $this->item->text; ?>
@@ -64,6 +95,7 @@ foreach ($fields as $field) {
             <?php echo LayoutHelper::render('joomla.content.about_full_image', $this->item); ?>
         </div>
     </div>
+
     <?php if (!empty($secondTextArea) || !empty($secondAboutImage)) : ?>
         <div class="uk-background-secondary">
             <div class="uk-margin-large-right" uk-grid>
@@ -78,11 +110,35 @@ foreach ($fields as $field) {
                         <div class="uk-text-white vertical-center uk-text-left">
                             <h2 class="gardein uk-text-white"><?php echo $secondTitle; ?></h2>
                             <div class="second-text-area-width">
-                            <?php echo $secondTextArea; ?>
+                                <?php echo $secondTextArea; ?>
                             </div>
                         </div>
                     </div>
                 <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <?php if (!empty($introText) || !empty($interestedImage)) : ?>
+        <div class="uk-background-default">
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+                <div class="uk-flex uk-flex-middle uk-padding-large" uk-grid>
+                    <div class="uk-width-1-2@m uk-padding uk-text-center">
+                        <div id="interested" class="heading-3 uk-text-center uk-text-primary">
+                            <?php echo $introText; ?>
+                        </div>
+                        <?php if (!empty($menuItem)) : ?>
+                            <a class="get-involved-border uk-background-primary uk-padding gardein heading-2" href="<?php echo Route::_($menuItem->link); ?>">
+                                <?php echo htmlspecialchars($menuItem->title, ENT_QUOTES, 'UTF-8'); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="uk-width-1-2@m uk-padding uk-position-relative">
+                        <?php if (!empty($interestedImage)) : ?>
+                            <img src="<?php echo htmlspecialchars($interestedImage, ENT_QUOTES, 'UTF-8'); ?>" alt="Get Involved" id="getInvolved" class="uk-position-absolute">
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </div>
     <?php endif; ?>

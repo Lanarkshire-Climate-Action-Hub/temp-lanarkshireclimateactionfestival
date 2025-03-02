@@ -56,7 +56,7 @@ $grey: #707070;
 $muted: #202024;
 $primary: #0540f2;
 $secondary: #6aab05;
-$blue: #0441F2;
+$blue: #0441f2;
 $orange: #f54d00;
 $yellow: #f2cb05;
 
@@ -357,15 +357,22 @@ h2 {
 }
 
 //Border Radius
-$submit-button-border: 20px;
+$submit_button_border: 20px;
+$get_involed_border_radius: 46px;
 $getintouch_border_radius: 36px;
 $signpost_border_radius: 57px;
 $news_border_radius: 71px;
 
 .submit-button-border {
-    -webkit-border-radius: $submit-button-border;
-    -moz-border-radius: $submit-button-border;
-    border-radius: $submit-button-border;
+    -webkit-border-radius: $submit_button_border;
+    -moz-border-radius: $submit_button_border;
+    border-radius: $submit_button_border;
+}
+
+.get-involved-border {
+    -webkit-border-radius: $get_involed_border_radius;
+    -moz-border-radius: $get_involed_border_radius;
+    border-radius: $get_involed_border_radius;
 }
 
 .getintouch_border {
@@ -434,9 +441,17 @@ $news_border_radius: 71px;
     border-bottom-right-radius: $news_border_radius;
 }
 //Font Sizes
-
 .heading-1 {
     font-size: 6.25rem;
+    line-height: 1.5;
+}
+.heading-2 {
+    font-size: 4.75rem;
+    line-height: 1.5;
+}
+
+.heading-3 {
+    font-size: 3.6875rem;
     line-height: 1.5;
 }
 
@@ -641,6 +656,18 @@ img {
         bottom: -18px;
         color: $muted;
     }
+}
+
+//About page
+#interested::before {
+    content: "Interested?"; /* Manually add the first word */
+    font-weight: bold;
+}
+#interested {
+    display: inline-block;
+}
+#interested::after {
+    content: " Learn more about how you can get involved."; /* The remaining text */
 }
 
 //Import Responsive Styles
