@@ -569,6 +569,21 @@ header {
     }
 }
 
+.uk-button-primary {
+    background-color: $primary;
+    border-color: $primary;
+    text-transform: unset;
+    color: $white;
+    text-decoration: none;
+    &:hover,
+    &.active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $primary;
+        text-decoration: none;
+    }
+}
+
 #top-menu {
     .nav-item {
         padding: 0 20px;
@@ -656,18 +671,6 @@ img {
         bottom: -18px;
         color: $muted;
     }
-}
-
-//About page
-#interested::before {
-    content: "Interested?"; /* Manually add the first word */
-    font-weight: bold;
-}
-#interested {
-    display: inline-block;
-}
-#interested::after {
-    content: " Learn more about how you can get involved."; /* The remaining text */
 }
 
 //Import Responsive Styles

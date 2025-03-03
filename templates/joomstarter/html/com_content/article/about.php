@@ -120,15 +120,15 @@ if ($menuItemId > 0) {
     <?php endif; ?>
 
     <?php if (!empty($introText) || !empty($interestedImage)) : ?>
-        <div class="uk-background-default">
+        <div class="uk-background-default uk-margin-xlarge-top uk-margin-xlarge-bottom">
             <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
                 <div class="uk-flex uk-flex-middle uk-padding-large" uk-grid>
-                    <div class="uk-width-1-2@m uk-padding uk-text-center">
-                        <div id="interested" class="heading-3 uk-text-center uk-text-primary">
+                    <div class="uk-width-1-2@m uk-padding-small uk-text-center">
+                        <div id="interested" class="heading-3 uk-text-center uk-margin-large-bottom uk-text-primary">
                             <?php echo $introText; ?>
                         </div>
                         <?php if (!empty($menuItem)) : ?>
-                            <a class="get-involved-border uk-background-primary uk-padding gardein heading-2" href="<?php echo Route::_($menuItem->link); ?>">
+                            <a class="uk-button-primary get-involved-border get-involved-padding uk-padding gardein heading-2 uk-text-normal" href="<?php echo Route::_($menuItem->link); ?>">
                                 <?php echo htmlspecialchars($menuItem->title, ENT_QUOTES, 'UTF-8'); ?>
                             </a>
                         <?php endif; ?>
