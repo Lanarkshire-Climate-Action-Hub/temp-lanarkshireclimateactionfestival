@@ -46,6 +46,9 @@
     .forty {
         font-size: 2.5rem; //40px
     }
+    .sixty {
+        font-size: 3.75rem; //60px
+    }
     .eighty {
         font-size: 5rem; //80px
         line-height: 1.47;
@@ -60,7 +63,7 @@
         top: 0;
         transition: top ease 0.5s;
         &:hover {
-            top: -50px;
+            top: -25px;
         }
     }
     .yellow-circle {
