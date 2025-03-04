@@ -1,8 +1,28 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
     /* Styles */
     .bike-position {
         display: none;
+    }
+
+    //Downloads buttons
+    .download_button_position {
+        top: 170px;
+        right: -12%;
+        img {
+            width: 50px;
+            height: auto;
+        }
+    }
+
+    .download_button_position {
+        position: relative !important;
+        bottom: 0;
+        right: auto;
+        margin-top: 15px;
     }
 }
 
@@ -38,25 +58,6 @@
         max-width: 897px;
     }
 
-    //Font Sizes
-    h2 {
-        font-size: 3.125rem;
-    }
-
-    .forty {
-        font-size: 2.5rem; //40px
-    }
-    .sixty {
-        font-size: 3.75rem; //60px
-    }
-    .eighty {
-        font-size: 5rem; //80px
-        line-height: 1.47;
-    }
-
-    .oneHundred {
-        font-size: 6.25rem; //100px
-    }
     //Animate
     .bounce-on-hover {
         position: relative;
@@ -96,6 +97,22 @@
         padding-right: 64px;
         padding-top: 22px;
         padding-bottom: 24px;
+    }
+
+    //Downloads buttons
+    .download_button_position {
+        top: 90px;
+        right: -12%;
+    }
+
+    #funding-page {
+        #downloads {
+            min-height: 529px;
+        }
+    }
+
+    .fixing_bike_bg {
+        background-image: url(/images/assets/fixing_bike.png);
     }
 }
 

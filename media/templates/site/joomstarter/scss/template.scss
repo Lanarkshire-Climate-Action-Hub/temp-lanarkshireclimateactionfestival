@@ -76,6 +76,9 @@ h2 {
 .uk-text-primary {
     color: $primary !important;
 }
+.uk-text-yellow {
+    color: $yellow !important;
+}
 .uk-background-default {
     background-color: $white;
 }
@@ -357,11 +360,24 @@ h2 {
 }
 
 //Border Radius
+$download_border_radius: 9px;
 $submit_button_border: 20px;
 $get_involed_border_radius: 46px;
 $getintouch_border_radius: 36px;
 $signpost_border_radius: 57px;
 $news_border_radius: 71px;
+
+.circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.download_border {
+    -webkit-border-radius: $download_border_radius;
+    -moz-border-radius: $download_border_radius;
+    border-radius: $download_border_radius;
+}
 
 .submit-button-border {
     -webkit-border-radius: $submit_button_border;
@@ -460,6 +476,33 @@ p {
     line-height: 1.5;
 }
 
+//Font Sizes
+h2 {
+    font-size: 3.125rem;
+}
+.forty {
+    font-size: 2.5rem; //40px
+}
+.fifty {
+    font-size: 3.125rem; //50px
+}
+.sixty {
+    font-size: 3.75rem; //60px
+}
+.sixty_five {
+    font-size: 4.0625; //65px
+}
+.seventy {
+    font-size: 4.375rem; //70px
+}
+.eighty {
+    font-size: 5rem; //80px
+    line-height: 1.47;
+}
+.oneHundred {
+    font-size: 6.25rem; //100px
+}
+
 header {
     .nav-link {
         font-size: 1.75rem;
@@ -514,7 +557,7 @@ header {
     display: flex;
     // align-items: center; /* Vertically center content */
     justify-content: center; /* Horizontally center content */
-    text-align: center; /* Ensure text is centered */
+    // text-align: center; /* Ensure text is centered */
     flex-direction: column; /* Stack elements vertically if needed */
     height: 100%; /* Ensure it takes full height of the parent */
 }
@@ -584,6 +627,21 @@ header {
     }
 }
 
+.uk-button-white {
+    background-color: $white;
+    border-color: $white;
+    text-transform: unset;
+    color: $primary;
+    text-decoration: none;
+    &:hover,
+    &.active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $primary;
+        text-decoration: none;
+    }
+}
+
 #top-menu {
     .nav-item {
         padding: 0 20px;
@@ -598,6 +656,14 @@ header {
             }
         }
     }
+}
+
+//Button Padding
+.apply_funding_button_padding {
+    padding-top: 13px;
+    padding-left: 40px;
+    padding-right: 37px;
+    padding-bottom: 13px;
 }
 
 //Font Styles
