@@ -1,0 +1,252 @@
+<?php
+
+/**
+ * @package     Joomla.Site
+ * @subpackage  com_content
+ *
+ * @copyright   (C) 2006 Open Source Matters, Inc. <https://www.joomla.org>
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Associations;
+use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+
+/** @var \Joomla\Component\Content\Site\View\Article\HtmlView $this */
+// Create shortcuts to some parameters.
+$params  = $this->item->params;
+$canEdit = $params->get('access-edit');
+$user    = $this->getCurrentUser();
+$info    = $params->get('info_block_position', 0);
+$htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
+
+// Check if associations are implemented. If they are, define the parameter.
+$assocParam        = (Associations::isEnabled() && $params->get('show_associations'));
+$currentDate       = Factory::getDate()->format('Y-m-d H:i:s');
+$isNotPublishedYet = $this->item->publish_up > $currentDate;
+$isExpired         = !is_null($this->item->publish_down) && $this->item->publish_down < $currentDate;
+
+// Get custom fields
+$fields = FieldsHelper::getFields('com_content.article', $this->item, true);
+
+$whoCanHostAnEvent = '';
+$whoCanHostAnEvent_title = '';
+$whoCanAccessFunding = '';
+$whoCanAccessFunding_title = '';
+$whatTypeOfEventsCanYouHost = '';
+$whatTypeOfEventsCanYouHost_title = '';
+$submitAnEvent = '';
+$submitAnEvent_title = '';
+$submitEventLink = '';
+$fundingLink = '';
+$funding = '';
+$funding_title = '';
+$benefitsOfHostingAnEvent = '';
+$benefitsOfHostingAnEvent_title = '';
+$benefitsButtonText = '';
+
+foreach ($fields as $field) {
+    if ($field->id == 38) {
+        $whoCanHostAnEvent = $field->value;
+        $whoCanHostAnEvent_title = $field->title;
+    }
+    if ($field->id == 39) {
+        $whoCanAccessFunding = $field->value;
+        $whoCanAccessFunding_title = $field->title;
+    }
+    if ($field->id == 40) {
+        $whatCanTheClimateFestivalGrantBeUsedFor = $field->value;
+        $whatCanTheClimateFestivalGrantBeUsedFor_title = $field->title;
+    }
+    if ($field->id == 41) {
+        $submitAnEvent = $field->value;
+        $submitAnEvent_title = $field->title;
+    }
+    if ($field->id == 42) {
+        $submitEventLink = $field->value;
+    }
+    if ($field->id == 43) {
+        $fundingLink = $field->value;
+    }
+    if ($field->id == 44) {
+        $funding = $field->value;
+        $funding_title = $field->title;
+    }
+    if ($field->id == 45) {
+        $benefitsOfHostingAnEvent = $field->value;
+        $benefitsOfHostingAnEvent_title = $field->title;
+    }
+    if ($field->id == 46) {
+        $benefitsButtonText = $field->value;
+    }
+}
+
+?>
+
+<div id="host-an-event">
+    <div class="item-page<?php echo $this->pageclass_sfx; ?> uk-background-primary" uk-grid>
+        <div class="uk-width-1-3@m uk-padding-large">
+                <div class="page-header vertical-center uk-padding">
+                    <h1 class="uk-text-white oneHundred uk-text-center"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+                    <span class="outfit uk-text-bold uk-text-yellow fifty"><?php echo $this->item->text; ?></span>
+                </div>
+        </div>
+        <div class="uk-width-2-3@m">
+            <?php echo LayoutHelper::render('joomla.content.about_full_image', $this->item); ?>
+        </div>
+    </div>
+    
+    <div id="faqs" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div uk-grid>
+                <div class="uk-width-1-2@m">
+
+                    <h3 class="fifty uk-text-primary uk-text-bold border_bottom_blue"><?php echo $whoCanHostAnEvent_title; ?></h3>
+                    <?php echo $whoCanHostAnEvent; ?>
+
+                    <ul uk-accordion>
+                        <li class="border_bottom_blue">
+                            <a class="uk-accordion-title fifty uk-text-primary uk-text-bold remove-decoration" href><?php echo $whoCanAccessFunding_title; ?></a>
+                            <div class="uk-accordion-content"><?php echo $whoCanAccessFunding; ?></div>
+                        </li>
+                        <li class="border_bottom_blue">
+                            <a class="uk-accordion-title fifty uk-text-primary uk-text-bold remove-decoration" href><?php echo $whatTypeOfEventsCanYouHost_title; ?></a>
+                            <div class="uk-accordion-content"><?php echo $whatTypeOfEventsCanYouHost; ?></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-2@m uk-margin-xlarge-top">
+
+                    <div class="uk-position-relative uk-padding uk-background-secondary submit-button-border custom-box">
+                        <!-- Circular Image -->
+                        <div class="uk-position-absolute custom-circle">
+                            <img src="/images/logo/lcah_logo.png" alt="Lanarkshire Climate Action Hub" class="uk-border-circle">
+                        </div>
+
+                        <!-- Heading Text -->
+                        <h3 class="uk-text-white eighty uk-text-bold gardein uk-text-bolder uk-margin-remove">
+                            
+                            Want to<br>know more<br>about our<br>other grants?
+                        </h3>
+
+                        <!-- Button -->
+                        <div class="uk-margin-top uk-position-absolute">
+                            <a href="<?php echo $otherGrantsWebsiteLink; ?>" class="hub_website_button_position uk-button gardein forty uk-button-orange hub_website_funding submit-button-border uk-text-white uk-text-bold">
+                                <?php echo $otherGrantsButtonText; ?>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <?php if (!empty($secondTextArea) || !empty($secondAboutImage)) : ?>
+        <div class="uk-background-secondary uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+            <div class="uk-margin-large-right" uk-grid>
+                <?php if (!empty($secondAboutImage)) : ?>
+                    <div class="uk-width-2-5@m">
+                        <img src="<?php echo htmlspecialchars($secondAboutImage, ENT_QUOTES, 'UTF-8'); ?>" alt="Second About Image" class="uk-width-1-1">
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($secondTextArea)) : ?>
+                    <div class="uk-width-3-5@m">
+                        <div class="uk-text-white vertical-center uk-text-left">
+                            <h2 class="gardein uk-text-white"><?php echo $secondTitle; ?></h2>
+                            <div class="second-text-area-width">
+                                <?php echo $secondTextArea; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <div id="downloads" class="uk-background-yellow">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div class="uk-padding-large" uk-grid>
+                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large">
+                    <div class="uk-position-relative">
+                        <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
+                            <?php echo $grantApplicationFormText; ?>
+                        </div>
+                        <div class="circle uk-background-default uk-text-center uk-margin-large-bottom uk-position-absolute download_button_position">
+                            <div class="uk-padding">
+                                <a target="_blank" href="<?php echo $grantApplicationForm; ?>">
+                                    <img src="/images/icons/download.png" alt="<?php echo $grantApplicationFormText; ?>" class="uk-width-1-1">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large">
+                    <div class="uk-position-relative">
+                        <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
+                            <?php echo $grantGuidanceText; ?>
+                        </div>
+                        <div class="circle uk-background-default uk-text-center uk-margin-large-bottom uk-position-absolute download_button_position">
+                            <div class="uk-padding">
+                                <a target="_blank" href="<?php echo $grantGuidance; ?>">
+                                    <img src="/images/icons/download.png" alt="<?php echo $grantGuidanceText; ?>" class="uk-width-1-1">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ready-to-apply">
+        <div class="uk-container-expand">
+            <div uk-grid class="uk-background-default uk-margin-large-left uk-margin-large-right">
+                <div class="uk-width-1-1">
+                    <h2 class="gardein uk-text-bold uk-text-primary"><?php echo $applyHeading; ?></h2>
+                </div>
+            </div>
+            <div uk-grid class="uk-background-primary uk-padding-large uk-margin-remove uk-padding-remove-bottom">
+                <div class="uk-width-2-3@m uk-width-1-1">
+                    <?php echo $applyCopy; ?>
+                </div>
+                <div class="uk-width-1-3@m uk-width-1-1 uk-position-relative">
+                    <div class="uk-position-relative">
+                        <img class="uk-position-absolute fixing_bike_image" src="/images/assets/fixing_bike.png" />
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-text-center">
+                    <a href="mailto:info@climateactionlanarkshire.net?Subject=Festival Grant Application" class="uk-button gardein forty submit-button-border apply_funding_button_padding uk-button-white"><?php echo $applyButtonText; ?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="help-us" class="uk-background-secondary uk-padding">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div uk-grid>
+                <div class="uk-width-2-3@m uk-width-1-1">
+                    <h2 class="sixty_five gardein uk-text-bold uk-text-white"><?php echo $helpUsHeading; ?></h2>
+                    <div class="uk-text-white"><?php echo $helpUsCopy; ?></div>
+                </div>
+                <div class="uk-width-1-3@m uk-width-1-1 uk-position-relative">
+                    <div class="poster-container uk-position-relative">
+                        <img class="poster_rotate uk-position-absolute uk-padding-large" src="<?php echo $helpUsPoster; ?>" />
+                        <a href="<?php echo $helpUsPosterLink; ?>" class="uk-button gardein forty submit-button-border download_poster_button_padding uk-button-orange z_index_one uk-position-relative">
+                            <?php echo $helpUsButtonText; ?>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
