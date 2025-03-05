@@ -78,6 +78,9 @@ h2 {
 .uk-text-grey {
     color: $grey;
 }
+.uk-text-muted {
+    color: $muted;
+}
 .uk-text-primary {
     color: $primary !important;
 }
@@ -102,6 +105,9 @@ h2 {
 }
 .uk-background-yellow {
     background-color: $yellow;
+}
+.uk-background-peach {
+    background-color: $peach;
 }
 .lcaf-background-blue-white {
     background: rgb(5, 64, 242);
@@ -496,6 +502,9 @@ h2 {
 .forty {
     font-size: 2.5rem; //40px
 }
+.forty_five {
+    font-size: 2.8125rem; //45px
+}
 .fifty {
     font-size: 3.125rem; //50px
 }
@@ -510,7 +519,6 @@ h2 {
 }
 .eighty {
     font-size: 5rem; //80px
-    line-height: 1.47;
 }
 .oneHundred {
     font-size: 6.25rem; //100px
@@ -669,6 +677,21 @@ header {
     }
 }
 
+.uk-button-peach {
+    background-color: $peach;
+    border-color: $peach;
+    text-transform: unset;
+    color: $white;
+    text-decoration: none;
+    &:hover,
+    &.active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $primary;
+        text-decoration: none;
+    }
+}
+
 #top-menu {
     .nav-item {
         padding: 0 20px;
@@ -704,6 +727,12 @@ header {
     padding-left: 28px;
     padding-right: 28px;
     padding-bottom: 24px;
+}
+.hostEvent_buttons_padding {  
+    padding-top: 22px;
+    padding-left: 42px;
+    padding-right: 49px;
+    padding-bottom: 27px;
 }
 
 //Font Styles
