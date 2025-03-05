@@ -53,6 +53,29 @@
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
+    //Nav dropdown
+    .dropdown-menu {
+        width: 100%;
+        border: 0 none;
+        background-color: $yellow;
+        padding-top: 0;
+        padding-bottom: 0;
+        -webkit-border-radius: $download_border_radius;
+        -moz-border-radius: $download_border_radius;
+        border-radius: $download_border_radius;
+
+        .nav-item {
+            .dropdown-item {
+                font-size: 1.75rem;
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
     //Welcome module
     img#mod-welcome-image {
         max-width: 897px;
@@ -80,6 +103,9 @@
         z-index: 9999;
         top: -60px;
         transform: rotate(12deg);
+    }
+    .fixing_bike_image {
+        top: -115px;
     }
     .getintouch_module_margin {
         margin-right: 70px !important;
@@ -113,6 +139,12 @@
 
     .fixing_bike_bg {
         background-image: url(/images/assets/fixing_bike.png);
+    }
+
+    #faqs {
+        .custom-box {
+            max-width: 675px;
+        }
     }
 }
 

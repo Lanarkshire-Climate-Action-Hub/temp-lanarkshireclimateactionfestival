@@ -42,6 +42,10 @@ h6,
     font-style: normal;
 }
 
+em {
+    color: inherit;
+}
+
 .remove-decoration,
 .remove-decoration:hover {
     text-decoration: none;
@@ -59,6 +63,7 @@ $secondary: #6aab05;
 $blue: #0441f2;
 $orange: #f54d00;
 $yellow: #f2cb05;
+$peach: #E68D3E;
 
 html {
     background: $white;
@@ -359,6 +364,11 @@ h2 {
     color: $secondary;
 }
 
+//Border
+.border_bottom_blue {
+    border-bottom: 4px solid $primary;
+}
+
 //Border Radius
 $download_border_radius: 9px;
 $submit_button_border: 20px;
@@ -473,7 +483,10 @@ $news_border_radius: 71px;
 
 p {
     font-size: 1.875rem;
-    line-height: 1.5;
+    line-height: 1.1;
+}
+ul {
+    font-size: 1.875rem;
 }
 
 //Font Sizes
@@ -562,17 +575,16 @@ header {
     height: 100%; /* Ensure it takes full height of the parent */
 }
 //Seperators
-.homePage {
-    #topd {
-        &::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 135px;
-            background-color: $primary;
-            background-image: url(/images/backgrounds/grass.png);
-            margin: 0 auto;
-        }
+.homePage #topd,
+#funding-page #ready-to-apply {
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 135px;
+        background-color: $primary;
+        background-image: url(/images/backgrounds/grass.png);
+        margin: 0 auto;
     }
 }
 
@@ -642,6 +654,21 @@ header {
     }
 }
 
+.uk-button-orange {
+    background-color: $orange;
+    border-color: $orange;
+    text-transform: unset;
+    color: $white;
+    text-decoration: none;
+    &:hover,
+    &.active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $orange;
+        text-decoration: none;
+    }
+}
+
 #top-menu {
     .nav-item {
         padding: 0 20px;
@@ -664,6 +691,19 @@ header {
     padding-left: 40px;
     padding-right: 37px;
     padding-bottom: 13px;
+}
+
+.download_poster_button_padding {
+    padding-top: 30px;
+    padding-left: 53px;
+    padding-right: 52px;
+    padding-bottom: 31px;
+}
+.hub_website_funding {
+    padding-top: 25px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 24px;
 }
 
 //Font Styles
@@ -736,6 +776,126 @@ img {
         right: 70px;
         bottom: -18px;
         color: $muted;
+    }
+}
+
+/* Funding page */
+#help-us {
+    .poster-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align content */
+        justify-content: flex-end; /* Push button to the bottom */
+        height: 100%; /* Allow full height */
+        padding-bottom: 20px; /* Adjust spacing */
+    }
+
+    /* Rotates the poster and positions it correctly */
+    .poster_rotate {
+        transform: rotate(8deg);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) rotate(8deg);
+        width: 90%; /* Adjust as needed */
+        z-index: 0;
+    }
+
+    /* Button stays at the bottom */
+    .uk-button {
+        margin-top: auto; /* Pushes it to the bottom */
+    }
+
+    /* Ensures button stays above */
+    .z_index_one {
+        z-index: 1; /* Above poster */
+    }
+}
+
+#faqs {
+    .uk-accordion {
+        li {
+            .uk-accordion-title {
+                display: flex;
+                align-items: center;
+                position: relative; // Allows absolute positioning of ::before
+                padding-left: 80px; // Creates space for the arrow
+
+                &::before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    background-image: none;
+                    border-style: solid;
+                    border-width: 0 25.5px 44.2px 25.5px;
+                    border-color: transparent transparent $orange transparent;
+                    position: absolute;
+                    left: 0; // Aligns to the left of the title
+                    top: 50%; // Centers vertically
+                    transform: translateY(-50%) rotate(180deg);
+                    transition: transform 0.3s ease-in-out; // Smooth rotation
+                }
+            }
+
+            &.uk-open {
+                .uk-accordion-title::before {
+                    transform: translateY(-50%) rotate(0deg);
+                }
+            }
+            .uk-accordion-content {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .custom-box {
+        position: relative;
+    }
+
+    .custom-circle {
+        top: -118px;
+        right: -33px;
+        width: 259px;
+        height: 259px;
+    }
+
+    .custom-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 20px solid $secondary; // Optional white border
+    }
+    .hub_website_button_position {
+        position: relative;
+        left: 195px;
+        bottom: 20px;
+    }
+}
+
+#ready-to-apply {
+    p {
+        a {
+            text-decoration: none;
+            color: $white;
+            font-weight: bold;
+        }
+    }
+}
+
+//Resources page
+
+#resources {
+    .uk-background-primary,
+    .uk-background-secondary,
+    .uk-background-orange {
+        a {
+            color: $white;
+        }
+    }
+    .uk-background-yellow {
+        a {
+            color: $primary;
+        }
     }
 }
 
