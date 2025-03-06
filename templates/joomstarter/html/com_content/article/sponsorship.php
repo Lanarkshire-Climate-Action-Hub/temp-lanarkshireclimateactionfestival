@@ -11,15 +11,10 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Associations;
-use Joomla\CMS\Language\Text;
-use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
-use Joomla\CMS\Uri\Uri;
-use Joomla\Component\Content\Administrator\Extension\ContentComponent;
-use Joomla\Component\Content\Site\Helper\RouteHelper;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 
 /** @var \Joomla\Component\Content\Site\View\Article\HtmlView $this */
 // Create shortcuts to some parameters.
@@ -29,117 +24,114 @@ $user    = $this->getCurrentUser();
 $info    = $params->get('info_block_position', 0);
 $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
+// Generate the SEF-friendly URL
+$festivalProgrammeUrl = Route::_('index.php?option=com_content&view=category&layout=blog&id=11&Itemid=110');
+
 // Check if associations are implemented. If they are, define the parameter.
 $assocParam        = (Associations::isEnabled() && $params->get('show_associations'));
 $currentDate       = Factory::getDate()->format('Y-m-d H:i:s');
 $isNotPublishedYet = $this->item->publish_up > $currentDate;
 $isExpired         = !is_null($this->item->publish_down) && $this->item->publish_down < $currentDate;
-?>
-<div class="uk-margin-large-left uk-margin-large-right com-content-article item-page<?php echo $this->pageclass_sfx; ?>">
-    <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
-    <?php if ($this->params->get('show_page_heading')) : ?>
-    <div class="page-header">
-        <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
-    </div>
-    <?php endif;
-    if (!empty($this->item->pagination) && !$this->item->paginationposition && $this->item->paginationrelative) {
-        echo $this->item->pagination;
+
+// Load gallery module
+$document = Factory::getApplication()->getDocument();
+$renderer = $document->loadRenderer('modules');
+$options  = array('style' => 'raw');
+$sponsorshipGallery = $renderer->render('sponsorship-gallery', $options, null);
+
+// Get custom fields
+$fields = FieldsHelper::getFields('com_content.article', $this->item, true);
+
+$becomeASponsor = '';
+$becomeASponsor_title = '';
+$enquireAboutSponsorship = '';
+$enquireAboutSponsorship_title = '';
+$whySponsorLCAF = '';
+$whySponsorLCAF_title = '';
+$whoSponsorLCAF = '';
+$whoSponsorLCAF_title = '';
+$whatSponsorLCAF = '';
+$whatSponsorLCAF_title = '';
+
+foreach ($fields as $field) {
+    if ($field->id == 54) {
+        $becomeASponsor = $field->value;
+        $becomeASponsor_title = $field->title;
     }
-    ?>
+    if ($field->id == 55) {
+        $enquireAboutSponsorship = $field->value;
+        $enquireAboutSponsorship_title = $field->title;
+    }
+    if ($field->id == 57) {
+        $whySponsorLCAF = $field->value;
+        $whySponsorLCAF_title = $field->title;
+    }
+    if ($field->id == 58) {
+        $whoSponsorLCAF = $field->value;
+        $whoSponsorLCAF_title = $field->title;
+    }
+    if ($field->id == 59) {
+        $whatSponsorLCAF = $field->value;
+        $whatSponsorLCAF_title = $field->title;
+    }
+}
 
-    <?php $useDefList = $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
-    || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam; ?>
+?>
 
-    <?php if ($params->get('show_title')) : ?>
-    <div class="page-header">
-        <<?php echo $htag; ?>>
-            <?php echo $this->escape($this->item->title); ?>
-        </<?php echo $htag; ?>>
-        <?php if ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED) : ?>
-            <span class="badge bg-warning text-light"><?php echo Text::_('JUNPUBLISHED'); ?></span>
-        <?php endif; ?>
-        <?php if ($isNotPublishedYet) : ?>
-            <span class="badge bg-warning text-light"><?php echo Text::_('JNOTPUBLISHEDYET'); ?></span>
-        <?php endif; ?>
-        <?php if ($isExpired) : ?>
-            <span class="badge bg-warning text-light"><?php echo Text::_('JEXPIRED'); ?></span>
-        <?php endif; ?>
-    </div>
-    <?php endif; ?>
-    <?php if ($canEdit) : ?>
-        <?php echo LayoutHelper::render('joomla.content.icons', ['params' => $params, 'item' => $this->item]); ?>
-    <?php endif; ?>
+<div id="take-part-in-an-event">
+    <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-orange uk-background-contain uk-background-center-right" uk-grid>
+        <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
+        <div class="uk-width-1-1 uk-padding-large">
+            <div class="page-header vertical-center uk-padding">
+                <h1 class="uk-text-white oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 
-    <?php // Content is generated by content plugin event "onContentAfterTitle" ?>
-    <?php echo $this->item->event->afterDisplayTitle; ?>
-
-    <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-        <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'above']); ?>
-    <?php endif; ?>
-
-    <?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-        <?php $this->item->tagLayout = new FileLayout('joomla.content.tags'); ?>
-
-        <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
-    <?php endif; ?>
-
-    <?php // Content is generated by content plugin event "onContentBeforeDisplay" ?>
-    <?php echo $this->item->event->beforeDisplayContent; ?>
-
-    <?php if ((int) $params->get('urls_position', 0) === 0) : ?>
-        <?php echo $this->loadTemplate('links'); ?>
-    <?php endif; ?>
-    <?php if ($params->get('access-view')) : ?>
-        <?php echo LayoutHelper::render('joomla.content.full_image', $this->item); ?>
-        <?php
-        if (!empty($this->item->pagination) && !$this->item->paginationposition && !$this->item->paginationrelative) :
-            echo $this->item->pagination;
-        endif;
-        ?>
-        <?php if (isset($this->item->toc)) :
-            echo $this->item->toc;
-        endif; ?>
-    <div class="com-content-article__body">
-        <?php echo $this->item->text; ?>
+            </div>
+        </div>
     </div>
 
-        <?php if ($info == 1 || $info == 2) : ?>
-            <?php if ($useDefList) : ?>
-                <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'below']); ?>
-            <?php endif; ?>
-            <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-                <?php $this->item->tagLayout = new FileLayout('joomla.content.tags'); ?>
-                <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
-            <?php endif; ?>
-        <?php endif; ?>
+    <div class="uk-background-white uk-padding-large">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div class="vertical-center" uk-grid>
+                <div class="uk-width-2-3@m">
+                    <h3 class="gardein uk-text-bold uk-text-orange sixty_five"><?php echo $becomeASponsor_title; ?></h3>
+                    <div class="uk-margin-top">
+                        <div>
+                            <?php echo $becomeASponsor; ?>
+                        </div>
+                        <a class="uk-button uk-button-orange gardein forty sponsorship_buttons_padding submit-button-border" href="<?php echo $enquireAboutSponsorship; ?>"><?php echo $enquireAboutSponsorship_title; ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php if (!empty($sponsorshipGallery)) { ?>
+        <div id="photoSlider">
+            <div class="uk-container-expand">
+                <?php echo $sponsorshipGallery; ?>
+            </div>
+        </div>
+    <?php } ?>
 
-        <?php
-        if (!empty($this->item->pagination) && $this->item->paginationposition && !$this->item->paginationrelative) :
-            echo $this->item->pagination;
-            ?>
-        <?php endif; ?>
-        <?php if ((int) $params->get('urls_position', 0) === 1) : ?>
-            <?php echo $this->loadTemplate('links'); ?>
-        <?php endif; ?>
-        <?php // Optional teaser intro text for guests ?>
-    <?php elseif ($params->get('show_noauth') == true && $user->guest) : ?>
-        <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
-        <?php echo HTMLHelper::_('content.prepare', $this->item->introtext); ?>
-        <?php // Optional link to let them register to see the whole article. ?>
-        <?php if ($params->get('show_readmore') && $this->item->fulltext != null) : ?>
-            <?php $menu = Factory::getApplication()->getMenu(); ?>
-            <?php $active = $menu->getActive(); ?>
-            <?php $itemId = $active->id; ?>
-            <?php $link = new Uri(Route::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false)); ?>
-            <?php $link->setVar('return', base64_encode(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language))); ?>
-            <?php echo LayoutHelper::render('joomla.content.readmore', ['item' => $this->item, 'params' => $params, 'link' => $link]); ?>
-        <?php endif; ?>
-    <?php endif; ?>
-    <?php
-    if (!empty($this->item->pagination) && $this->item->paginationposition && $this->item->paginationrelative) :
-        echo $this->item->pagination;
-        ?>
-    <?php endif; ?>
-    <?php // Content is generated by content plugin event "onContentAfterDisplay" ?>
-    <?php echo $this->item->event->afterDisplayContent; ?>
+    <div id="faqs" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+            <div uk-grid>
+                <div class="uk-width-4-5@m">
+
+                    <h3 class="fifty uk-text-red uk-text-bold border_bottom_red"><?php echo $whySponsorLCAF_title; ?></h3>
+                    <?php echo $whySponsorLCAF; ?>
+
+                    <ul uk-accordion>
+                        <li class="border_bottom_red">
+                            <a class="uk-accordion-title fifty uk-text-red uk-text-bold remove-decoration" href><?php echo $whoSponsorLCAF_title; ?></a>
+                            <div class="uk-accordion-content"><?php echo $whoSponsorLCAF; ?></div>
+                        </li>
+                        <li class="border_bottom_red">
+                            <a class="uk-accordion-title fifty uk-text-red uk-text-bold remove-decoration" href><?php echo $whatSponsorLCAF_title; ?></a>
+                            <div class="uk-accordion-content"><?php echo $whatSponsorLCAF; ?></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
