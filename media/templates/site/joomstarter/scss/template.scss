@@ -85,6 +85,9 @@ h2 {
 .uk-text-primary {
     color: $primary !important;
 }
+.uk-text-secondary {
+    color: $secondary !important;
+}
 .uk-text-yellow {
     color: $yellow !important;
 }
@@ -105,16 +108,19 @@ h2 {
     color: $white;
 }
 .uk-background-secondary {
-    background-color: $secondary;
+    background-color: $secondary !important;
 }
 .uk-background-orange {
     background-color: $orange;
 }
 .uk-background-yellow {
-    background-color: $yellow;
+    background-color: $yellow !important;
 }
 .uk-background-peach {
     background-color: $peach;
+}
+.uk-background-red {
+    background-color: $red !important;
 }
 .lcaf-background-blue-white {
     background: rgb(5, 64, 242);
@@ -435,7 +441,12 @@ $news_border_radius: 71px;
     &.border-blue {
         border-color: $primary;
     }
-
+    &.border-green {
+        border-color: $secondary;
+    }
+    &.border-yellow {
+        border-color: $yellow;
+    }
     /* Ensuring the image is fully inside the circle */
     img {
         width: 100%;
@@ -444,7 +455,6 @@ $news_border_radius: 71px;
         position: absolute;
     }
 }
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -568,6 +578,8 @@ ul {
 h2 {
     font-size: 3.125rem;
 }
+.lead,
+.uk-text-lead,
 .forty {
     font-size: 2.5rem; //40px
 }

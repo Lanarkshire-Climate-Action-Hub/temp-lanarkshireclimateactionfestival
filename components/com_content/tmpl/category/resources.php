@@ -15,6 +15,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 
 $app = Factory::getApplication();
 
@@ -46,25 +47,53 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         </div>
     </div>
 
-    <div class="uk-margin-large uk-margin-large-left uk-margin-large-right uk-background-white uk-text-center">
-        <?php if (!empty($this->intro_items)) : ?>
-            <?php $blogClass = $this->params->get('blog_class', ''); ?>
-            <?php if ((int) $this->params->get('num_columns') > 1) : ?>
-                <?php $blogClass .= (int) $this->params->get('multi_column_order', 0) === 0 ? ' masonry-' : ' columns-'; ?>
-                <?php $blogClass .= (int) $this->params->get('num_columns'); ?>
-            <?php endif; ?>
-            <div class="com-content-category-blog__items blog-items <?php echo $blogClass; ?>" uk-height-match="target: .item-content h2">
-                <?php foreach ($this->intro_items as $key => &$item) : ?>
-                    <div class="com-content-category-blog__item uk-padding blog-item">
-                        <?php
-                        $item->index = $key; // Pass index to item template
-                        $this->item = &$item;
-                        echo $this->loadTemplate('item');
-                        ?>
-                    </div>
-                <?php endforeach; ?>
 
+
+    <div class="uk-margin-large uk-margin-large-left uk-margin-large-right uk-background-white uk-text-center">
+
+        <div class="com-content-category-blog__items" uk-height-match="target: .item-content h2" uk-grid>
+
+            <div class="uk-width-1-4@m">
+                <div class="item-content uk-text-center">
+                    <h2 class="uk-padding-large sixty signpost_border uk-background-primary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                        <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=19:event-inspiration&catid=9&Itemid=122'); ?>">
+                            Event Inspiration
+                        </a>
+                    </h2>
+                </div>
             </div>
-        <?php endif; ?>
+
+            <div class="uk-width-1-4@m">
+                <div class="item-content uk-text-center">
+                    <h2 class="uk-padding-large sixty signpost_border uk-background-secondary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                        <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=4:sustainable-event-planning&catid=9&Itemid=123'); ?>">
+                            Sustainable Event Planning
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="uk-width-1-4@m">
+                <div class="item-content uk-text-center">
+                    <h2 class="uk-padding-large sixty signpost_border uk-background-orange bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                        <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=8:marketing-promotion&catid=9&Itemid=124'); ?>">
+                            Marketing &amp; Promotion
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="uk-width-1-4@m">
+                <div class="item-content uk-text-center">
+                    <h2 class="uk-padding-large sixty signpost_border uk-background-yellow bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                        <a class="remove-decoration uk-text-primary" href="<?php echo Route::_('index.php?option=com_content&view=article&id=9:talking-climate&catid=9&Itemid=125'); ?>">
+                            Talking Climate
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </div>
