@@ -250,18 +250,21 @@ foreach ($fields as $field) {
     <div id="eventCategories" class="uk-background-default">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
 
-            <div class="custom-card-wrapper">
-                <!-- Circular Icon -->
-                <div class="icon-container">
-                    <img src="/images/assets/circularity.png" alt="<?php echo $circularity; ?> Icon">
-                </div>
 
-                <!-- Card Content -->
-                <div class=" uk-text-center uk-padding submit-button-border">
-                    <h3 class="gardein forty uk-text-orange uk-text-bold"><?php echo $circularity_title; ?></h3>
-                    <p class="uk-text-default twenty_three"><?php echo $circularity; ?></p>
+
+            <div class="shape-container">
+                <div class="circle">
+                    <div class="rectangle"></div>
+                    <img class="uk-position-absolute uk-padding" src="/images/assets/circularity.png" alt="">
+                </div>
+                <div class="shape submit-button-border">
+                    <div class="uk-padding uk-text-center">
+                        <div class="uk-text-bold forty gardein uk-margin-medium-top"><?php echo $circularity_title; ?></div>
+                        <div class="twenty_three"><?php echo $circularity; ?></div>
+                    </div>
                 </div>
             </div>
+
 
 
 
