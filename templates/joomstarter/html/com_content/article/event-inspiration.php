@@ -246,32 +246,91 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-
     <div id="eventCategories" class="uk-background-default">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
-
-
-
-            <div class="shape-container">
-                <div class="circle">
-                    <div class="rectangle"></div>
-                    <img class="uk-position-absolute uk-padding" src="/images/assets/circularity.png" alt="">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-margin-xlarge-top uk-margin-bottom">
+            <div uk-grid class="uk-text-center uk-padding-large uk-padding-remove-right uk-padding-remove-left">
+                <!-- energy -->
+                <div class="uk-width-1-3@m">
+                    <div class="shape-container">
+                        <div class="circle">
+                            <div class="rectangle"></div>
+                            <img class="uk-position-absolute uk-padding" src="/images/assets/energy.png" alt="">
+                        </div>
+                        <div class="shape submit-button-border">
+                            <div class="uk-padding uk-text-center">
+                                <div class="uk-text-bold uk-text-yellow forty gardein uk-margin-medium-top"><?php echo $energy_title; ?></div>
+                                <div class="twenty_three"><?php echo $energy; ?></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shape submit-button-border">
-                    <div class="uk-padding uk-text-center">
-                        <div class="uk-text-bold forty gardein uk-margin-medium-top"><?php echo $circularity_title; ?></div>
-                        <div class="twenty_three"><?php echo $circularity; ?></div>
+                <!-- Community Engagement -->
+                <div class="uk-width-1-3@m">
+                    <div class="shape-container">
+                        <div class="circle">
+                            <div class="rectangle"></div>
+                            <img class="uk-position-absolute uk-padding" src="/images/assets/community.png" alt="">
+                        </div>
+                        <div class="shape submit-button-border">
+                            <div class="uk-padding uk-text-center">
+                                <div class="uk-text-bold forty gardein uk-margin-medium-top"><?php echo $communityEngagement_title; ?></div>
+                                <div class="twenty_three"><?php echo $communityEngagement; ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- circularity -->
+                <div class="uk-width-1-3@m">
+                    <div class="shape-container">
+                        <div class="circle">
+                            <div class="rectangle"></div>
+                            <img class="uk-position-absolute uk-padding" src="/images/assets/circularity.png" alt="">
+                        </div>
+                        <div class="shape submit-button-border">
+                            <div class="uk-padding uk-text-center">
+                                <div class="uk-text-bold uk-text-orange forty gardein uk-margin-medium-top"><?php echo $circularity_title; ?></div>
+                                <div class="twenty_three"><?php echo $circularity; ?></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
+            <div uk-grid class="uk-padding-large uk-padding-remove-right uk-padding-remove-left uk-margin-xlarge-top">
+                <div class="uk-width-1-6@m"></div>
+                <!-- Food and Nature -->
+                <div class="uk-width-1-3@m">
+                    <div class="shape-container">
+                        <div class="circle">
+                            <div class="rectangle"></div>
+                            <img class="uk-position-absolute uk-padding" src="/images/assets/food-nature.png" alt="">
+                        </div>
+                        <div class="shape submit-button-border">
+                            <div class="uk-padding uk-text-center">
+                                <div class="uk-text-bold uk-text-secondary forty gardein uk-margin-medium-top"><?php echo $foodNature_title; ?></div>
+                                <div class="twenty_three"><?php echo $foodNature; ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Travel -->
+                <div class="uk-width-1-3@m">
+                    <div class="shape-container">
+                        <div class="circle">
+                            <div class="rectangle"></div>
+                            <img class="uk-position-absolute uk-padding" src="/images/assets/travel.png" alt="">
+                        </div>
+                        <div class="shape submit-button-border">
+                            <div class="uk-padding uk-text-center">
+                                <div class="uk-text-bold uk-text-primary forty gardein uk-margin-medium-top"><?php echo $travel_title; ?></div>
+                                <div class="twenty_three"><?php echo $travel; ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="eventCategories" class="uk-background-primary uk-padding uk-padding-remove-left uk-padding-remove-right">
+    <div id="multipleCategories" class="uk-background-primary uk-padding uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
             <div uk-grid>
                 <div class="uk-width-4-5@m">
@@ -386,10 +445,9 @@ foreach ($fields as $field) {
         <div class="uk-container-expand uk-margin-xlarge-left uk-margin-xlarge-right">
             <div class="uk-text-center vertical-align uk-padding-large uk-padding-remove-top uk-padding-remove-bottom uk-margin-xlarge-left uk-margin-xlarge-right">
                 <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaTitle; ?></div>
-                <a href="" class="uk-button uk-button-primary gardein uk-button-large seventy uk-padding submit-button-border">Get in touch</a>
+                <a href="mailto:info@climateactionlanarkshire.net?Subject=Lanarkshire Climate Action Festival" style="z-index:1;" class="uk-button uk-position-relative uk-button-primary gardein uk-button-large seventy uk-padding submit-button-border">Get in touch</a>
                 <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaDescription; ?></div>
             </div>
         </div>
     </div>
-
 </div>
