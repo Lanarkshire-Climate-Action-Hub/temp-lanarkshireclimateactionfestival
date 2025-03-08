@@ -36,8 +36,8 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 // Get custom fields
 $fields = FieldsHelper::getFields('com_content.article', $this->item, true);
 
-$tipsForEnjoyingTheFestivalSustainably = '';
-$tipsForEnjoyingTheFestivalSustainably_title = '';
+$startTheConversations = '';
+$startTheConversations_title = '';
 $description1 = '';
 $description2 = '';
 $description3 = '';
@@ -46,9 +46,9 @@ $wasteDescription2 = '';
 $wasteDescription3 = '';
 
 foreach ($fields as $field) {
-    if ($field->id == 47) {
-        $tipsForEnjoyingTheFestivalSustainably = $field->value;
-        $tipsForEnjoyingTheFestivalSustainably_title = $field->title;
+    if ($field->id == 125) {
+        $startTheConversations = $field->value;
+        $startTheConversations_title = $field->title;
     }
     if ($field->id == 48) {
         $description1 = $field->value;
@@ -73,17 +73,28 @@ foreach ($fields as $field) {
 ?>
 
 <div id="take-part-in-an-event">
-    <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-primary uk-background-contain uk-background-center-right" uk-grid>
+    <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-yellow uk-background-contain uk-background-center-right" uk-grid>
         <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
-        <div class="uk-width-1-2@m uk-padding-large">
+        <div class="uk-width-1-3@m uk-padding-large">
             <div class="page-header uk-padding vertical-center">
-                <h1 class="uk-text-white oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+                <h1 class="uk-text-primary uk-text-center oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
             </div>
         </div>
     </div>
-    <div class="uk-background-primary uk-padding-large">
-        <div class="uk-text-white"><?php echo $this->item->text; ?></div>
+
+    <div class="uk-background-default uk-padding-large uk-background-center-right uk-background-norepeat uk-background-contain" style="background-image: url(images/backgrounds/cloud.png);">
+        <div class="uk-container-expand">
+            <div uk-grid>
+                <div class="uk-width-2-3@m">
+                        <h2 class="uk-text-primary gardein eighty uk-text-bold"><?php echo $startTheConversations_title; ?></h2>
+                        <?php echo $startTheConversations; ?>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
     <div class="uk-background-yellow uk-padding-large">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div class="vertical-center" uk-grid>
