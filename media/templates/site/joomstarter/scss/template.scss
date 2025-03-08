@@ -574,9 +574,13 @@ ul {
     font-size: 1.875rem;
 }
 
+
 //Font Sizes
 h2 {
     font-size: 3.125rem;
+}
+.twenty_three {
+    font-size: 1.4375rem; //23px
 }
 .lead,
 .uk-text-lead,
@@ -603,6 +607,9 @@ h2 {
 }
 .oneHundred {
     font-size: 6.25rem; //100px
+}
+.one_sixty {
+    font-size: 10rem; //160px
 }
 
 header {
@@ -1011,6 +1018,82 @@ img {
     .uk-background-yellow {
         a {
             color: $primary;
+        }
+    }
+}
+
+//Event Inspiration
+
+#eventCategories {
+    .custom-card-wrapper {
+        position: relative;
+        width: 320px; // Adjust as needed
+        background-color: #f8fcf8;
+        border-radius: 20px; // Rounded edges
+        padding-top: 50px; // Extra space for the circle
+        text-align: center;
+        box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.15); // Unified shadow
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Floating Circular Icon (Part of the Unified Shape) */
+    .icon-container {
+        width: 100px;
+        height: 100px;
+        background-color: #ffd700; // Yellow background
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -50px; // Moves above the card
+    }
+
+    /* Ensuring the icon fits */
+    .icon-container img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    /* Content Box (Sits Below the Circle) */
+    .custom-card {
+        padding: 60px 20px 30px; // Extra space for text
+        text-align: center;
+        background-color: transparent; // Inherits from wrapper
+        width: 100%;
+    }
+
+    /* Title */
+    .title {
+        font-size: 20px;
+        color: #ffd700;
+        margin-bottom: 10px;
+    }
+}
+
+#idea {
+    .uk-container-expand {
+        &::before,
+        &::after {
+            content: ""; // Required for the pseudo-element to appear
+            position: absolute; // Ensure positioning works}
+            bottom: 0;
+            width: 100%;
+            height: 100%; // Adjust as needed
+            background-image: url(/images/assets/clovers.png);
+            background-repeat: no-repeat;
+        }
+        &::before {
+            left: 0;
+            background-position: left bottom;
+        }
+        &::after {
+            right: 0;
+            background-position: right bottom;
         }
     }
 }

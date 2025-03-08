@@ -36,37 +36,182 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 // Get custom fields
 $fields = FieldsHelper::getFields('com_content.article', $this->item, true);
 
-$tipsForEnjoyingTheFestivalSustainably = '';
-$tipsForEnjoyingTheFestivalSustainably_title = '';
-$description1 = '';
-$description2 = '';
-$description3 = '';
-$wasteDescription1 = '';
-$wasteDescription2 = '';
-$wasteDescription3 = '';
+$leadIntroduction = '';
+$introduction = '';
+$weFindMostEventsHeading = '';
+$energy = '';
+$energy_title = '';
+$communityEngagement = '';
+$communityEngagement_title = '';
+$circularity = '';
+$circularity_title = '';
+$foodNature = '';
+$foodNature_title = '';
+$travel = '';
+$travel_title = '';
+$someEventsCover = '';
+$someEventsCover_title = '';
+$letsLookAtHeading = '';
+$exampleOneTitle = '';
+$exampleOneImage = '';
+$exampleOneListTitle = '';
+$exampleOneListItems = '';
+$exampleOneBackground = '';
+$exampleTwoTitle = '';
+$exampleTwoImage = '';
+$exampleTwoListTitle = '';
+$exampleTwoListItems = '';
+$exampleTwoBackground = '';
+$exampleThreeTitle = '';
+$exampleThreeImage = '';
+$exampleThreeListTitle = '';
+$exampleThreeListItems = '';
+$exampleThreeBackground = '';
+$exampleFourTitle = '';
+$exampleFourImage = '';
+$exampleFourListTitle = '';
+$exampleFourListItems = '';
+$exampleFourBackground = '';
+$exampleFiveTitle = '';
+$exampleFiveImage = '';
+$exampleFiveListTitle = '';
+$exampleFiveListItems = '';
+$exampleFiveBackground = '';
+$gotAnIdeaTitle = '';
+$gotAnIdeaDescription = '';
 
 foreach ($fields as $field) {
-    if ($field->id == 47) {
-        $tipsForEnjoyingTheFestivalSustainably = $field->value;
-        $tipsForEnjoyingTheFestivalSustainably_title = $field->title;
+    if ($field->id == 73) {
+        $leadIntroduction = $field->value;
     }
-    if ($field->id == 48) {
-        $description1 = $field->value;
+    if ($field->id == 74) {
+        $introduction = $field->value;
     }
-    if ($field->id == 49) {
-        $description2 = $field->value;
+    if ($field->id == 109) {
+        $weFindMostEventsHeading = $field->value;
     }
-    if ($field->id == 50) {
-        $description3 = $field->value;
+    if ($field->id == 76) {
+        $energy = $field->value;
+        $energy_title = $field->title;
     }
-    if ($field->id == 51) {
-        $wasteDescription1 = $field->value;
+    if ($field->id == 77) {
+        $communityEngagement = $field->value;
+        $communityEngagement_title = $field->title;
     }
-    if ($field->id == 52) {
-        $wasteDescription2 = $field->value;
+    if ($field->id == 78) {
+        $circularity = $field->value;
+        $circularity_title = $field->title;
     }
-    if ($field->id == 53) {
-        $wasteDescription3 = $field->value;
+    if ($field->id == 79) {
+        $foodNature = $field->value;
+        $foodNature_title = $field->title;
+    }
+    if ($field->id == 80) {
+        $travel = $field->value;
+        $travel_title = $field->title;
+    }
+    if ($field->id == 81) {
+        $someEventsCover = $field->value;
+        $someEventsCover_title = $field->title;
+    }
+    if ($field->id == 110) {
+        $letsLookAtHeading = $field->value;
+    }
+    if ($field->id == 82) {
+        $exampleOneTitle = $field->value;
+    }
+    if ($field->id == 87) {
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $exampleOneImage = $imageData->imagefile;
+        }
+    }
+    if ($field->id == 92) {
+        $exampleOneListTitle = $field->value;
+    }
+    if ($field->id == 97) {
+        $exampleOneListItems = $field->value;
+    }
+    if ($field->id == 102) {
+        $exampleOneBackground = is_array($field->rawvalue) ? implode(',', $field->rawvalue) : $field->rawvalue;
+    }
+    if ($field->id == 83) {
+        $exampleTwoTitle = $field->value;
+    }
+    if ($field->id == 88) {
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $exampleTwoImage = $imageData->imagefile;
+        }
+    }
+    if ($field->id == 93) {
+        $exampleTwoListTitle = $field->value;
+    }
+    if ($field->id == 98) {
+        $exampleTwoListItems = $field->value;
+    }
+    if ($field->id == 103) {
+        $exampleTwoBackground = is_array($field->rawvalue) ? implode(',', $field->rawvalue) : $field->rawvalue;
+    }
+    if ($field->id == 84) {
+        $exampleThreeTitle = $field->value;
+    }
+    if ($field->id == 89) {
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $exampleThreeImage = $imageData->imagefile;
+        }
+    }
+    if ($field->id == 94) {
+        $exampleThreeListTitle = $field->value;
+    }
+    if ($field->id == 99) {
+        $exampleThreeListItems = $field->value;
+    }
+    if ($field->id == 104) {
+        $exampleThreeBackground = is_array($field->rawvalue) ? implode(',', $field->rawvalue) : $field->rawvalue;
+    }
+    if ($field->id == 85) {
+        $exampleFourTitle = $field->value;
+    }
+    if ($field->id == 90) {
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $exampleFourImage = $imageData->imagefile;
+        }
+    }
+    if ($field->id == 95) {
+        $exampleFourListTitle = $field->value;
+    }
+    if ($field->id == 100) {
+        $exampleFourListItems = $field->value;
+    }
+    if ($field->id == 105) {
+        $exampleFourBackground = is_array($field->rawvalue) ? implode(',', $field->rawvalue) : $field->rawvalue;
+    }
+    if ($field->id == 86) {
+        $exampleFiveTitle = $field->value;
+    }
+    if ($field->id == 91) {
+        $imageData = json_decode($field->rawvalue);
+        if (!empty($imageData->imagefile)) {
+            $exampleFiveImage = $imageData->imagefile;
+        }
+    }
+    if ($field->id == 96) {
+        $exampleFiveListTitle = $field->value;
+    }
+    if ($field->id == 101) {
+        $exampleFiveListItems = $field->value;
+    }
+    if ($field->id == 106) {
+        $exampleFiveBackground = is_array($field->rawvalue) ? implode(',', $field->rawvalue) : $field->rawvalue;
+    }
+    if ($field->id == 107) {
+        $gotAnIdeaTitle = $field->value;
+    }
+    if ($field->id == 108) {
+        $gotAnIdeaDescription = $field->value;
     }
 }
 
@@ -81,152 +226,166 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-    <div class="uk-background-primary uk-padding-large">
-        <div class="uk-text-white"><?php echo $this->item->text; ?></div>
+    <div class="uk-background-primary uk-padding-large uk-padding-remove-top">
+        <div class="uk-text-white" uk-grid>
+            <div class="uk-width-1-2@m uk-text-bold">
+                <?php echo $leadIntroduction; ?>
+            </div>
+            <div class="uk-width-2-3@m">
+                <?php echo $introduction; ?>
+            </div>
+        </div>
     </div>
-    <div class="uk-background-yellow uk-padding-large">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-            <div class="vertical-center" uk-grid>
-                <div class="uk-width-1-1 uk-text-center">
-                    <a class="uk-button uk-button-white uk-text-primary gardein seventy uk-padding submit-button-border uk-button-large" href="<?php echo $festivalProgrammeUrl; ?>">View the Festival Programme</a>
+
+    <div class="uk-background-default uk-padding-large">
+        <div class="uk-container-expand">
+            <div cuk-grid>
+                <div class="uk-width-1-1">
+                    <h2 class="uk-text-primary fifty"><?php echo $weFindMostEventsHeading; ?></h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="tips" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+    <div id="eventCategories" class="uk-background-default">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
 
-            <div uk-grid>
-                <div>
-                    <h2 class="uk-text-white gardein sixty_five uk-margin-bottom"><span class="uk-padding-small uk-background-secondary submit-button-border"><?php echo $tipsForEnjoyingTheFestivalSustainably_title; ?></span></h2>
-                    <?php if ($tipsForEnjoyingTheFestivalSustainably) : ?>
-                        <div class="uk-width-2-3@m uk-margin-top uk-margin-bottom uk-padding-small">
-                            <div class="forty">
-                                <?php echo $tipsForEnjoyingTheFestivalSustainably; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <div class="uk-padding-small">
-                        <h2 class="uk-text-primary gardein sixty_five uk-margin-top">How you travel to the festival matters</h2>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-blue">
-                                        <img src="/images/icons/bicycle.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $description1; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-blue">
-                                        <img src="/images/icons/road.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $description2; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-blue">
-                                        <img src="/images/icons/bus.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $description3; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3@m"></div>
-                    </div>
-
-                    <div class="uk-padding-small uk-margin-top">
-                        <h2 class="uk-text-red gardein sixty_five">Avoid waste</h2>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-red">
-                                        <img src="/images/icons/recycle.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $wasteDescription1; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-red">
-                                        <img src="/images/icons/skateboard.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $wasteDescription2; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
-                                <!-- Circular Image Container -->
-                                <div class="circle-container">
-                                    <div class="circle-border border-red">
-                                        <img src="/images/icons/jar.png" alt="" uk-cover>
-                                    </div>
-                                </div>
-
-                                <!-- Text Content -->
-                                <div class="uk-width-expand@s uk-padding-large uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                    <div class="uk-card-body uk-padding-large">
-                                        <?php echo $wasteDescription3; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3@m"></div>
-                    </div>
+            <div class="custom-card-wrapper">
+                <!-- Circular Icon -->
+                <div class="icon-container">
+                    <img src="/images/assets/circularity.png" alt="<?php echo $circularity; ?> Icon">
                 </div>
-                <div class="uk-width-auto"></div>
+
+                <!-- Card Content -->
+                <div class=" uk-text-center uk-padding submit-button-border">
+                    <h3 class="gardein forty uk-text-orange uk-text-bold"><?php echo $circularity_title; ?></h3>
+                    <p class="uk-text-default twenty_three"><?php echo $circularity; ?></p>
+                </div>
             </div>
 
+
+
+
+        </div>
+    </div>
+    <div id="eventCategories" class="uk-background-primary uk-padding uk-padding-remove-left uk-padding-remove-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
+            <div uk-grid>
+                <div class="uk-width-4-5@m">
+                    <div class="uk-flex-middle" uk-grid>
+                        <div class="gardein uk-text-center one_sixty uk-text-bold">!</div>
+                        <div class="uk-padding uk-width-5-6@m">
+                            <div class="uk-text-bold forty outfit"><?php echo $someEventsCover_title; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $someEventsCover; ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="examples">
+        <div class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+                <h2 class="uk-text-bold uk-text-primary gardein eighty"><?php echo $letsLookAtHeading; ?></h2>
+            </div>
+        </div>
+        <!-- Circular Container -->
+        <div class="<?php echo $exampleOneBackground; ?>">
+            <div class="uk-container-expand">
+                <div uk-grid>
+                    <div class="uk-width-1-2@m uk-position-relative">
+                        <div class="uk-position-absolute uk-padding uk-text-white gardein uk-text-bold sixty"><?php echo $exampleOneTitle; ?></div>
+                        <img src="<?php echo htmlspecialchars($exampleOneImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card-body uk-text-white uk-padding-large">
+                            <div class="uk-text-bold sixty"><?php echo $exampleOneListTitle; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $exampleOneListItems; ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Engagement Container -->
+        <div class="<?php echo $exampleTwoBackground; ?>">
+            <div class="uk-container-expand">
+                <div uk-grid>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card-body uk-text-white uk-padding-large">
+                            <div class="uk-text-bold sixty"><?php echo $exampleTwoListTitle; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $exampleTwoListItems; ?></div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2@m uk-position-relative">
+                        <div class="uk-position-absolute uk-padding uk-text-mute gardein uk-text-bold sixty"><?php echo $exampleTwoTitle; ?></div>
+                        <img src="<?php echo htmlspecialchars($exampleTwoImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Energy Container -->
+        <div class="<?php echo $exampleThreeBackground; ?>">
+            <div class="uk-container-expand">
+                <div uk-grid>
+                    <div class="uk-width-1-2@m uk-position-relative">
+                        <div class="uk-position-absolute uk-padding uk-text-yellow gardein uk-text-bold sixty"><?php echo $exampleThreeTitle; ?></div>
+                        <img src="<?php echo htmlspecialchars($exampleThreeImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card-body uk-text-orange uk-padding-large">
+                            <div class="uk-text-bold sixty"><?php echo $exampleThreeListTitle; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $exampleThreeListItems; ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Container -->
+        <div class="<?php echo $exampleFourBackground; ?>">
+            <div class="uk-container-expand">
+                <div uk-grid>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card-body uk-text-white uk-padding-large">
+                            <div class="uk-text-bold sixty"><?php echo $exampleFourListTitle; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $exampleFourListItems; ?></div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2@m uk-position-relative">
+                        <div class="uk-position-absolute uk-padding uk-text-secondary gardein uk-text-bold sixty"><?php echo $exampleFourTitle; ?></div>
+                        <img src="<?php echo htmlspecialchars($exampleFourImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Travel Container -->
+        <div class="<?php echo $exampleFiveBackground; ?>">
+            <div class="uk-container-expand">
+                <div uk-grid>
+                    <div class="uk-width-1-2@m uk-position-relative">
+                        <div class="uk-position-absolute uk-padding uk-text-white gardein uk-text-bold sixty"><?php echo $exampleFiveTitle; ?></div>
+                        <img src="<?php echo htmlspecialchars($exampleFiveImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card-body uk-text-white uk-padding-large">
+                            <div class="uk-text-bold sixty"><?php echo $exampleFiveListTitle; ?></div>
+                            <div class="uk-flex-wrap"><?php echo $exampleFiveListItems; ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="idea" class="uk-background-default uk-padding uk-padding-remove-left uk-padding-remove-right uk-position-relative">
+        <div class="uk-container-expand uk-margin-xlarge-left uk-margin-xlarge-right">
+            <div class="uk-text-center vertical-align uk-padding-large uk-padding-remove-top uk-padding-remove-bottom uk-margin-xlarge-left uk-margin-xlarge-right">
+                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaTitle; ?></div>
+                <a href="" class="uk-button uk-button-primary gardein uk-button-large seventy uk-padding submit-button-border">Get in touch</a>
+                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaDescription; ?></div>
+            </div>
         </div>
     </div>
 

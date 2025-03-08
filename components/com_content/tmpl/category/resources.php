@@ -55,7 +55,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
             <div class="uk-width-1-4@m">
                 <div class="item-content uk-text-center">
-                    <h2 class="uk-padding-large sixty signpost_border uk-background-primary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                    <h2 class="uk-padding sixty signpost_border uk-background-primary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
                         <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=19:event-inspiration&catid=9&Itemid=122'); ?>">
                             Event Inspiration
                         </a>
@@ -65,7 +65,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
             <div class="uk-width-1-4@m">
                 <div class="item-content uk-text-center">
-                    <h2 class="uk-padding-large sixty signpost_border uk-background-secondary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                    <h2 class="uk-padding sixty signpost_border uk-background-secondary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
                         <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=4:sustainable-event-planning&catid=9&Itemid=123'); ?>">
                             Sustainable Event Planning
                         </a>
@@ -75,7 +75,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
             <div class="uk-width-1-4@m">
                 <div class="item-content uk-text-center">
-                    <h2 class="uk-padding-large sixty signpost_border uk-background-orange bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                    <h2 class="uk-padding sixty signpost_border uk-background-orange bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
                         <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=8:marketing-promotion&catid=9&Itemid=124'); ?>">
                             Marketing &amp; Promotion
                         </a>
@@ -85,7 +85,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
             <div class="uk-width-1-4@m">
                 <div class="item-content uk-text-center">
-                    <h2 class="uk-padding-large sixty signpost_border uk-background-yellow bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+                    <h2 class="uk-padding sixty signpost_border uk-background-yellow bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
                         <a class="remove-decoration uk-text-primary" href="<?php echo Route::_('index.php?option=com_content&view=article&id=9:talking-climate&catid=9&Itemid=125'); ?>">
                             Talking Climate
                         </a>
