@@ -93,9 +93,6 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-    <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-secondary uk-background-contain uk-background-center-right" uk-grid>
-    <?php echo $this->item->text; ?>
-    </div>
 
     <div id="tips" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">

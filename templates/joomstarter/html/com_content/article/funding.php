@@ -222,8 +222,8 @@ if ($menuItemId > 0) {
                         </div>
                         <div class="circle uk-background-default uk-text-center uk-margin-large-bottom uk-position-absolute download_button_position">
                             <div class="uk-padding">
-                                <a target="_blank" href="<?php echo $grantApplicationForm; ?>">
-                                    <img src="/images/icons/download.png" alt="<?php echo $grantApplicationFormText; ?>" class="uk-width-1-1">
+                                <a class="download" target="_blank" href="<?php echo $grantApplicationForm; ?>">
+                                    <img src="/images/icons/download.png" alt="<?php echo $grantApplicationFormText; ?>" class="scroll-down uk-width-1-1">
                                 </a>
                             </div>
                         </div>

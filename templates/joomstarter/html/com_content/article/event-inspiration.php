@@ -330,7 +330,7 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-    <div id="multipleCategories" class="uk-background-primary uk-padding uk-padding-remove-left uk-padding-remove-right">
+    <div id="multipleCategories" class="uk-background-primary">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
             <div uk-grid>
                 <div class="uk-width-4-5@m">
