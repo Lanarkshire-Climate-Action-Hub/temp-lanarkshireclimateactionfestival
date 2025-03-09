@@ -24,14 +24,6 @@
 }
 
 //Fonts
-body,
-.outfit-regular,
-.uk-button-yellow {
-    font-family: "Outfit", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
 
 h1,
 .gardein,
@@ -39,6 +31,14 @@ h1,
     font-family: gardein, sans-serif;
     font-style: normal;
     font-weight: 800;
+}
+body,
+.outfit-regular,
+.uk-button-yellow {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h2,
@@ -93,7 +93,7 @@ h2 {
     color: $grey;
 }
 .uk-text-muted {
-    color: $muted;
+    color: $muted !important;
 }
 .uk-text-primary {
     color: $primary !important;
@@ -158,6 +158,14 @@ h2 {
     &-travel {
         &-original {
             &-background {
+                background-color: $primary;
+            }
+            &-text {
+                color: $primary;
+            }
+        }
+        &-dark {
+            &-background {
                 background-color: #0114a5;
             }
             &-text {
@@ -183,6 +191,14 @@ h2 {
     }
     &-food-nature {
         &-original {
+            &-background {
+                background-color: $secondary;
+            }
+            &-text {
+                color: $secondary;
+            }
+        }
+        &-dark {
             &-background {
                 background-color: #1f6401;
             }
@@ -210,6 +226,15 @@ h2 {
     &-energy {
         &-original {
             &-background {
+                background-color: $yellow;
+                color: $primary;
+            }
+            &-text {
+                color: $yellow;
+            }
+        }
+        &-dark {
+            &-background {
                 background-color: #e09600;
             }
             &-text {
@@ -235,6 +260,14 @@ h2 {
     }
     &-circularity {
         &-original {
+            &-background {
+                background-color: $orange;
+            }
+            &-text {
+                color: $orange;
+            }
+        }
+        &-dark {
             &-background {
                 background-color: #ea0101;
             }
@@ -621,6 +654,9 @@ h2 {
 .twenty_five {
     font-size: 1.5625rem; //25px
 }
+.twenty_six {
+    font-size: 1.625rem; //26px
+}
 .thirty {
     font-size: 1.875rem; //30px
 }
@@ -652,6 +688,9 @@ h2 {
 }
 .oneHundred {
     font-size: 6.25rem; //100px
+}
+.one_fifty {
+    font-size: 9.375rem; //150px
 }
 .one_sixty {
     font-size: 10rem; //160px
@@ -760,6 +799,20 @@ header {
     }
 }
 
+.uk-button-default {
+    background-color: $white;
+    -webkit-border-radius: $download_border_radius;
+    -moz-border-radius: $download_border_radius;
+    border-radius: $download_border_radius;
+    color: $primary;
+    text-transform: none;
+    &:hover {
+        background-color: $orange;
+        color: $white;
+        border-color: $orange;
+    }
+}
+
 .uk-button-primary {
     background-color: $primary;
     border-color: $primary;
@@ -837,6 +890,12 @@ header {
 }
 
 //Button Padding
+.book_now_button_padding {
+    padding-top: 11px;
+    padding-left: 39px;
+    padding-right: 39px;
+    padding-bottom: 13px;
+}
 .apply_funding_button_padding {
     padding-top: 13px;
     padding-left: 40px;
@@ -1229,6 +1288,82 @@ a.download:hover {
                     }
                 }
             }
+        }
+    }
+}
+
+.individual-event-page {
+    #event-details {
+        #icon {
+            width: 53px;
+            height: 53px;
+            background-size: contain;
+            display: inline-block;
+            &.date_time {
+                background-image: url(/images/icons/daytime.png);
+            }
+            &.location {
+                background-image: url(/images/icons/location.png);
+            }
+            &.wheelchair_friendly {
+                background-image: url(/images/icons/wheelchair_friendly.png);
+            }
+            &.family_friendly {
+                background-image: url(/images/icons/family_friendly.png);
+            }
+        }
+    }
+    #map {
+        width: 100%;
+        height: 782px;
+        .circle-pin {
+            width: 117px;
+            height: 117px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+#map {
+    &.theme-color-energy {
+        .circle-pin {
+            background-color: $yellow;
+        }
+    }
+    &.theme-color-circularity {
+        .circle-pin {
+            background-color: $orange;
+        }
+    }
+    &.theme-color-food-nature {
+        .circle-pin {
+            background-color: $secondary;
+        }
+    }
+    &.theme-color-travel {
+        .circle-pin {
+            background-color: $primary;
+        }
+    }
+    &.theme-color-community-engagement {
+        .circle-pin {
+            background: linear-gradient(
+                45deg,
+                rgba(1, 20, 165, 1) 24%,
+                rgba(31, 100, 1, 1) 24.1%,
+                rgba(31, 100, 1, 1) 49.9%,
+                rgba(224, 150, 0, 1) 50%,
+                rgba(224, 150, 0, 1) 74.9%,
+                rgba(231, 49, 1, 1) 75%,
+                rgba(234, 1, 1, 1) 100%
+            );
         }
     }
 }
