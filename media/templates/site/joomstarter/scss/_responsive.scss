@@ -24,6 +24,9 @@
         right: auto;
         margin-top: 15px;
     }
+    div#engaging-adults {
+        display: inline-block;
+    }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -156,6 +159,19 @@
     #sustainable-event-planning {
         .hero {
             min-height: 766px;
+        }
+    }
+
+    #talking-climate {
+        #engaging-adults {
+            #climateActions {
+                top: -180px;
+                position: relative;
+            }
+            #visitHub {
+                top: -100px;
+                position: relative;
+            }
         }
     }
 }

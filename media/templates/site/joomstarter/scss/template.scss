@@ -1,6 +1,6 @@
 //This is where you can edit your CSS, or better yet, create additional scss files and import them.
 //You can compile this to css using the command:
-// sass C:\wamp64\www\temp-lanarkshireclimateactionfestival\media\templates\site\joomstarter\scss\template.scss:..\css\template.min.css --style compressed
+// cd C:\wamp64\www\temp-lanarkshireclimateactionfestival\media\templates\site\joomstarter\scss
 // sass template.scss:..\css\template.min.css --style compressed
 
 // Load our local copy of Bootstrap 5.3.2
@@ -120,7 +120,7 @@ h2 {
     background-color: $muted;
 }
 .uk-background-primary {
-    background-color: $primary;
+    background-color: $primary !important;
     color: $white;
 }
 .uk-background-secondary {
@@ -140,6 +140,11 @@ h2 {
 }
 .uk-background-darkGreen {
     background-color: $darkGreen !important;
+}
+.yellow-strip {
+    background-color: $yellow;
+    height: 300px;
+    width: 100%;
 }
 .lcaf-background-blue-white {
     background: rgb(5, 64, 242);
@@ -601,7 +606,8 @@ p {
         color: inherit;
     }
 }
-ul {
+ul,
+ol {
     font-size: 1.875rem;
 }
 
@@ -624,7 +630,7 @@ h2 {
 .lead,
 .uk-text-lead,
 .forty {
-    font-size: 2.5rem; //40px
+    font-size: 2.5rem !important; //40px
 }
 .forty_five {
     font-size: 2.8125rem; //45px
@@ -742,11 +748,6 @@ header {
 //Festival programme menu item
 .uk-button-yellow {
     background-color: $yellow;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    font-size: 3.125rem;
-    line-height: 1.5;
     border-color: $yellow;
     text-transform: unset;
     color: $primary;
@@ -848,6 +849,18 @@ header {
     padding-left: 53px;
     padding-right: 52px;
     padding-bottom: 31px;
+}
+.kids_download_sheets_button_padding {
+    padding-top: 25px;
+    padding-left: 23px;
+    padding-right: 107px;
+    padding-bottom: 25px;
+}
+.kids_download_bingo_sheets_button_padding {
+    padding-top: 10px;
+    padding-left: 23px;
+    padding-right: 107px;
+    padding-bottom: 0;
 }
 .download_flyer_button_padding {
     padding-top: 22px;
@@ -1166,6 +1179,55 @@ a.download:hover {
         a:hover {
             .uk-card-default {
                 background-color: $yellow;
+            }
+        }
+    }
+}
+#talking-climate {
+    #engaging-adults {
+        .custom-circle {
+            top: -118px;
+            right: -33px;
+            width: 259px;
+            height: 259px;
+        }
+
+        .custom-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 20px solid $secondary; // Optional white border
+        }
+        .hub_website_button_position {
+            // left: 195px;
+            bottom: 20px;
+        }
+    }
+    #engaging-kids {
+        #tips {
+            div#icon {
+                top: 150px;
+                left: -175px;
+            }
+        }
+        #downloadButton {
+            bottom: -60px;
+            &.bottom_left {
+                left: 15%;
+            }
+            .circle-container {
+                right: -70px;
+                left: unset;
+                .circle-border {
+                    border: 0 none;
+                    width: 153px;
+                    height: 153px;
+                    box-shadow: 5px 6px 15px #00000029;
+                    img {
+                        object-fit: none;
+                        transition: transform 0.5s ease-in-out; // Smooth transition
+                    }
+                }
             }
         }
     }
