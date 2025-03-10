@@ -17,6 +17,16 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\Database\DatabaseInterface;
+use Joomla\CMS\Router\Route;use Joomla\CMS\WebAsset\WebAssetManager;
+
+// Register and use Leaflet scripts/styles
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->registerScript('open-street-map', '//unpkg.com/leaflet/dist/leaflet.js', [], ['defer' => true]);
+$wa->useScript('open-street-map');
+$wa->registerScript('festival-programme-map', 'media/templates/site/joomstarter/js/festival-programme-map.min.js', [], ['defer' => true]);
+$wa->useScript('festival-programme-map');
+$wa->registerStyle('leaflet-css', '//unpkg.com/leaflet/dist/leaflet.css', [], ['defer' => false]);
+$wa->useStyle('leaflet-css');
 
 /**
  * Note that this layout opens a div with the page class suffix. If you do not use the category children
@@ -144,7 +154,7 @@ if (!empty($articleIds)) {
         ->select(['fv.item_id', 'fv.field_id', 'fv.value'])
         ->from($db->quoteName('#__fields_values', 'fv'))
         ->where($db->quoteName('fv.item_id') . ' IN (' . implode(',', $articleIds) . ')')
-        ->where($db->quoteName('fv.field_id') . ' IN (1, 7, 5, 2)'); // Time, Location, Event Options, About this Event
+        ->where($db->quoteName('fv.field_id') . ' IN (1, 7, 5, 2, 145, 144)'); // Time, Location, Event Options, About this Event, Longitude, Latitude
 
     $db->setQuery($query);
     $fieldValues = $db->loadAssocList();
@@ -168,33 +178,78 @@ $groupedArticles = [];
 foreach ($articles as $article) {
     $date = isset($customFields[$article->article_id][1]) ? date('Y-m-d', strtotime($customFields[$article->article_id][1])) : 'No Date';
     $categoryClass = $categoryColors[$article->category_id] ?? 'theme-color-default';
+    $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . (int) $article->article_id);
 
     $groupedArticles[$date][] = [
         'title' => $article->title,
+        'article_id' => $article->article_id,
         'category_id' => $article->category_id,
         'category_class' => $categoryClass, // Assign the category-based class
         'image' => json_decode($article->images)->image_intro ?? '',
         'location' => $customFields[$article->article_id][7] ?? '',
+        'longitude' => $customFields[$article->article_id][145] ?? '',
+        'latitude' => $customFields[$article->article_id][144] ?? '',
         'time' => isset($customFields[$article->article_id][1]) ? date('H:i', strtotime($customFields[$article->article_id][1])) : '',
         'event_options' => isset($customFields[$article->article_id][5]) ? explode(',', $customFields[$article->article_id][5]) : [],
-        'about' => isset($customFields[$article->article_id][2]) ? implode(' ', array_slice(explode(' ', strip_tags($customFields[$article->article_id][2])), 0, 50)) . '...' : ''
+        'about' => isset($customFields[$article->article_id][2]) ? implode(' ', array_slice(explode(' ', strip_tags($customFields[$article->article_id][2])), 0, 50)) . '...' : '',
+        'article_url' => $articleUrl // Add the URL here
     ];
 }
 
 // Sort articles by date
 ksort($groupedArticles);
 
+//store all article locations in a JavaScript-readable format
+$mapLocations = [];
+
+foreach ($groupedArticles as $date => $articles) {
+    foreach ($articles as $article) {
+        if (!empty($article['longitude']) && !empty($article['latitude'])) {
+            $mapLocations[] = [
+                'title' => $article['title'],
+                'longitude' => $article['longitude'],
+                'latitude' => $article['latitude'],
+                'categoryClass' => $article['category_class'],
+                'location' => $article['location'],
+                'markerHtml' => '<div class="circle-pin"></div>', // This will ensure proper reuse of SCSS
+                'article_url' => $article['article_url'] // Pass the correct article URL
+            ];
+        } elseif (!empty($article['location'])) {
+            $mapLocations[] = [
+                'title' => $article['title'],
+                'longitude' => null,
+                'latitude' => null,
+                'categoryClass' => $article['category_class'],
+                'location' => $article['location'],
+                'markerHtml' => '<div class="circle-pin"></div>', // This will ensure proper reuse of SCSS            
+                'article_url' => $article['article_url'] // Pass the correct article URL
+            ];
+        }
+    }
+}
+
+// Convert PHP array to JSON
+$mapLocationsJson = json_encode($mapLocations);
+
 
 ?>
 
-<div id="festival-programme" class="<?php echo $className . '-category' . $displayData->pageclass_sfx; ?>">
-    <?php if ($params->get('show_page_heading')) : ?>
-        <h1>
-            <?php echo $displayData->escape($params->get('page_heading')); ?>
-        </h1>
-    <?php endif; ?>
+<script>
+    var mapLocations = <?php echo json_encode($mapLocations, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
+</script>
 
-    <div id="map"></div>
+
+
+<div id="festival-programme" class="<?php echo $className . '-category' . $displayData->pageclass_sfx; ?>">
+        <h1 style="display: none;">
+        Lanarkshire Climate Action Festival Programme
+        </h1>
+
+    <div id="map" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+        <div class="uk-container-expand">
+        </div>
+    </div>
+
     <div id="eventCategories" class="uk-background-default">
 
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-margin-top uk-margin-xlarge-bottom uk-padding-large uk-padding-remove-left uk-padding-remove-right">
@@ -318,11 +373,11 @@ ksort($groupedArticles);
                                                     <div id="info" class="uk-background-default uk-padding signpost_border uk-text-muted <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background">
 
                                                         <h4 class="forty gardein uk-text-white"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
-                                                        <p><strong>Category ID:</strong> <?php echo $article['category_id']; ?></p>
                                                         <div uk-grid class="uk-width-child-auto uk-text-white">
                                                             <div><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
                                                             <div><?php echo htmlspecialchars($article['location'], ENT_QUOTES, 'UTF-8'); ?></div>
                                                         </div>
+                                                        <pre><?php print_r($article['event_options']); ?></pre>
                                                         <p>
                                                             <?php echo !empty($article['event_options']) ? implode(', ', array_map('htmlspecialchars', $article['event_options'])) : 'N/A'; ?>
                                                         </p>
@@ -332,7 +387,12 @@ ksort($groupedArticles);
                                                     <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted uk-margin-bottom twenty_four">
                                                         <?php echo htmlspecialchars($article['about'], ENT_QUOTES, 'UTF-8'); ?>
                                                     </div>
-                                                    <a href="#" class="uk-position-bottom-right uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">Details</a>
+                                                    <a href="<?php echo Route::_('index.php?option=com_content&view=article&id=' . (int) $article['article_id']); ?>"
+                                                        class="uk-position-bottom-right uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
+                                                        Details
+                                                    </a>
+
+
                                                 </div>
                                             </div>
                                             </div>

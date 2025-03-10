@@ -1327,8 +1327,6 @@ a.download:hover {
         }
     }
     #map {
-        width: 100%;
-        height: 782px;
         .circle-pin {
             width: 117px;
             height: 117px;
@@ -1345,27 +1343,46 @@ a.download:hover {
 }
 
 #map {
-    &.theme-color-energy {
+    width: 100%;
+    height: 782px;
+    .circle-pin {
+        width: 117px;
+        height: 117px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    &.theme-color-energy,
+    .theme-color-energy {
         .circle-pin {
             background-color: $yellow;
         }
     }
-    &.theme-color-circularity {
+    &.theme-color-circularity,
+    .theme-color-circularity {
         .circle-pin {
             background-color: $orange;
         }
     }
-    &.theme-color-food-nature {
+    &.theme-color-food-nature,
+    .theme-color-food-nature {
         .circle-pin {
             background-color: $secondary;
         }
     }
-    &.theme-color-travel {
+    &.theme-color-travel,
+    .theme-color-travel {
         .circle-pin {
             background-color: $primary;
         }
     }
-    &.theme-color-community-engagement {
+    &.theme-color-community-engagement,
+    .theme-color-community-engagement {
         .circle-pin {
             background: linear-gradient(
                 45deg,
@@ -1416,7 +1433,10 @@ a.download:hover {
     }
 }
 
-
+#festival-programme {
+    #events {
+    }
+}
 
 //Import Responsive Styles
 @import "_responsive";

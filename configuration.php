@@ -51,7 +51,7 @@ class JConfig {
 	public $MetaVersion = false;
 	public $robots = '';
 	public $sef = false;
-	public $sef_rewrite = false;
+	public $sef_rewrite = true;
 	public $sef_suffix = false;
 	public $unicodeslugs = false;
 	public $feed_limit = 10;
