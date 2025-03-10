@@ -21,25 +21,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // Iterate through `mapLocations` and add markers
     mapLocations.forEach(function (article) {
         if (article.latitude && article.longitude) {
-            var markerIcon = L.divIcon({
-                className: `${article.categoryClass.trim()}`, // Only apply category class here
-                iconSize: [117, 117],
-                html: article.markerHtml, // This ensures the inner div structure matches individual-event-map.js
-            });
-            
-            var marker = L.marker([article.latitude, article.longitude], { icon: markerIcon }).addTo(map);
-            
-            marker.bindPopup(`
-                <div class="uk-text-bold">${article.title}</div>
-                <a href="${article.article_url}" class="uk-button uk-button-primary download_border twenty_six uk-text-white">
-                    View Event
-                </a>
-            `);
-            
+            var lat = parseFloat(article.latitude);
+            var lng = parseFloat(article.longitude);
+    
+            if (!isNaN(lat) && !isNaN(lng)) {  // Ensure values are valid numbers
+                var markerIcon = L.divIcon({
+                    className: article.categoryClass.trim(),
+                    iconSize: [117, 117],
+                    html: article.markerHtml,
+                });
+    
+                var marker = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
+    
+                marker.bindPopup(`
+                    <div class="uk-text-bold">${article.title}</div>
+                    <a href="${article.article_url}" class="uk-button uk-button-primary download_border twenty_six uk-text-white">
+                        View Event
+                    </a>
+                `);
+            } else {
+                console.warn("Skipping marker due to invalid lat/lng:", article.title, lat, lng);
+            }
         } else {
-            console.warn("Missing coordinates for:", article.title);
+            console.warn("Skipping marker, missing lat/lng for:", article.title);
         }
     });
+    
 
     // Fit the map bounds to the markers if multiple exist
     var bounds = new L.LatLngBounds(mapLocations.map(article => [article.latitude, article.longitude]));

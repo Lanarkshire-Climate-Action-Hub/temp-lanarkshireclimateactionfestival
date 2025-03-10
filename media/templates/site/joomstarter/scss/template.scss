@@ -299,38 +299,39 @@ h2 {
         &-original {
             &-background {
                 color: $white;
-                background: rgb(1, 20, 165);
-                background: -moz-linear-gradient(
-                    45deg,
-                    rgba(1, 20, 165, 1) 24%,
-                    rgba(31, 100, 1, 1) 24.1%,
-                    rgba(31, 100, 1, 1) 49.9%,
-                    rgba(224, 150, 0, 1) 50%,
-                    rgba(224, 150, 0, 1) 74.9%,
-                    rgba(231, 49, 1, 1) 75%,
-                    rgba(234, 1, 1, 1) 100%
-                );
-                background: -webkit-linear-gradient(
-                    45deg,
-                    rgba(1, 20, 165, 1) 24%,
-                    rgba(31, 100, 1, 1) 24.1%,
-                    rgba(31, 100, 1, 1) 49.9%,
-                    rgba(224, 150, 0, 1) 50%,
-                    rgba(224, 150, 0, 1) 74.9%,
-                    rgba(231, 49, 1, 1) 75%,
-                    rgba(234, 1, 1, 1) 100%
-                );
-                background: linear-gradient(
-                    45deg,
-                    rgba(1, 20, 165, 1) 24%,
-                    rgba(31, 100, 1, 1) 24.1%,
-                    rgba(31, 100, 1, 1) 49.9%,
-                    rgba(224, 150, 0, 1) 50%,
-                    rgba(224, 150, 0, 1) 74.9%,
-                    rgba(231, 49, 1, 1) 75%,
-                    rgba(234, 1, 1, 1) 100%
-                );
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0114a5",endColorstr="#ea0101",GradientType=1);
+                background: #000000;
+                // background: rgb(1, 20, 165);
+                // background: -moz-linear-gradient(
+                //     45deg,
+                //     rgba(1, 20, 165, 1) 24%,
+                //     rgba(31, 100, 1, 1) 24.1%,
+                //     rgba(31, 100, 1, 1) 49.9%,
+                //     rgba(224, 150, 0, 1) 50%,
+                //     rgba(224, 150, 0, 1) 74.9%,
+                //     rgba(231, 49, 1, 1) 75%,
+                //     rgba(234, 1, 1, 1) 100%
+                // );
+                // background: -webkit-linear-gradient(
+                //     45deg,
+                //     rgba(1, 20, 165, 1) 24%,
+                //     rgba(31, 100, 1, 1) 24.1%,
+                //     rgba(31, 100, 1, 1) 49.9%,
+                //     rgba(224, 150, 0, 1) 50%,
+                //     rgba(224, 150, 0, 1) 74.9%,
+                //     rgba(231, 49, 1, 1) 75%,
+                //     rgba(234, 1, 1, 1) 100%
+                // );
+                // background: linear-gradient(
+                //     45deg,
+                //     rgba(1, 20, 165, 1) 24%,
+                //     rgba(31, 100, 1, 1) 24.1%,
+                //     rgba(31, 100, 1, 1) 49.9%,
+                //     rgba(224, 150, 0, 1) 50%,
+                //     rgba(224, 150, 0, 1) 74.9%,
+                //     rgba(231, 49, 1, 1) 75%,
+                //     rgba(234, 1, 1, 1) 100%
+                // );
+                // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0114a5",endColorstr="#ea0101",GradientType=1);
             }
         }
         &-light {
@@ -450,6 +451,11 @@ h2 {
 }
 .border_bottom_red {
     border-bottom: 4px solid $red;
+}
+.border_top {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 //Border Radius
@@ -657,6 +663,9 @@ h2 {
 }
 .twenty_three {
     font-size: 1.4375rem; //23px
+}
+.twenty_four {
+    font-size: 1.5rem; //24px
 }
 .twenty_five {
     font-size: 1.5625rem; //25px
@@ -1345,6 +1354,9 @@ a.download:hover {
 #map {
     width: 100%;
     height: 782px;
+}
+#map,
+#marker {
     .circle-pin {
         width: 117px;
         height: 117px;
@@ -1382,7 +1394,8 @@ a.download:hover {
         }
     }
     &.theme-color-community-engagement,
-    .theme-color-community-engagement {
+    .theme-color-community-engagement,
+    .theme-color-community-engagement-original-background {
         .circle-pin {
             background: linear-gradient(
                 45deg,
@@ -1435,6 +1448,38 @@ a.download:hover {
 
 #festival-programme {
     #events {
+        #marker {
+            .theme-color-circularity-original-background {
+                .circle-pin {
+                    background: url(/images/icons/circularity.png);
+                }
+            }
+            .theme-color-food-nature-original-background {
+                .circle-pin {
+                    background: url(/images/icons/food-nature.png);
+                }
+            }
+            .theme-color-energy-original-background {
+                .circle-pin {
+                    background: url(/images/icons/energy.png);
+                }
+            }
+            .theme-color-travel-original-background {
+                .circle-pin {
+                    background: url(/images/icons/travel.png);
+                }
+            }
+            .theme-color-circularity-original-background,
+            .theme-color-food-nature-original-background,
+            .theme-color-energy-original-background,
+            .theme-color-travel-original-background {
+                .circle-pin {
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
     }
 }
 

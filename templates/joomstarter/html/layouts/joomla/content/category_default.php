@@ -17,7 +17,8 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\Database\DatabaseInterface;
-use Joomla\CMS\Router\Route;use Joomla\CMS\WebAsset\WebAssetManager;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\WebAsset\WebAssetManager;
 
 // Register and use Leaflet scripts/styles
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
@@ -38,6 +39,9 @@ $extension = $category->extension;
 $canEdit   = $params->get('access-edit');
 $className = substr($extension, 4);
 $htag      = $params->get('show_page_heading') ? 'h2' : 'h1';
+
+//Set character limit for the description
+$maxLength = 160;
 
 $app = Factory::getApplication();
 
@@ -160,7 +164,10 @@ if (!empty($articleIds)) {
     $fieldValues = $db->loadAssocList();
 
     foreach ($fieldValues as $field) {
-        $customFields[$field['item_id']][$field['field_id']] = $field['value'];
+        if (!isset($customFields[$field['item_id']][$field['field_id']])) {
+            $customFields[$field['item_id']][$field['field_id']] = [];
+        }
+        $customFields[$field['item_id']][$field['field_id']][] = $field['value'];
     }
 }
 
@@ -176,9 +183,16 @@ $categoryColors = [
 // Process and group articles by date
 $groupedArticles = [];
 foreach ($articles as $article) {
-    $date = isset($customFields[$article->article_id][1]) ? date('Y-m-d', strtotime($customFields[$article->article_id][1])) : 'No Date';
+    // $date = isset($customFields[$article->article_id][1]) ? date('Y-m-d', strtotime($customFields[$article->article_id][1])) : 'No Date';
+    $dateValue = $customFields[$article->article_id][1] ?? null;
+    $dateString = is_array($dateValue) ? reset($dateValue) : $dateValue; // Get the first value if it's an array
+    $date = !empty($dateString) ? date('Y-m-d', strtotime($dateString)) : 'No Date';
     $categoryClass = $categoryColors[$article->category_id] ?? 'theme-color-default';
     $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . (int) $article->article_id);
+    $timeValue = $customFields[$article->article_id][1] ?? null;
+    $timeString = is_array($timeValue) ? reset($timeValue) : $timeValue; // Get the first value if it's an array
+    $aboutValue = $customFields[$article->article_id][2] ?? null;
+    $aboutString = is_array($aboutValue) ? reset($aboutValue) : $aboutValue; // Get first value if array
 
     $groupedArticles[$date][] = [
         'title' => $article->title,
@@ -187,11 +201,18 @@ foreach ($articles as $article) {
         'category_class' => $categoryClass, // Assign the category-based class
         'image' => json_decode($article->images)->image_intro ?? '',
         'location' => $customFields[$article->article_id][7] ?? '',
-        'longitude' => $customFields[$article->article_id][145] ?? '',
-        'latitude' => $customFields[$article->article_id][144] ?? '',
-        'time' => isset($customFields[$article->article_id][1]) ? date('H:i', strtotime($customFields[$article->article_id][1])) : '',
-        'event_options' => isset($customFields[$article->article_id][5]) ? explode(',', $customFields[$article->article_id][5]) : [],
-        'about' => isset($customFields[$article->article_id][2]) ? implode(' ', array_slice(explode(' ', strip_tags($customFields[$article->article_id][2])), 0, 50)) . '...' : '',
+        // 'longitude' => $customFields[$article->article_id][145] ?? '',
+        // 'latitude' => $customFields[$article->article_id][144] ?? '',
+        'longitude' => !empty($customFields[$article->article_id][145]) ? (is_array($customFields[$article->article_id][145]) ? reset($customFields[$article->article_id][145]) : $customFields[$article->article_id][145]) : null,
+        'latitude' => !empty($customFields[$article->article_id][144]) ? (is_array($customFields[$article->article_id][144]) ? reset($customFields[$article->article_id][144]) : $customFields[$article->article_id][144]) : null,
+
+        // 'time' => isset($customFields[$article->article_id][1]) ? date('H:i', strtotime($customFields[$article->article_id][1])) : '',
+        'time' => !empty($timeString) ? date('H:i', strtotime($timeString)) : '',
+        // 'event_options' => isset($customFields[$article->article_id][5]) ? explode(',', $customFields[$article->article_id][5]) : [],
+        // 'event_options' => isset($customFields[$article->article_id][5]) ? json_decode($customFields[$article->article_id][5], true) : [],
+        'event_options' => isset($customFields[$article->article_id][5]) ? $customFields[$article->article_id][5] : [],
+        // 'about' => isset($customFields[$article->article_id][2]) ? implode(' ', array_slice(explode(' ', strip_tags($customFields[$article->article_id][2])), 0, 50)) . '...' : '',
+        'about' => !empty($aboutString) ? implode(' ', array_slice(explode(' ', strip_tags($aboutString)), 0, 50)) . '...' : '',
         'article_url' => $articleUrl // Add the URL here
     ];
 }
@@ -231,6 +252,15 @@ foreach ($groupedArticles as $date => $articles) {
 // Convert PHP array to JSON
 $mapLocationsJson = json_encode($mapLocations);
 
+// Define category-to-Itemid mapping for menus
+$categoryItemIds = [
+    16 => 136, // Travel
+    15 => 135, // Food and Nature
+    13 => 134, // Community Engagement
+    12 => 133, // Energy
+    14 => 132, // Circularity
+];
+
 
 ?>
 
@@ -238,12 +268,10 @@ $mapLocationsJson = json_encode($mapLocations);
     var mapLocations = <?php echo json_encode($mapLocations, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
 </script>
 
-
-
 <div id="festival-programme" class="<?php echo $className . '-category' . $displayData->pageclass_sfx; ?>">
-        <h1 style="display: none;">
+    <h1 style="display: none;">
         Lanarkshire Climate Action Festival Programme
-        </h1>
+    </h1>
 
     <div id="map" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand">
@@ -362,39 +390,85 @@ $mapLocationsJson = json_encode($mapLocations);
                         <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
                             <?php foreach ($articles as $article) : ?>
                                 <div>
-                                    <div class="uk-panel">
+                                    <div class="uk-panel uk-padding-small">
                                         <?php if (!empty($article['image'])) : ?>
-                                            <img src="<?php echo htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>" class="signpost_border box-shadow" uk-cover>
-                                            <canvas width="488" height="623"></canvas>
-                                            <div class="uk-position-center uk-panel">
-                                            <?php endif; ?>
+
                                             <div class="uk-position-relative">
-                                                <div class="">
-                                                    <div id="info" class="uk-background-default uk-padding signpost_border uk-text-muted <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background">
+                                                <!-- Circle Pin with Category Class -->
+                                                <div id="marker">
+                                                    <div class="uk-position-z-index uk-position-absolute circle <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background" style="top: 10px; left: 10px;">
+                                                        <div class="circle-pin"></div>
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    src="<?php echo htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                    alt="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                    class="signpost_border box-shadow" uk-cover>
+                                                <canvas width="458" height="800"></canvas>
 
-                                                        <h4 class="forty gardein uk-text-white"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
-                                                        <div uk-grid class="uk-width-child-auto uk-text-white">
-                                                            <div><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
-                                                            <div><?php echo htmlspecialchars($article['location'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                <!-- Event Icons Overlay -->
+                                                <?php if (!empty($article['event_options'])) : ?>
+                                                    <div class="uk-position-absolute uk-padding-small uk-flex uk-flex-left uk-flex-middle" style="top: 10px; right: 10px; gap: 8px;">
+                                                        <?php foreach ($article['event_options'] as $option) : ?>
+                                                            <?php
+                                                            $iconMap = [
+                                                                'wheelchair' => 'images/icons/wheelchair_friendly.png',
+                                                                'family' => 'images/icons/family_friendly.png'
+                                                            ];
+                                                            if (isset($iconMap[$option])) :
+                                                            ?>
+                                                                <img src="<?php echo $iconMap[$option]; ?>"
+                                                                    alt="<?php echo htmlspecialchars($option, ENT_QUOTES, 'UTF-8'); ?>"
+                                                                    class="event-option-icon"
+                                                                    width="53" height="53" loading="lazy">
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                                <div class="uk-position-bottom uk-panel">
+                                                <?php endif; ?>
+                                                <div class="uk-position-relative">
+                                                    <div class="uk-position-relative" style="bottom:-75px;">
+                                                        <div id="info" style="padding-bottom:75px;" class="uk-background-default uk-padding uk-margin-bottom signpost_border_top_left signpost_border_top_right <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background">
+
+                                                            <h4 class="forty gardein"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
+                                                            <div uk-grid class="uk-width-child-auto">
+                                                                <div><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
+
+                                                                <?php
+                                                                $locationString = is_array($article['location']) ? implode(', ', $article['location']) : $article['location'];
+                                                                ?>
+                                                                <div><?php echo htmlspecialchars($locationString, ENT_QUOTES, 'UTF-8'); ?></div>
+
+                                                            </div>
                                                         </div>
-                                                        <pre><?php print_r($article['event_options']); ?></pre>
-                                                        <p>
-                                                            <?php echo !empty($article['event_options']) ? implode(', ', array_map('htmlspecialchars', $article['event_options'])) : 'N/A'; ?>
-                                                        </p>
+                                                    </div>
+                                                    <div class="uk-position-relative">
+                                                        <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted twenty_four">
+                                                            <div class="uk-margin-large-bottom uk-text-muted twenty_four">
+                                                                <?php
+                                                                $text = strip_tags($article['about']); // Remove HTML
+                                                                echo htmlspecialchars(mb_substr($text, 0, $maxLength) . (mb_strlen($text) > $maxLength ? '...' : ''), ENT_QUOTES, 'UTF-8');
+                                                                ?>
+                                                            </div>
+
+                                                        </div>
+                                                        <?php
+                                                        $menuItemId = isset($categoryItemIds[$article['category_id']]) ? '&Itemid=' . $categoryItemIds[$article['category_id']] : '';
+                                                        $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . (int) $article['article_id'] . $menuItemId);
+                                                        ?>
+                                                        <div class="uk-position-bottom-right uk-padding">
+                                                            <a href="<?php echo $articleUrl; ?>"
+                                                                class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
+                                                                Details
+                                                            </a>
+                                                        </div>
+                                                        <?php echo (int) $category->id; ?>
+
                                                     </div>
                                                 </div>
-                                                <div class="">
-                                                    <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted uk-margin-bottom twenty_four">
-                                                        <?php echo htmlspecialchars($article['about'], ENT_QUOTES, 'UTF-8'); ?>
-                                                    </div>
-                                                    <a href="<?php echo Route::_('index.php?option=com_content&view=article&id=' . (int) $article['article_id']); ?>"
-                                                        class="uk-position-bottom-right uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
-                                                        Details
-                                                    </a>
-
-
                                                 </div>
-                                            </div>
                                             </div>
                                     </div>
                                 </div>
@@ -412,3 +486,7 @@ $mapLocationsJson = json_encode($mapLocations);
 </div>
 
 </div>
+
+<script>
+    console.log("Debug - mapLocations:", <?php echo json_encode($mapLocations); ?>);
+</script>
