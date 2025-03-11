@@ -161,7 +161,7 @@ if (!empty($articleIds)) {
         ->select(['fv.item_id', 'fv.field_id', 'fv.value'])
         ->from($db->quoteName('#__fields_values', 'fv'))
         ->where($db->quoteName('fv.item_id') . ' IN (' . implode(',', $articleIds) . ')')
-        ->where($db->quoteName('fv.field_id') . ' IN (1, 7, 5, 2, 145, 144)'); // Time, Location, Event Options, About this Event, Longitude, Latitude
+        ->where($db->quoteName('fv.field_id') . ' IN (1, 146, 7, 5, 2, 145, 144)'); // Time, End Time, Location, Event Options, About this Event, Longitude, Latitude
 
     $db->setQuery($query);
     $fieldValues = $db->loadAssocList();
@@ -208,7 +208,6 @@ foreach ($articles as $article) {
         // 'latitude' => $customFields[$article->article_id][144] ?? '',
         'longitude' => !empty($customFields[$article->article_id][145]) ? (is_array($customFields[$article->article_id][145]) ? reset($customFields[$article->article_id][145]) : $customFields[$article->article_id][145]) : null,
         'latitude' => !empty($customFields[$article->article_id][144]) ? (is_array($customFields[$article->article_id][144]) ? reset($customFields[$article->article_id][144]) : $customFields[$article->article_id][144]) : null,
-
         // 'time' => isset($customFields[$article->article_id][1]) ? date('H:i', strtotime($customFields[$article->article_id][1])) : '',
         'time' => !empty($timeString) ? date('H:i', strtotime($timeString)) : '',
         // 'event_options' => isset($customFields[$article->article_id][5]) ? explode(',', $customFields[$article->article_id][5]) : [],
@@ -500,7 +499,6 @@ $categoryItemIds = [
                                                             <h4 class="forty gardein"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
                                                             <div uk-grid class="uk-width-child-auto">
                                                                 <div><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
-
                                                                 <?php
                                                                 $locationString = is_array($article['location']) ? implode(', ', $article['location']) : $article['location'];
                                                                 ?>

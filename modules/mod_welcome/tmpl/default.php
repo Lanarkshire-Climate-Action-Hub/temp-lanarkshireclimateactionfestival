@@ -32,7 +32,7 @@ $altText = is_object($image) && isset($image->alt_text) ? $image->alt_text : '';
 
         <h2 class="uk-margin-top uk-margin-bottom"><?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?></h2>
 
-        <a class="uk-button uk-button-default uk-button-yellow" href="<?php echo Route::_('index.php?Itemid=' . (int) $link); ?>">
+        <a class="uk-button submit-button-border uk-button-yellow gardein forty hub_website_funding" href="<?php echo Route::_('index.php?Itemid=' . (int) $link); ?>">
             <?php echo htmlspecialchars($link_title, ENT_QUOTES, 'UTF-8'); ?>
         </a>
     </div>

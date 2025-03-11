@@ -41,8 +41,7 @@ h1,
 }
 
 body,
-.outfit-regular,
-.uk-button-yellow {
+.outfit-regular {
     font-family: "Outfit", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -710,8 +709,14 @@ h2 {
 .eighty {
     font-size: 5rem; //80px
 }
+.ninety {
+    font-size: 5.625rem; //90px
+}
 .oneHundred {
     font-size: 6.25rem; //100px
+}
+.one_twenty_five {
+    font-size: 7.8125rem; //125px
 }
 .one_fifty {
     font-size: 9.375rem; //150px
@@ -1455,6 +1460,16 @@ a.download:hover {
 }
 
 #festival-programme {
+    #map {
+        .circle-pin {
+            width: 60px;
+            height: 60px;
+            &:after {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
     #events {
         #marker {
             .theme-color-circularity-original-background {

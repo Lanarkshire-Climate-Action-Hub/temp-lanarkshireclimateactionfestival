@@ -28,7 +28,7 @@ $altText = is_object($image) && isset($image->alt_text) ? $image->alt_text : '';
         <div class="uk-background-contain uk-background-bottom-right uk-background-image@m <?php echo $background_color; ?> uk-height-medium uk-panel uk-flex uk-flex-middle" style="background-image: url(<?php echo htmlspecialchars($imagePath, ENT_QUOTES, 'UTF-8'); ?>); height: 90vh">
             <div class="uk-align-center@s uk-align-left@m uk-margin-large-left uk-margin-large-right">
                 <h2 class="uk-margin-top uk-margin-bottom gardein uk-text-white oneHundred uk-width-1-2@m uk-width-1-1@s"><?php echo htmlspecialchars($copy, ENT_QUOTES, 'UTF-8'); ?></h2>
-                <a class="uk-button uk-button-default uk-button-yellow gardein forty" href="<?php echo Route::_('index.php?Itemid=' . (int) $link); ?>">
+                <a class="uk-button submit-button-border uk-button-yellow gardein forty hub_website_funding" href="<?php echo Route::_('index.php?Itemid=' . (int) $link); ?>">
                     <?php echo htmlspecialchars($link_title, ENT_QUOTES, 'UTF-8'); ?>
                 </a>
             </div>
