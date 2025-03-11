@@ -29,6 +29,9 @@ $wa->useScript('festival-programme-map');
 $wa->registerStyle('leaflet-css', '//unpkg.com/leaflet/dist/leaflet.css', [], ['defer' => false]);
 $wa->useStyle('leaflet-css');
 
+$wa->registerScript('festival-programme-filter', 'media/templates/site/joomstarter/js/festival-programme-filter.min.js', [], ['defer' => true]);
+$wa->useScript('festival-programme-filter');
+
 /**
  * Note that this layout opens a div with the page class suffix. If you do not use the category children
  * layout you need to close this div either by overriding this file or in your main layout.
@@ -373,8 +376,62 @@ $categoryItemIds = [
     </div>
 
     <div id="browse-full-programme" class="uk-background-secondary uk-padding uk-padding-remove-left uk-padding-remove-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right" uk-grid>
+            <h2 class="gardein_regular eighty uk-text-white uk-width-expand">Browse the full <span class="uk-text-bold">programme</span></h2>
+
+
+            <div class="uk-width-auto">
+                <a id="filter-toggle" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top" href="#">
+                    Open Filter
+                </a>
+            </div>
+        </div>
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-            <h2 class="gardein eighty uk-text-white">Browse the full <span class="uk-text-bold">programme</span></h2>
+            <!-- Accordion for Filters -->
+            <div id="filter-container" class="uk-margin-top" hidden>
+                <ul uk-accordion>
+                    <li class="uk-open">
+                        <a class="uk-accordion-title" href="#">Filter Options</a>
+                        <div class="uk-accordion-content">
+                            <form id="event-filters" class="uk-form-stacked">
+
+                                <!-- Category Filter -->
+                                <label class="uk-form-label">Category</label>
+                                <select id="filter-category" class="uk-select">
+                                    <option value="">All Categories</option>
+                                    <option value="theme-color-energy">Energy</option>
+                                    <option value="theme-color-community-engagement">Community Engagement</option>
+                                    <option value="theme-color-circularity">Circularity</option>
+                                    <option value="theme-color-food-nature">Food & Nature</option>
+                                    <option value="theme-color-travel">Travel</option>
+                                </select>
+
+                                <!-- Accessibility Filter -->
+                                <label class="uk-form-label uk-margin-top">Accessibility</label>
+                                <div class="uk-grid-small" uk-grid>
+                                    <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
+                                    <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
+                                </div>
+
+                                <!-- Location Filter -->
+                                <label class="uk-form-label uk-margin-top">Location</label>
+                                <select id="filter-location" class="uk-select">
+                                    <option value="">All Locations</option>
+                                    <!-- Locations will be dynamically populated -->
+                                </select>
+
+                                <!-- Date Filter -->
+                                <label class="uk-form-label uk-margin-top">Date</label>
+                                <input type="date" id="filter-date" class="uk-input">
+
+                                <!-- Apply Filter Button -->
+                                <button id="apply-filter" type="button" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">Apply Filters</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
@@ -390,7 +447,15 @@ $categoryItemIds = [
                         <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
                             <?php foreach ($articles as $article) : ?>
                                 <div>
-                                    <div class="uk-panel uk-padding-small">
+                                    <div class="uk-panel uk-padding-small"
+                                        data-category="<?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-location="<?php echo htmlspecialchars(is_array($article['location']) ? implode(', ', $article['location']) : $article['location'], ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-date="<?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-options="<?php echo htmlspecialchars(implode(',', $article['event_options']), ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-title="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-latitude="<?php echo htmlspecialchars($article['latitude'], ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-longitude="<?php echo htmlspecialchars($article['longitude'], ENT_QUOTES, 'UTF-8'); ?>">
+
                                         <?php if (!empty($article['image'])) : ?>
 
                                             <div class="uk-position-relative">
@@ -444,7 +509,7 @@ $categoryItemIds = [
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="uk-position-relative">
+                                                    <div class="uk-position-relative" style="bottom:-0;">
                                                         <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted twenty_four">
                                                             <div class="uk-margin-large-bottom uk-text-muted twenty_four">
                                                                 <?php
@@ -464,7 +529,6 @@ $categoryItemIds = [
                                                                 Details
                                                             </a>
                                                         </div>
-                                                        <?php echo (int) $category->id; ?>
 
                                                     </div>
                                                 </div>

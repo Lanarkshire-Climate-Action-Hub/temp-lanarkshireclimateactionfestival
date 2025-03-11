@@ -27,11 +27,19 @@
 
 h1,
 .gardein,
+.gardein_extra_bold,
 .title {
     font-family: gardein, sans-serif;
     font-style: normal;
     font-weight: 800;
 }
+
+.gardein_regular {
+    font-family: gardein, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body,
 .outfit-regular,
 .uk-button-yellow {
@@ -989,7 +997,7 @@ img {
 #top-search {
     .mod-finder__search {
         .awesomplete {
-            width: 75%;
+            width: 69%;
         }
         -webkit-border-radius: 25px;
         -moz-border-radius: 25px;
