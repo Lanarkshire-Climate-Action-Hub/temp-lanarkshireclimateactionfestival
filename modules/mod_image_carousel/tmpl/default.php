@@ -39,8 +39,8 @@ $menu = Factory::getApplication()->getMenu();
                     </div>
                 <?php endforeach; ?>
             </div>
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large" href uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large" href uk-slidenav-next uk-slideshow-item="next"></a>
         </div>
     <?php endif; ?>
 </div>

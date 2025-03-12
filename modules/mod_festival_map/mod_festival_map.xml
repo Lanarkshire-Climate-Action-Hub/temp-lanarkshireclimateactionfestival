@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+    <name>Festival Map</name>
+    <version>1.0.0</version>
+    <author>Russell English</author>
+    <creationDate>March 2025</creationDate>
+    <description>Displays a map with markers based on festival articles.</description>
+
+    <files>
+        <filename module="mod_festival_map">mod_festival_map.php</filename>
+        <filename>tmpl/default.php</filename>
+    </files>
+
+    <!-- Move JavaScript and CSS files to the media folder -->
+    <media destination="mod_festival_map">
+        <folder>media/js</folder>
+        <folder>media/css</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="map_width" type="text" label="Map Width" default="100%" />
+                <field name="map_height" type="text" label="Map Height" default="500px" />
+                <field name="default_latitude" type="text" label="Default Latitude" default="55.608314" />
+                <field name="default_longitude" type="text" label="Default Longitude" default="-3.787285" />
+                <field name="default_zoom" type="number" label="Default Zoom" default="7" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
