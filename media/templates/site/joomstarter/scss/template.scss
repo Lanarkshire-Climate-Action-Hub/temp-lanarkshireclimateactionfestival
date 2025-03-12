@@ -416,6 +416,10 @@ h2 {
     }
 }
 
+.uk-slidenav {
+    color: $white;
+}
+
 .text-white,
 .text-white > a,
 .text-white > i,
@@ -690,6 +694,7 @@ h2 {
 .uk-text-lead,
 .forty {
     font-size: 2.5rem !important; //40px
+    line-height: 1.2;
 }
 .forty_five {
     font-size: 2.8125rem; //45px
@@ -815,16 +820,16 @@ header {
 
 //Festival programme menu item
 .uk-button-yellow {
-    background-color: $yellow;
-    border-color: $yellow;
-    text-transform: unset;
-    color: $primary;
+    background-color: $yellow !important;
+    border-color: $yellow !important;
+    text-transform: unset !important;
+    color: $primary !important;
     &:hover,
     &.active {
-        background-color: $primary;
-        border-color: $primary;
-        color: $white;
-        text-decoration: none;
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: $white !important;
+        text-decoration: none !important;
     }
 }
 
@@ -1047,7 +1052,8 @@ img {
         background-size: 100% 4ch;
     }
     input {
-        height: 4rem;
+        height: 7rem;
+
     }
     textarea {
         resize: none;
@@ -1501,6 +1507,16 @@ a.download:hover {
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
+            }
+        }
+    }
+}
+
+#intro_items {
+    .blog-item {
+        .uk-panel {
+            .uk-background-default {
+                background-color: $primary;
             }
         }
     }

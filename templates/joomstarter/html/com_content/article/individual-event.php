@@ -190,8 +190,6 @@ $wa->useStyle('individual-event-style');
     var eventLongitude = <?php echo json_encode($longitude); ?>;
 </script>
 
-<
-
     <div id="<?php echo $this->item->alias; ?>" class="individual-event-page">
     <div class="hero<?php echo $this->pageclass_sfx; ?> <?php echo $categoryClass; ?>-original-background uk-background-contain uk-background-center-right" uk-grid>
         <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
@@ -245,7 +243,8 @@ $wa->useStyle('individual-event-style');
                 </div>
             </div>
         </div>
-        <div class="uk-width-expand"></div><?php if (!empty($shareModule)) { ?>
+        <div class="uk-width-expand"></div>
+        <?php if (!empty($shareModule)) { ?>
             <div class="uk-width-1-6@m" id="share">
                 <div class="uk-text-center vertical-center uk-background-secondary">
                     <?php echo $shareModule; ?>
