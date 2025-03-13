@@ -406,7 +406,6 @@ $categoryItemIds = [
                                 </select>
 
                                 <!-- Accessibility Filter -->
-                                <label class="uk-form-label uk-margin-top">Accessibility</label>
                                 <div class="uk-grid-small" uk-grid>
                                     <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
                                     <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
@@ -446,14 +445,16 @@ $categoryItemIds = [
                         <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
                             <?php foreach ($articles as $article) : ?>
                                 <div>
-                                    <div class="uk-panel uk-padding-small"
+                                    <div class="uk-panel uk-padding-small event-item"
                                         data-category="<?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>"
                                         data-location="<?php echo htmlspecialchars(is_array($article['location']) ? implode(', ', $article['location']) : $article['location'], ENT_QUOTES, 'UTF-8'); ?>"
                                         data-date="<?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?>"
                                         data-options="<?php echo htmlspecialchars(implode(',', $article['event_options']), ENT_QUOTES, 'UTF-8'); ?>"
                                         data-title="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
                                         data-latitude="<?php echo htmlspecialchars($article['latitude'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-longitude="<?php echo htmlspecialchars($article['longitude'], ENT_QUOTES, 'UTF-8'); ?>">
+                                        data-longitude="<?php echo htmlspecialchars($article['longitude'], ENT_QUOTES, 'UTF-8'); ?>"
+                                        data-wheelchair="<?php echo in_array('wheelchair', $article['event_options']) ? 'true' : 'false'; ?>"
+                                        data-family="<?php echo in_array('family', $article['event_options']) ? 'true' : 'false'; ?>">
 
                                         <?php if (!empty($article['image'])) : ?>
 
