@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterButton = document.getElementById("apply-filter");
     const categoryFilter = document.getElementById("filter-category");
     const locationFilter = document.getElementById("filter-location");
+    const dateFilter = document.getElementById("filter-date");
     const eventItems = document.querySelectorAll(".event-item");
 
     // Step 1: Populate Location Dropdown Dynamically
-    const locations = new Set(); // Store unique locations
+    const locations = new Set();
     eventItems.forEach(event => {
         const eventLocation = event.getAttribute("data-location");
         if (eventLocation && eventLocation.trim() !== "") {
-            locations.add(eventLocation.trim()); // Add location to the set
+            locations.add(eventLocation.trim());
         }
     });
 
-    // Add locations to dropdown
     locations.forEach(location => {
         const option = document.createElement("option");
         option.value = location;
@@ -35,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedFamily = document.querySelector("input[name='filter-option'][value='family']").checked;
         const selectedCategory = categoryFilter.value;
         const selectedLocation = locationFilter.value;
+        const selectedDate = dateFilter.value; // Get selected date (YYYY-MM-DD)
 
         eventItems.forEach(event => {
-            const parentContainer = event.closest('.uk-slider-items > div'); // Target parent for layout shift
+            const parentContainer = event.closest('.uk-slider-items > div');
             const eventCategory = event.getAttribute("data-category");
             const eventLocation = event.getAttribute("data-location");
+            const eventDate = event.getAttribute("data-date");
             const isWheelchair = event.getAttribute("data-wheelchair") === "true";
             const isFamily = event.getAttribute("data-family") === "true";
 
@@ -53,6 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Apply Location filter
             if (selectedLocation && eventLocation !== selectedLocation) {
+                showEvent = false;
+            }
+
+            // Apply Date filter
+            if (selectedDate && eventDate !== selectedDate) {
                 showEvent = false;
             }
 
