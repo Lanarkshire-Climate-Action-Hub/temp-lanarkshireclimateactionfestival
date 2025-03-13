@@ -378,12 +378,12 @@ $categoryItemIds = [
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right" uk-grid>
             <h2 class="gardein_regular eighty uk-text-white uk-width-expand">Browse the full <span class="uk-text-bold">programme</span></h2>
 
-
             <div class="uk-width-auto">
-                <a id="filter-toggle" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top" href="#">
+                <a id="filter-toggle" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top" href="javascript:void(0);">
                     Open Filter
                 </a>
             </div>
+
         </div>
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <!-- Accordion for Filters -->
