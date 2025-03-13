@@ -394,7 +394,7 @@ $categoryItemIds = [
                             <form id="event-filters" class="" uk-grid>
                                 <div class="uk-width-1-2@m uk-width-1-1">
                                     <!-- Category Filter -->
-                                    <select id="filter-category" class="uk-select">
+                                    <select id="filter-category" class="uk-select download_border">
                                         <option value="">All Categories</option>
                                         <option value="theme-color-energy">Energy</option>
                                         <option value="theme-color-community-engagement">Community Engagement</option>
@@ -405,7 +405,7 @@ $categoryItemIds = [
                                 </div>
                                 <div class="uk-width-1-2@m uk-width-1-1">
                                     <!-- Location Filter -->
-                                    <select id="filter-location" class="uk-select">
+                                    <select id="filter-location" class="uk-select download_border">
                                         <option value="">All Locations</option>
                                         <!-- Locations will be dynamically populated -->
                                     </select>
@@ -413,13 +413,13 @@ $categoryItemIds = [
                                 <div class="uk-width-1-2@m uk-width-1-1">
                                     <!-- Accessibility Filter -->
                                     <div class="uk-grid-small" uk-grid>
-                                        <label class="uk-text-white"><input class="uk-checkbox" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
-                                        <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
+                                        <label class="uk-text-white"><input class="uk-checkbox uk-form-large uk-form-width-xsmall download_border" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
+                                        <label class="uk-text-white"><input class="uk-checkbox uk-form-large uk-form-width-xsmall download_border" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
                                     </div>
                                 </div>
                                 <div class="uk-width-1-2@m uk-width-1-1">
                                     <!-- Date Filter -->
-                                    <input type="date" id="filter-date" class="uk-input">
+                                    <input type="date" id="filter-date" class="uk-input download_border">
                                 </div>
                                 <div class="uk-width-1-2@m uk-width-1-1">
                                     <!-- Apply Filter Button -->
