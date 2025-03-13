@@ -390,7 +390,6 @@ $categoryItemIds = [
             <div id="filter-container" class="uk-margin-top" hidden>
                 <ul uk-accordion>
                     <li class="uk-open">
-                        <a class="uk-accordion-title" href="#">Filter Options</a>
                         <div class="uk-accordion-content">
                             <form id="event-filters" class="uk-form-stacked">
 
