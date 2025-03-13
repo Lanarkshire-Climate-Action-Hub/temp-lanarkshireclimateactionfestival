@@ -391,38 +391,41 @@ $categoryItemIds = [
                 <ul uk-accordion>
                     <li class="uk-open">
                         <div class="uk-accordion-content">
-                            <form id="event-filters" class="uk-form-stacked">
-
-                                <!-- Category Filter -->
-                                <label class="uk-form-label">Category</label>
-                                <select id="filter-category" class="uk-select">
-                                    <option value="">All Categories</option>
-                                    <option value="theme-color-energy">Energy</option>
-                                    <option value="theme-color-community-engagement">Community Engagement</option>
-                                    <option value="theme-color-circularity">Circularity</option>
-                                    <option value="theme-color-food-nature">Food & Nature</option>
-                                    <option value="theme-color-travel">Travel</option>
-                                </select>
-
-                                <!-- Accessibility Filter -->
-                                <div class="uk-grid-small" uk-grid>
-                                    <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
-                                    <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
+                            <form id="event-filters" class="" uk-grid>
+                                <div class="uk-width-1-2@m uk-width-1-1">
+                                    <!-- Category Filter -->
+                                    <select id="filter-category" class="uk-select">
+                                        <option value="">All Categories</option>
+                                        <option value="theme-color-energy">Energy</option>
+                                        <option value="theme-color-community-engagement">Community Engagement</option>
+                                        <option value="theme-color-circularity">Circularity</option>
+                                        <option value="theme-color-food-nature">Food & Nature</option>
+                                        <option value="theme-color-travel">Travel</option>
+                                    </select>
                                 </div>
+                                <div class="uk-width-1-2@m uk-width-1-1">
+                                    <!-- Location Filter -->
+                                    <select id="filter-location" class="uk-select">
+                                        <option value="">All Locations</option>
+                                        <!-- Locations will be dynamically populated -->
+                                    </select>
+                                </div>
+                                <div class="uk-width-1-2@m uk-width-1-1">
+                                    <!-- Accessibility Filter -->
+                                    <div class="uk-grid-small" uk-grid>
+                                        <label class="uk-text-white"><input class="uk-checkbox" type="checkbox" name="filter-option" value="wheelchair"> Wheelchair Friendly</label>
+                                        <label><input class="uk-checkbox" type="checkbox" name="filter-option" value="family"> Family Friendly</label>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2@m uk-width-1-1">
+                                    <!-- Date Filter -->
+                                    <input type="date" id="filter-date" class="uk-input">
+                                </div>
+                                <div class="uk-width-1-2@m uk-width-1-1">
+                                    <!-- Apply Filter Button -->
+                                    <button id="apply-filter" type="button" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">Apply Filters</button>
 
-                                <!-- Location Filter -->
-                                <label class="uk-form-label uk-margin-top">Location</label>
-                                <select id="filter-location" class="uk-select">
-                                    <option value="">All Locations</option>
-                                    <!-- Locations will be dynamically populated -->
-                                </select>
-
-                                <!-- Date Filter -->
-                                <label class="uk-form-label uk-margin-top">Date</label>
-                                <input type="date" id="filter-date" class="uk-input">
-
-                                <!-- Apply Filter Button -->
-                                <button id="apply-filter" type="button" class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">Apply Filters</button>
+                                </div>
                             </form>
                         </div>
                     </li>
