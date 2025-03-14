@@ -15,7 +15,7 @@ $this->getDocument()->getWebAssetManager()
     ->useStyle('com_finder.finder')
     ->useScript('com_finder.finder');
 ?>
-<div class="com-finder finder">
+<div class="com-finder finder uk-margin-large-left uk-margin-large-right">
     <?php if ($this->params->get('show_page_heading')) : ?>
         <h1>
             <?php if ($this->escape($this->params->get('page_heading'))) : ?>
@@ -30,7 +30,7 @@ $this->getDocument()->getWebAssetManager()
     </div>
     <?php // Load the search results layout if we are performing a search. ?>
     <?php if ($this->query->search === true) : ?>
-        <div id="search-results" class="com-finder__results">
+        <div id="search-results" class="com-finder__results uk-margin-bottom">
             <?php echo $this->loadTemplate('results'); ?>
         </div>
     <?php endif; ?>
