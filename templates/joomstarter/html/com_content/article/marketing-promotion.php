@@ -119,9 +119,9 @@ foreach ($fields as $field) {
 <div id="marketing-promotion">
     <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-orange uk-background-contain uk-background-center-right" uk-grid>
         <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
-        <div class="uk-width-1-2@m uk-padding-large uk-margin-xlarge-top uk-margin-xlarge-bottom">
-            <div class="page-header uk-padding vertical-center">
-                <h1 class="uk-text-white oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+        <div class="uk-width-1-2@m uk-padding-large uk-margin-xlarge-top uk-margin-xlarge-bottom mobile-remove-margin mobile-remove-margin-top mobile-remove-margin-bottom mobile-remove-padding">
+            <div class="page-header uk-padding vertical-center mobile-text-full-width mobile-remove-padding-top mobile-remove-padding-bottom">
+                <h1 class="uk-text-white oneHundred mobile-text-full-width"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
             </div>
         </div>
     </div>
@@ -159,7 +159,7 @@ foreach ($fields as $field) {
         </div>
     </div>
 
-    <div id="weve-made-it-easy" class="uk-background-orange uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+    <div id="weve-made-it-easy" class="uk-background-orange uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-remove-margin">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
                 <div class="uk-width-3-5@m">
@@ -170,8 +170,8 @@ foreach ($fields as $field) {
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-2-5@m uk-padding-large uk-padding-remove-top uk-padding-remove-bottom">
-                    <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-margin-top uk-margin-bottom">
+                <div class="uk-width-2-5@m uk-padding-large uk-padding-remove-top uk-padding-remove-bottom mobile-remove-padding">
+                    <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-margin-top uk-margin-bottom mobile-remove-padding">
                         <a href="<?php echo $flyerLink; ?>" class="remove-decoration download" target="_blank">
                             <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom submit-button-border" uk-grid>
                                 <!-- Circular Image Container -->
@@ -190,7 +190,7 @@ foreach ($fields as $field) {
                             </div>
                         </a>
                     </div>
-                    <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-margin-top uk-margin-bottom">
+                    <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-margin-top uk-margin-bottom mobile-remove-padding">
                         <a href="<?php echo $templateLink; ?>" class="remove-decoration download" target="_blank">
                             <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom submit-button-border" uk-grid>
                                 <!-- Circular Image Container -->
@@ -241,7 +241,7 @@ foreach ($fields as $field) {
         </div>
     </div>
     <div id="receivedFunding" class="uk-background-orange uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-background-center-right uk-background-norepeat uk-background-contain" style="background-image: url(images/backgrounds/person_watering.png);">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-background-center-right uk-background-norepeat uk-background-contain hide-background-mobile" style="background-image: url(images/backgrounds/person_watering.png);">
             <div class="vertical-center" uk-grid>
                 <div class="uk-width-2-3@m">
                     <h3 class="gardein eighty uk-text-white uk-margin-large-bottom"><?php echo $ifYouHaveReceivedFunding_title; ?></h3>

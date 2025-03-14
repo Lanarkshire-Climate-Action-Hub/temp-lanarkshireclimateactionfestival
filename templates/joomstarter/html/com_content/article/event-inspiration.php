@@ -217,21 +217,21 @@ foreach ($fields as $field) {
 
 ?>
 
-<div id="take-part-in-an-event">
+<div id="event-inspiration">
     <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-primary uk-background-contain uk-background-center-right" uk-grid>
         <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
-        <div class="uk-width-1-2@m uk-padding-large">
+        <div class="uk-width-1-2@m uk-padding-large mobile-text-full-width mobile-remove-padding-bottom mobile-remove-padding-top">
             <div class="page-header uk-padding vertical-center">
                 <h1 class="uk-text-white oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
             </div>
         </div>
     </div>
-    <div class="uk-background-primary uk-padding-large uk-padding-remove-top">
-        <div class="uk-text-white" uk-grid>
-            <div class="uk-width-1-2@m uk-text-bold">
+    <div class="uk-background-primary">
+        <div class="uk-text-white uk-padding-large uk-padding-remove-top mobile-text-full-width" uk-grid>
+            <div class="uk-width-1-2@m uk-text-bold mobile-remove-padding mobile-margin-top">
                 <?php echo $leadIntroduction; ?>
             </div>
-            <div class="uk-width-2-3@m">
+            <div class="uk-width-2-3@m mobile-remove-padding">
                 <?php echo $introduction; ?>
             </div>
         </div>
@@ -248,7 +248,7 @@ foreach ($fields as $field) {
     </div>
     <div id="eventCategories" class="uk-background-default">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-margin-xlarge-top uk-margin-bottom">
-            <div uk-grid class="uk-text-center uk-padding-large uk-padding-remove-right uk-padding-remove-left">
+            <div uk-grid class="uk-text-center uk-padding-large uk-padding-remove-right uk-padding-remove-left mobile-remove-padding-bottom">
                 <!-- energy -->
                 <div class="uk-width-1-3@m">
                     <div class="shape-container">
@@ -258,7 +258,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
-                                <div class="uk-text-bold uk-text-yellow forty gardein uk-margin-medium-top"><?php echo $energy_title; ?></div>
+                                <div class="uk-text-bold uk-text-yellow forty gardein uk-margin-medium-top mobile-margin-top"><?php echo $energy_title; ?></div>
                                 <div class="twenty_three"><?php echo $energy; ?></div>
                             </div>
                         </div>
@@ -273,7 +273,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
-                                <div class="uk-text-bold forty gardein uk-margin-medium-top"><?php echo $communityEngagement_title; ?></div>
+                                <div class="uk-text-bold forty gardein uk-margin-medium-top mobile-margin-top"><?php echo $communityEngagement_title; ?></div>
                                 <div class="twenty_three"><?php echo $communityEngagement; ?></div>
                             </div>
                         </div>
@@ -288,14 +288,14 @@ foreach ($fields as $field) {
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
-                                <div class="uk-text-bold uk-text-orange forty gardein uk-margin-medium-top"><?php echo $circularity_title; ?></div>
+                                <div class="uk-text-bold uk-text-orange forty gardein uk-margin-medium-top mobile-margin-top"><?php echo $circularity_title; ?></div>
                                 <div class="twenty_three"><?php echo $circularity; ?></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div uk-grid class="uk-padding-large uk-padding-remove-right uk-padding-remove-left uk-margin-xlarge-top">
+            <div uk-grid class="uk-padding-large uk-padding-remove-right uk-padding-remove-left uk-margin-xlarge-top mobile-remove-padding-top mobile-remove-padding-top mobile-margin-top">
                 <div class="uk-width-1-6@m"></div>
                 <!-- Food and Nature -->
                 <div class="uk-width-1-3@m">
@@ -306,7 +306,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
-                                <div class="uk-text-bold uk-text-secondary forty gardein uk-margin-medium-top"><?php echo $foodNature_title; ?></div>
+                                <div class="uk-text-bold uk-text-secondary forty gardein uk-margin-medium-top mobile-margin-top"><?php echo $foodNature_title; ?></div>
                                 <div class="twenty_three"><?php echo $foodNature; ?></div>
                             </div>
                         </div>
@@ -321,7 +321,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
-                                <div class="uk-text-bold uk-text-primary forty gardein uk-margin-medium-top"><?php echo $travel_title; ?></div>
+                                <div class="uk-text-bold uk-text-primary forty gardein uk-margin-medium-top mobile-margin-top"><?php echo $travel_title; ?></div>
                                 <div class="twenty_three"><?php echo $travel; ?></div>
                             </div>
                         </div>
@@ -331,12 +331,12 @@ foreach ($fields as $field) {
         </div>
     </div>
     <div id="multipleCategories" class="uk-background-primary">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right mobile-remove-margin">
             <div uk-grid>
                 <div class="uk-width-4-5@m">
-                    <div class="uk-flex-middle" uk-grid>
-                        <div class="gardein uk-text-center one_sixty uk-text-bold">!</div>
-                        <div class="uk-padding uk-width-5-6@m">
+                    <div class="uk-flex-middle mobile-remove-margin" uk-grid>
+                        <div class="gardein uk-text-center one_sixty uk-text-bold mobile-hide">!</div>
+                        <div class="uk-padding uk-width-5-6@m mobile-text-full-width">
                             <div class="uk-text-bold forty outfit"><?php echo $someEventsCover_title; ?></div>
                             <div class="uk-flex-wrap"><?php echo $someEventsCover; ?></div>
                         </div>
@@ -359,7 +359,7 @@ foreach ($fields as $field) {
                         <div class="uk-position-absolute uk-padding uk-text-white gardein uk-text-bold sixty"><?php echo $exampleOneTitle; ?></div>
                         <img src="<?php echo htmlspecialchars($exampleOneImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
                     </div>
-                    <div class="uk-width-1-2@m">
+                    <div class="uk-width-1-2@m mobile-remove-margin-top">
                         <div class="uk-card-body uk-text-white uk-padding-large">
                             <div class="uk-text-bold sixty"><?php echo $exampleOneListTitle; ?></div>
                             <div class="uk-flex-wrap"><?php echo $exampleOneListItems; ?></div>
@@ -373,14 +373,14 @@ foreach ($fields as $field) {
         <div class="<?php echo $exampleTwoBackground; ?>">
             <div class="uk-container-expand">
                 <div uk-grid>
-                    <div class="uk-width-1-2@m">
-                        <div class="uk-card-body uk-text-white uk-padding-large">
+                    <div class="uk-width-1-2@m mobile-remove-margin-top">
+                        <div class="uk-card-body uk-text-white uk-padding-large uk-flex-last uk-flex-first@s">
                             <div class="uk-text-bold sixty"><?php echo $exampleTwoListTitle; ?></div>
                             <div class="uk-flex-wrap"><?php echo $exampleTwoListItems; ?></div>
                         </div>
                     </div>
-                    <div class="uk-width-1-2@m uk-position-relative">
-                        <div class="uk-position-absolute uk-padding uk-text-mute gardein uk-text-bold sixty"><?php echo $exampleTwoTitle; ?></div>
+                    <div class="uk-width-1-2@m uk-position-relative uk-flex-first uk-flex-last@s">
+                        <div class="uk-position-absolute uk-padding uk-text-mute gardein uk-text-bold sixty text-shadow"><?php echo $exampleTwoTitle; ?></div>
                         <img src="<?php echo htmlspecialchars($exampleTwoImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
                     </div>
                 </div>
@@ -392,10 +392,10 @@ foreach ($fields as $field) {
             <div class="uk-container-expand">
                 <div uk-grid>
                     <div class="uk-width-1-2@m uk-position-relative">
-                        <div class="uk-position-absolute uk-padding uk-text-yellow gardein uk-text-bold sixty"><?php echo $exampleThreeTitle; ?></div>
+                        <div class="uk-position-absolute uk-padding uk-text-yellow gardein uk-text-bold sixty text-shadow"><?php echo $exampleThreeTitle; ?></div>
                         <img src="<?php echo htmlspecialchars($exampleThreeImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
                     </div>
-                    <div class="uk-width-1-2@m">
+                    <div class="uk-width-1-2@m mobile-remove-margin-top">
                         <div class="uk-card-body uk-text-orange uk-padding-large">
                             <div class="uk-text-bold sixty"><?php echo $exampleThreeListTitle; ?></div>
                             <div class="uk-flex-wrap"><?php echo $exampleThreeListItems; ?></div>
@@ -409,14 +409,14 @@ foreach ($fields as $field) {
         <div class="<?php echo $exampleFourBackground; ?>">
             <div class="uk-container-expand">
                 <div uk-grid>
-                    <div class="uk-width-1-2@m">
-                        <div class="uk-card-body uk-text-white uk-padding-large">
+                    <div class="uk-width-1-2@m mobile-remove-margin-top">
+                        <div class="uk-card-body uk-text-white uk-padding-large uk-flex-last uk-flex-first@s">
                             <div class="uk-text-bold sixty"><?php echo $exampleFourListTitle; ?></div>
                             <div class="uk-flex-wrap"><?php echo $exampleFourListItems; ?></div>
                         </div>
                     </div>
-                    <div class="uk-width-1-2@m uk-position-relative">
-                        <div class="uk-position-absolute uk-padding uk-text-secondary gardein uk-text-bold sixty"><?php echo $exampleFourTitle; ?></div>
+                    <div class="uk-width-1-2@m uk-position-relative uk-flex-first uk-flex-last@s">
+                        <div class="uk-position-absolute uk-padding uk-text-secondary gardein uk-text-bold sixty text-shadow"><?php echo $exampleFourTitle; ?></div>
                         <img src="<?php echo htmlspecialchars($exampleFourImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
                     </div>
                 </div>
@@ -431,7 +431,7 @@ foreach ($fields as $field) {
                         <div class="uk-position-absolute uk-padding uk-text-white gardein uk-text-bold sixty"><?php echo $exampleFiveTitle; ?></div>
                         <img src="<?php echo htmlspecialchars($exampleFiveImage, ENT_QUOTES, 'UTF-8'); ?>" alt="">
                     </div>
-                    <div class="uk-width-1-2@m">
+                    <div class="uk-width-1-2@m mobile-remove-margin-top">
                         <div class="uk-card-body uk-text-white uk-padding-large">
                             <div class="uk-text-bold sixty"><?php echo $exampleFiveListTitle; ?></div>
                             <div class="uk-flex-wrap"><?php echo $exampleFiveListItems; ?></div>
@@ -442,11 +442,11 @@ foreach ($fields as $field) {
         </div>
     </div>
     <div id="idea" class="uk-background-default uk-padding uk-padding-remove-left uk-padding-remove-right uk-position-relative">
-        <div class="uk-container-expand uk-margin-xlarge-left uk-margin-xlarge-right">
-            <div class="uk-text-center vertical-align uk-padding-large uk-padding-remove-top uk-padding-remove-bottom uk-margin-xlarge-left uk-margin-xlarge-right">
-                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaTitle; ?></div>
+        <div class="uk-container-expand uk-margin-xlarge-left uk-margin-xlarge-right mobile-remove-margin">
+            <div class="uk-text-center vertical-align uk-padding-large uk-padding-remove-top uk-padding-remove-bottom uk-margin-xlarge-left uk-margin-xlarge-right mobile-remove-margin">
+                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right mobile-remove-margin mobile-remove-padding"><?php echo $gotAnIdeaTitle; ?></div>
                 <a href="mailto:info@climateactionlanarkshire.net?Subject=Lanarkshire Climate Action Festival" style="z-index:1;" class="uk-button uk-position-relative uk-button-primary gardein uk-button-large seventy uk-padding submit-button-border">Get in touch</a>
-                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right"><?php echo $gotAnIdeaDescription; ?></div>
+                <div class="uk-text-primary uk-padding-large uk-margin-xlarge-left uk-margin-xlarge-right uk-position-relative mobile-remove-margin mobile-remove-padding" style="z-index:1;" ><?php echo $gotAnIdeaDescription; ?></div>
             </div>
         </div>
     </div>

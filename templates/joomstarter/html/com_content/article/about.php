@@ -82,8 +82,8 @@ if ($menuItemId > 0) {
 ?>
 
 <div class="about-page">
-    <div class="item-page<?php echo $this->pageclass_sfx; ?> uk-margin-large-left" uk-grid>
-        <div class="uk-width-1-2@m">
+    <div id="intro" class="item-page<?php echo $this->pageclass_sfx; ?> uk-margin-large-left mobile-remove-margin" uk-grid>
+        <div class="uk-width-1-2@m uk-padding-remove-left mobile-text-full-width" id="intro-container">
             <?php if ($this->params->get('show_page_heading')) : ?>
                 <div class="page-header">
                     <h1 class="uk-text-primary heading-1"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
@@ -91,22 +91,22 @@ if ($menuItemId > 0) {
             <?php endif; ?>
             <?php echo $this->item->text; ?>
         </div>
-        <div class="uk-width-1-2@m">
+        <div class="uk-width-1-2@m mobile-remove-padding">
             <?php echo LayoutHelper::render('joomla.content.about_full_image', $this->item); ?>
         </div>
     </div>
 
     <?php if (!empty($secondTextArea) || !empty($secondAboutImage)) : ?>
         <div class="uk-background-secondary">
-            <div class="uk-margin-large-right" uk-grid>
+            <div class="uk-margin-large-right mobile-image-full-width" uk-grid>
                 <?php if (!empty($secondAboutImage)) : ?>
-                    <div class="uk-width-2-5@m">
+                    <div class="uk-width-2-5@m mobile-image-full-width">
                         <img src="<?php echo htmlspecialchars($secondAboutImage, ENT_QUOTES, 'UTF-8'); ?>" alt="Second About Image" class="uk-width-1-1">
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($secondTextArea)) : ?>
-                    <div class="uk-width-3-5@m">
+                    <div class="uk-width-3-5@m mobile-text-full-width mobile-margin-bottom">
                         <div class="uk-text-white vertical-center uk-text-left">
                             <h2 class="gardein uk-text-white"><?php echo $secondTitle; ?></h2>
                             <div class="second-text-area-width">
@@ -120,9 +120,9 @@ if ($menuItemId > 0) {
     <?php endif; ?>
 
     <?php if (!empty($introText) || !empty($interestedImage)) : ?>
-        <div class="uk-background-default uk-margin-xlarge-top uk-margin-xlarge-bottom">
-            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-                <div class="uk-flex uk-flex-middle uk-padding-large" uk-grid>
+        <div class="uk-background-default uk-margin-xlarge-top uk-margin-xlarge-bottom mobile-remove-margin-top mobile-remove-margin-bottom">
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right mobile-remove-margin">
+                <div class="uk-flex uk-flex-middle uk-padding-large mobile-remove-padding" uk-grid>
                     <div class="uk-width-1-2@m uk-padding-small uk-text-center">
                         <div id="interested" class="heading-3 uk-text-center uk-margin-large-bottom uk-text-primary">
                             <?php echo $introText; ?>

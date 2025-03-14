@@ -126,9 +126,9 @@ foreach ($fields as $field) {
         </div>
     </div>
 
-    <div class="uk-background-primary uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-        <div class="uk-margin-large-right uk-margin-large-left" uk-grid>
-            <div class="uk-width-1-2@m uk-margin-large-bottom">
+    <div class="uk-background-primary uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-remove-margin">
+        <div class="uk-margin-large-right uk-margin-large-left mobile-remove-margin" uk-grid>
+            <div class="uk-width-1-2@m uk-margin-large-bottom mobile-remove-padding">
                 <div class="uk-background-peach submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
                     <h3 class="eighty uk-text-white uk-text-bold border_bottom_white gardein"><?php echo $submitAnEvent_title; ?></h3>
                     <div class="uk-text-white"><?php echo $submitAnEvent; ?></div>
@@ -137,7 +137,7 @@ foreach ($fields as $field) {
                     </div>
                 </div>
             </div>
-            <div class="uk-width-1-2@m">
+            <div class="uk-width-1-2@m mobile-remove-padding">
                 <div class="uk-background-default submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
                     <h3 class="eighty uk-text-primary uk-text-bold border_bottom_white gardein"><?php echo $funding_title; ?></h3>
                     <div class="uk-text-primary"><?php echo $funding; ?></div>
@@ -151,15 +151,15 @@ foreach ($fields as $field) {
 
     <div lass="uk-background-default">
         <div class="uk-container-expand">
-            <div uk-grid>
-                <div class="uk-width-1-3@m uk-text-left">
+            <div uk-grid class="mobile-remove-margin">
+                <div class="uk-width-1-3@m uk-text-left mobile-hide">
                     <img src="/images/assets/thistle.png" alt="Lanarkshire Climate Action Hub - Flowers">
                 </div>
-                <div class="uk-width-2-3@m uk-padding-large">
-                    <div class="uk-margin-right">
+                <div class="uk-width-2-3@m uk-padding-large mobile-remove-padding">
+                    <div class="uk-margin-right mobile-text-full-width mobile-margin-bottom">
                         <h3 class="fifty gardein uk-text-primary uk-text-bold"><?php echo $benefitsOfHostingAnEvent_title; ?></h3>
-                        <div><?php echo $benefitsOfHostingAnEvent; ?></div>
-                        <div class="uk-position-absolute">
+                        <div class="uk-margin-bottom"><?php echo $benefitsOfHostingAnEvent; ?></div>
+                        <div>
                             <a href="mailto:info@climateactionlanarkshire.net?Subject=Enquiry – Lanarkshire Climate Action Festival" class="uk-button gardein forty submit-button-border hostEvent_buttons_padding submit-button-border uk-button-primary"><?php echo $benefitsButtonText; ?></a>
                         </div>
                     </div>

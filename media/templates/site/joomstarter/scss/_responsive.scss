@@ -9,12 +9,17 @@
     }
 
     //Downloads buttons
-    .download_button_position {
-        top: 170px;
-        right: -12%;
-        img {
-            width: 50px;
-            height: auto;
+    #downloads {
+        .download_button_position {
+            top: 120px;
+            width: 40%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            img {
+                width: 50px;
+                height: auto;
+            }
         }
     }
 
@@ -31,22 +36,6 @@
         .uk-background-primary {
             padding-top: 15px;
         }
-    }
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 321px) {
-    /* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
-    /* Styles */
-}
-
-/* Smartphones (modern) ----------- */
-@media only screen and (max-width: 932px) {
-    header {
         #top-search {
             .mod-finder__search {
                 input.js-finder-search-query {
@@ -59,9 +48,257 @@
     }
     .mod_funding_open {
         #background {
-            height:50vh !important;
+            height: 50vh !important;
         }
     }
+    img#getInvolved {
+        top: -35px;
+        max-width: 162px;
+        right: 0;
+    }
+    .height160 {
+        height: 160px !important;
+    }
+    .hero {
+        background-position: bottom;
+        h1 {
+            margin-bottom: 200px;
+        }
+    }
+    // .sixty_five {
+    //     font-size: 2.1rem;
+    // }
+    #tips {
+        .circle-container {
+            left: -20px;
+        }
+        .circle-border {
+            width: 150px;
+            height: 150px;
+            border-width: 6px;
+        }
+    }
+    #faqs {
+        .custom-circle {
+            width: 180px;
+            height: 180px;
+        }
+        .hub_website_button_position {
+            left: 0;
+        }
+    }
+    #eventCategories {
+        .shape-container {
+            margin-bottom: 70px !important;
+            .circle {
+                width: 120px;
+                height: 120px;
+                top: -50%;
+                .rectangle {
+                }
+            }
+            .shape {
+            }
+        }
+    }
+    #marketing-promotion {
+        #weve-made-it-easy {
+            .circle-container {
+                left: -4px;
+                .circle-border {
+                    width: 100px;
+                    height: 100px;
+                    img {
+                        height: 70px;
+                        width: 70px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        top: 0;
+                        bottom: 0;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    #talking-climate #engaging-adults .custom-circle {
+        top: -48px;
+        width: 150px;
+        height: 150px;
+    }
+    #talking-climate #engaging-kids #tips div#icon {
+        top: 10px;
+        left: -20px;
+        .circle-border {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    #talking-climate #engaging-kids #downloadButton .circle-container {
+        right: -35px;
+        .circle-border {
+            width: 120px;
+            height: 120px;
+            img {
+                object-fit: cover;
+                height: 70px;
+                width: 70px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+    #talking-climate #engaging-kids #downloadButton {
+        &.buttonOne {
+            bottom: 0;
+            left: 0;
+        }
+        &.buttonTwo {
+            bottom: -125px;
+            left: 0;
+        }
+    }
+    #idea {
+        .uk-container-expand {
+            &:before,
+            &:after {
+                background-size: unset !important;
+            }
+        }
+    }
+    #faqs .uk-accordion li .uk-accordion-title::before {
+        border-width: 0 18px 30px 18px;
+    }
+
+    #festival-programme {
+        #events {
+            .uk-slider-items {
+                .uk-slide-active {
+                    width: 100%;
+                    .event-item {
+                        #info {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .yellow-strip {
+        background-color: transparent;
+        height: unset;
+    }
+
+    .hide-background-mobile {
+        background: none;
+    }
+
+    .mobile-remove-padding-top {
+        padding-top: 0 !important;
+    }
+    .mobile-remove-padding-bottom {
+        padding-bottom: 0 !important;
+    }
+    .mobile-remove-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .mobile-remove-padding-all {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .mobile-reset-button-padding {
+        padding: 0 30px !important;
+    }
+    .mobile-remove-margin-all {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .mobile-remove-margin {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .mobile-remove-margin-left {
+        margin-left: 0 !important;
+    }
+    .mobile-remove-margin-right {
+        margin-right: 0 !important;
+    }
+    .mobile-remove-margin-top {
+        margin-top: 0 !important;
+    }
+    .mobile-remove-margin-bottom {
+        margin-bottom: 0 !important;
+    }
+    .mobile-image-full-width {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .mobile-text-full-width {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .mobile-margin-top {
+        margin-top: 20px !important;
+    }
+    .mobile-margin-bottom {
+        margin-bottom: 20px !important;
+    }
+    .mobile-margin-top-large {
+        margin-top: 40px !important;
+    }
+    .mobile-margin-bottom-large {
+        margin-bottom: 40px !important;
+    }
+    .mobile-margin-top-xlarge {
+        margin-top: 70px !important;
+    }
+    .mobile-margin-bottom-xlarge {
+        margin-bottom: 70px !important;
+    }
+    .mobile-padding-top {
+        padding-top: 20px !important;
+    }
+    .mobile-padding-bottom {
+        padding-bottom: 20px !important;
+    }
+    .mobile-padding-top-large {
+        padding-top: 40px !important;
+    }
+    .mobile-padding-bottom-large {
+        padding-bottom: 40px !important;
+    }
+    .mobile-padding-top-xlarge {
+        padding-top: 70px !important;
+    }
+    .mobile-padding-bottom-xlarge {
+        padding-bottom: 70px !important;
+    }
+    .mobile-hide {
+        display: none !important;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+    /* Styles */
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -184,7 +421,8 @@
         }
     }
 
-    #take-part-in-an-event {
+    #take-part-in-an-event,
+    #event-inspiration {
         .hero {
             min-height: 695px;
         }

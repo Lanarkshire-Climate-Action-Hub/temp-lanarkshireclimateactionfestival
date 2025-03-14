@@ -80,8 +80,8 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
     <div class="com-content-category-blog__items" uk-height-match="target: .item-content h2" uk-grid>
 
         <div class="uk-width-1-3@m">
-            <div class="item-content uk-text-center uk-padding">
-                <h2 class="uk-padding-large sixty signpost_border uk-background-primary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+            <div class="item-content uk-text-center uk-padding mobile-remove-padding-bottom mobile-remove-padding-top mobile-remove-padding">
+                <h2 class="uk-padding-large sixty signpost_border uk-background-primary bounce-on-hover vertical-center uk-text-center height160">
                     <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=2&Itemid=119'); ?>">
                         Host an event </a>
                 </h2>
@@ -89,8 +89,8 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         </div>
 
         <div class="uk-width-1-3@m">
-            <div class="item-content uk-text-center uk-padding">
-                <h2 class="uk-padding-large sixty signpost_border uk-background-secondary bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+            <div class="item-content uk-text-center uk-padding mobile-remove-padding-bottom mobile-remove-padding-top mobile-remove-padding">
+                <h2 class="uk-padding-large sixty signpost_border uk-background-secondary bounce-on-hover vertical-center uk-text-center height160">
                     <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=6&Itemid=120'); ?>">
                         Take part in an event </a>
                 </h2>
@@ -98,8 +98,8 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         </div>
 
         <div class="uk-width-1-3@m">
-            <div class="item-content uk-text-center uk-padding">
-                <h2 class="uk-padding-large sixty signpost_border uk-background-orange bounce-on-hover vertical-center uk-text-center" style="min-height: 296px;">
+            <div class="item-content uk-text-center uk-padding mobile-remove-padding-bottom mobile-remove-padding-top mobile-remove-padding">
+                <h2 class="uk-padding-large sixty signpost_border uk-background-orange bounce-on-hover vertical-center uk-text-center height160">
                     <a class="remove-decoration uk-text-white" href="<?php echo Route::_('index.php?option=com_content&view=article&id=7&Itemid=121'); ?>">
                         Sponsorship </a>
                 </h2>

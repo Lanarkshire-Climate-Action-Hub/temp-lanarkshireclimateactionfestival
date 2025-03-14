@@ -75,8 +75,8 @@ foreach ($fields as $field) {
 <div id="take-part-in-an-event">
     <div class="hero<?php echo $this->pageclass_sfx; ?> uk-background-secondary uk-background-contain uk-background-center-right" uk-grid>
         <?php echo LayoutHelper::render('joomla.content.hero_background_image', $this->item); ?>
-        <div class="uk-width-1-1 uk-padding-large">
-            <div class="page-header uk-padding">
+        <div class="uk-width-1-1 uk-padding-large mobile-remove-padding-bottom">
+            <div class="page-header uk-padding mobile-remove-padding-bottom mobile-remove-padding mobile-remove-padding-top">
                 <h1 class="uk-text-white oneHundred"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
                 <span class="outfit uk-text-bold uk-text-yellow fifty"><?php echo $this->item->text; ?></span>
             </div>
@@ -94,7 +94,7 @@ foreach ($fields as $field) {
     </div>
 
     <div id="tips" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right mobile-text-full-width">
 
             <div uk-grid>
                 <div>
@@ -109,7 +109,7 @@ foreach ($fields as $field) {
                     <div class="uk-padding-small">
                         <h2 class="uk-text-primary gardein sixty_five uk-margin-top">How you travel to the festival matters</h2>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-blue">
@@ -127,7 +127,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="uk-width-1-3@m"></div>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-blue">
@@ -145,7 +145,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="uk-width-1-3@m"></div>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-blue">
@@ -167,7 +167,7 @@ foreach ($fields as $field) {
                     <div class="uk-padding-small uk-margin-top">
                         <h2 class="uk-text-red gardein sixty_five">Avoid waste</h2>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-red">
@@ -185,7 +185,7 @@ foreach ($fields as $field) {
                         </div>
                         <div class="uk-width-1-3@m"></div>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-red">
@@ -204,7 +204,7 @@ foreach ($fields as $field) {
 
                         <div class="uk-width-1-3@m"></div>
                         <div class="uk-width-2-3@m">
-                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
+                            <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
                                     <div class="circle-border border-red">

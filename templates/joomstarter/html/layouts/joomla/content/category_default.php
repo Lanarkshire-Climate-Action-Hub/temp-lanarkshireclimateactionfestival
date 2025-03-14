@@ -501,18 +501,18 @@ $categoryItemIds = [
 
                                                             <h4 class="forty gardein"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
                                                             <div uk-grid class="uk-width-child-auto">
-                                                                <div><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                <div class="twenty_three"><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
                                                                 <?php
                                                                 $locationString = is_array($article['location']) ? implode(', ', $article['location']) : $article['location'];
                                                                 ?>
-                                                                <div><?php echo htmlspecialchars($locationString, ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                <div class="twenty_three"><?php echo htmlspecialchars($locationString, ENT_QUOTES, 'UTF-8'); ?></div>
 
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="uk-position-relative" style="bottom:-0;">
                                                         <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted twenty_four">
-                                                            <div class="uk-margin-large-bottom uk-text-muted twenty_four">
+                                                            <div class="uk-margin-large-bottom uk-text-muted twenty_four mobile-margin-bottom-xlarge">
                                                                 <?php
                                                                 $text = strip_tags($article['about']); // Remove HTML
                                                                 echo htmlspecialchars(mb_substr($text, 0, $maxLength) . (mb_strlen($text) > $maxLength ? '...' : ''), ENT_QUOTES, 'UTF-8');
@@ -526,7 +526,7 @@ $categoryItemIds = [
                                                         ?>
                                                         <div class="uk-position-bottom-right uk-padding">
                                                             <a href="<?php echo $articleUrl; ?>"
-                                                                class="uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
+                                                                class="mobile-reset-button-padding uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
                                                                 Details
                                                             </a>
                                                         </div>

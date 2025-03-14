@@ -191,15 +191,15 @@ if ($menuItemId > 0) {
 
     <?php if (!empty($secondTextArea) || !empty($secondAboutImage)) : ?>
         <div class="uk-background-secondary uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-            <div class="uk-margin-large-right" uk-grid>
+            <div class="uk-margin-large-right mobile-remove-margin" uk-grid>
                 <?php if (!empty($secondAboutImage)) : ?>
-                    <div class="uk-width-2-5@m">
+                    <div class="uk-width-2-5@m mobile-text-full-width">
                         <img src="<?php echo htmlspecialchars($secondAboutImage, ENT_QUOTES, 'UTF-8'); ?>" alt="Second About Image" class="uk-width-1-1">
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($secondTextArea)) : ?>
-                    <div class="uk-width-3-5@m">
+                    <div class="uk-width-3-5@m mobile-text-full-width">
                         <div class="uk-text-white vertical-center uk-text-left">
                             <h2 class="gardein uk-text-white"><?php echo $secondTitle; ?></h2>
                             <div class="second-text-area-width">
@@ -214,8 +214,8 @@ if ($menuItemId > 0) {
 
     <div id="downloads" class="uk-background-yellow">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-            <div class="uk-padding-large" uk-grid>
-                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large">
+            <div class="uk-padding-large mobile-remove-padding mobile-remove-padding-top mobile-remove-margin" uk-grid>
+                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large mobile-remove-padding">
                     <div class="uk-position-relative">
                         <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
                             <?php echo $grantApplicationFormText; ?>
@@ -229,7 +229,7 @@ if ($menuItemId > 0) {
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large">
+                <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large mobile-remove-padding mobile-remove-margin">
                     <div class="uk-position-relative">
                         <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
                             <?php echo $grantGuidanceText; ?>
@@ -250,7 +250,7 @@ if ($menuItemId > 0) {
     <div id="faqs" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
-                <div class="uk-width-1-2@m">
+                <div class="uk-width-1-2@m uk-margin-xlarge-bottom">
 
                     <h3 class="fifty uk-text-primary uk-text-bold border_bottom_blue"><?php echo $whatTypeOfEventsCanYouHost_title; ?></h3>
                     <?php echo $whatTypeOfEventsCanYouHost; ?>
@@ -274,7 +274,7 @@ if ($menuItemId > 0) {
                         </li>
                     </ul>
                 </div>
-                <div class="uk-width-1-2@m uk-margin-xlarge-top">
+                <div class="uk-width-1-2@m uk-margin-xlarge-top uk-margin-xlarge-bottom">
 
                     <div class="uk-position-relative uk-padding uk-background-secondary submit-button-border custom-box">
                         <!-- Circular Image -->
@@ -308,23 +308,23 @@ if ($menuItemId > 0) {
                     <h2 class="gardein uk-text-bold uk-text-primary"><?php echo $applyHeading; ?></h2>
                 </div>
             </div>
-            <div uk-grid class="uk-background-primary uk-padding-large uk-margin-remove uk-padding-remove-bottom">
-                <div class="uk-width-2-3@m uk-width-1-1">
+            <div uk-grid class="uk-background-primary uk-padding-large uk-margin-remove uk-padding-remove-bottom mobile-remove-padding">
+                <div class="uk-width-2-3@m uk-width-1-1 mobile-text-full-width">
                     <?php echo $applyCopy; ?>
                 </div>
-                <div class="uk-width-1-3@m uk-width-1-1 uk-position-relative">
+                <div class="uk-width-1-3@m uk-width-1-1 uk-position-relative mobile-hide">
                     <div class="uk-position-relative">
                         <img class="uk-position-absolute fixing_bike_image" src="/images/assets/fixing_bike.png" />
                     </div>
                 </div>
-                <div class="uk-width-1-1 uk-text-center">
+                <div class="uk-width-1-1 uk-text-center mobile-remove-padding">
                     <a href="mailto:info@climateactionlanarkshire.net?Subject=Festival Grant Application" class="uk-button gardein forty submit-button-border apply_funding_button_padding uk-button-white"><?php echo $applyButtonText; ?></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="help-us" class="uk-background-secondary uk-padding">
+    <div id="help-us" class="uk-background-secondary uk-padding mobile-remove-padding">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
                 <div class="uk-width-2-3@m uk-width-1-1">
@@ -333,7 +333,7 @@ if ($menuItemId > 0) {
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1 uk-position-relative">
                     <div class="poster-container uk-position-relative">
-                        <img class="poster_rotate uk-position-absolute uk-padding-large" src="<?php echo $helpUsPoster; ?>" />
+                        <img class="poster_rotate uk-position-absolute uk-padding-large mobile-hide" src="<?php echo $helpUsPoster; ?>" />
                         <a href="<?php echo $helpUsPosterLink; ?>" class="uk-button gardein forty submit-button-border download_poster_button_padding uk-button-orange z_index_one uk-position-relative">
                             <?php echo $helpUsButtonText; ?>
                         </a>

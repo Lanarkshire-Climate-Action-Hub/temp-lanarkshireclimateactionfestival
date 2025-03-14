@@ -95,7 +95,7 @@ foreach ($fields as $field) {
     </div>
 
     <div id="tips" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
+        <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right mobile-text-full-width">
 
             <div uk-grid>
                 <div>

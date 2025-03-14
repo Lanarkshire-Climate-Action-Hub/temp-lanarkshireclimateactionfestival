@@ -143,7 +143,7 @@ foreach ($fields as $field) {
         </div>
     </div>
 
-    <div class="uk-background-default uk-margin-xlarge-bottom uk-margin-top uk-padding-large uk-background-center-right uk-background-norepeat uk-background-contain" style="background-image: url(images/backgrounds/cloud.png);">
+    <div class="uk-background-default uk-margin-xlarge-bottom mobile-remove-margin-bottom uk-margin-top uk-padding-large uk-background-center-right uk-background-norepeat uk-background-contain" style="background-image: url(images/backgrounds/cloud.png);">
         <div class="uk-container-expand">
             <div uk-grid>
                 <div class="uk-width-2-3@m">
@@ -156,16 +156,16 @@ foreach ($fields as $field) {
 
 
 
-    <div id="engaging-adults" class="uk-background-default uk-margin-xlarge-top uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+    <div id="engaging-adults" class="mobile-remove-margin-top mobile-remove-padding-top uk-background-default uk-margin-xlarge-top uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand">
             <div class="yellow-strip">
                 <div class="vertical-center uk-margin-large-top uk-margin-large-bottom">
 
                     <div class="uk-margin-large-left uk-margin-large-right">
                         <h2 class="gardein uk-text-primary uk-text-bold sixty_five uk-padding-large uk-padding-remove-left uk-padding-remove-right uk-padding-remove-top">Starting climate conversations with adults</h3>
-                            <div uk-grid class="uk-margin-xlarge-top">
-                                <div class="uk-width-1-3@m" id="climateActions">
-                                    <div class="uk-position-relative signpost_border uk-background-primary uk-padding-large">
+                            <div uk-grid class="uk-margin-xlarge-top mobile-remove-margin-top">
+                                <div class="uk-width-1-3@m " id="climateActions">
+                                    <div class="mobile-margin-bottom mobile-margin-top uk-position-relative signpost_border uk-background-primary uk-padding-large">
                                         <h3 class="uk-text-white uk-text-center sixty uk-text-bold uk-text-bolder uk-margin-remove">
                                             <?php echo $climateActions_title; ?>
                                         </h3>
@@ -181,7 +181,7 @@ foreach ($fields as $field) {
                                 </div>
 
                                 <div class="uk-width-1-3@m" id="wwfFootprint">
-                                    <div class="uk-position-relative signpost_border uk-background-primary uk-padding">
+                                    <div class="mobile-margin-bottom mobile-margin-top uk-position-relative signpost_border uk-background-primary uk-padding">
                                         <h3 class="uk-text-white uk-text-center sixty uk-text-bold uk-text-bolder uk-margin-remove">
                                             <?php echo $wwfFootprint_title; ?>
                                         </h3>
@@ -196,8 +196,8 @@ foreach ($fields as $field) {
                                     </div>
                                 </div>
 
-                                <div class="uk-width-1-3@m" id="visitHub">
-                                    <div class="uk-position-relative uk-padding-large uk-background-secondary signpost_border">
+                                <div class="uk-width-1-3@m mobile-padding-top-large" id="visitHub">
+                                    <div class="mobile-margin-bottom mobile-margin-top uk-position-relative uk-padding-large uk-background-secondary signpost_border">
                                         <!-- Circular Image -->
                                         <div class="uk-position-absolute custom-circle">
                                             <img src="/images/logo/lcah_logo.png" alt="Lanarkshire Climate Action Hub" class="uk-border-circle">
@@ -223,7 +223,7 @@ foreach ($fields as $field) {
         </div>
     </div>
 
-    <div id="engaging-kids" class="uk-background-default uk-margin-xlarge-top uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+    <div id="engaging-kids" class="uk-background-default uk-margin-xlarge-top uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-margin-bottom-xlarge">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
             <div uk-grid>
                 <div class="uk-width-1-1">
@@ -236,11 +236,11 @@ foreach ($fields as $field) {
         </div>
 
         <div id="tips">
-            <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right">
+            <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right mobile-remove-margin">
                 <div uk-grid class="uk-padding">
                     <!--<?php echo $heading1; ?>-->
                     <div class="uk-width-1-1">
-                        <div class="uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
+                        <div class="mobile-remove-margin-left mobile-remove-margin-right uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
                             <!-- Circular Image Container -->
                             <div class="circle-container uk-position-absolute" id="icon">
                                 <div class="circle-border border-blue uk-background-primary">
@@ -248,13 +248,13 @@ foreach ($fields as $field) {
                                 </div>
                             </div>
                             <!-- Text Content -->
-                            <div class="uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                <div class="uk-card-body uk-padding">
+                            <div class="mobile-margin-bottom-large mobile-remove-margin mobile-remove-padding uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
+                                <div class="uk-card-body uk-padding mobile-margin-top-large">
                                     <h3 class="uk-text-bold fifty uk-text-primary"><?php echo $heading1; ?></h3>
                                     <?php echo $description1; ?>
                                 </div>
                             </div>
-                            <div id="downloadButton" class="uk-margin-top uk-position-absolute uk-position-bottom-right">
+                            <div id="downloadButton" class="mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                 <div class="">
                                     <a href="https://drive.google.com/file/d/1bxtChDl6slj5xpVnaGkWCyG-Hl-8tlhi/view?usp=drive_link" class="remove-decoration download" target="_blank">
                                         <div class="uk-card uk-card-default submit-button-border" uk-grid>
@@ -279,7 +279,7 @@ foreach ($fields as $field) {
 
                     <!--<?php echo $heading2; ?>-->
                     <div class="uk-width-1-1">
-                        <div class="uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
+                        <div class="mobile-remove-margin-left mobile-remove-margin-right uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
                             <!-- Circular Image Container -->
                             <div class="circle-container uk-position-absolute" id="icon">
                                 <div class="circle-border border-blue uk-background-primary">
@@ -287,8 +287,8 @@ foreach ($fields as $field) {
                                 </div>
                             </div>
                             <!-- Text Content -->
-                            <div class="uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                <div class="uk-card-body uk-padding">
+                            <div class="mobile-margin-bottom-large mobile-remove-margin mobile-remove-padding uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
+                                <div class="uk-card-body uk-padding mobile-margin-top-large">
                                     <h3 class="uk-text-bold fifty uk-text-primary"><?php echo $heading2; ?></h3>
                                     <?php echo $description2; ?>
                                 </div>
@@ -299,7 +299,7 @@ foreach ($fields as $field) {
 
                     <!--<?php echo $heading3; ?>-->
                     <div class="uk-width-1-1">
-                        <div class="uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
+                        <div class="mobile-remove-margin-left mobile-remove-margin-right uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
                             <!-- Circular Image Container -->
                             <div class="circle-container uk-position-absolute" id="icon">
                                 <div class="circle-border border-blue uk-background-primary">
@@ -307,8 +307,8 @@ foreach ($fields as $field) {
                                 </div>
                             </div>
                             <!-- Text Content -->
-                            <div class="uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                <div class="uk-card-body uk-padding">
+                            <div class="mobile-margin-bottom-large mobile-remove-margin mobile-remove-padding uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
+                                <div class="uk-card-body uk-padding mobile-margin-top-large">
                                     <h3 class="uk-text-bold fifty uk-text-primary"><?php echo $heading3; ?></h3>
                                     <?php echo $description3; ?>
                                 </div>
@@ -319,7 +319,7 @@ foreach ($fields as $field) {
 
                     <!--<?php echo $heading4; ?>-->
                     <div class="uk-width-1-1">
-                        <div class="uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
+                        <div class="mobile-remove-margin-left mobile-remove-margin-right uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
                             <!-- Circular Image Container -->
                             <div class="circle-container uk-position-absolute" id="icon">
                                 <div class="circle-border border-blue uk-background-primary">
@@ -327,13 +327,13 @@ foreach ($fields as $field) {
                                 </div>
                             </div>
                             <!-- Text Content -->
-                            <div class="uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                <div class="uk-card-body uk-padding">
+                            <div class="mobile-margin-bottom-large mobile-remove-margin mobile-remove-padding uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
+                                <div class="uk-card-body uk-padding mobile-margin-top-large">
                                     <h3 class="uk-text-bold fifty uk-text-primary"><?php echo $heading4; ?></h3>
                                     <?php echo $description4; ?>
                                 </div>
                             </div>
-                            <div id="downloadButton" class="uk-margin-top uk-position-absolute uk-position-bottom-right">
+                            <div id="downloadButton" class="mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                 <div class="">
                                     <a href="https://drive.google.com/file/d/1QXFevSVGan2KyheBCFTjIt7Ynr2OjYO2/view?usp=drive_link" class="remove-decoration download" target="_blank">
                                         <div class="uk-card uk-card-default submit-button-border" uk-grid>
@@ -358,7 +358,7 @@ foreach ($fields as $field) {
 
                     <!--<?php echo $heading5; ?>-->
                     <div class="uk-width-1-1">
-                        <div class="uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
+                        <div class="mobile-remove-margin-left mobile-remove-margin-right uk-card uk-card-default uk-position-relative uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-xlarge-left uk-border-rounded custom-card" uk-grid>
                             <!-- Circular Image Container -->
                             <div class="circle-container uk-position-absolute" id="icon">
                                 <div class="circle-border border-blue uk-background-primary">
@@ -366,8 +366,8 @@ foreach ($fields as $field) {
                                 </div>
                             </div>
                             <!-- Text Content -->
-                            <div class="uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                                <div class="uk-card-body uk-padding uk-margin-xlarge-bottom">
+                            <div class="mobile-margin-bottom-large mobile-remove-margin mobile-remove-padding uk-width-expand@s uk-padding uk-margin-xlarge-left uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
+                                <div class="uk-card-body uk-padding mobile-margin-top-large uk-margin-xlarge-bottom">
                                     <h3 class="uk-text-bold fifty uk-text-primary"><?php echo $heading5; ?></h3>
                                     <?php echo $description5; ?>
                                 </div>
@@ -376,7 +376,7 @@ foreach ($fields as $field) {
                             <div uk-grid>
 
                                 <div class="uk-width-1-2@m">
-                                    <div id="downloadButton" class="uk-margin-top uk-position-absolute bottom_left">
+                                    <div id="downloadButton" class="buttonOne mobile-margin-bottom mobile-text-full-width uk-margin-top uk-position-absolute bottom_left">
                                         <div class="">
                                             <a href="https://drive.google.com/file/d/1UFc5vJULT5KDmbae7SkA7MvABYXx4f8t/view?usp=drive_link" class="remove-decoration download" target="_blank">
                                                 <div class="uk-card uk-card-default submit-button-border" uk-grid>
@@ -398,7 +398,7 @@ foreach ($fields as $field) {
                                 </div>
 
                                 <div class="uk-width-1-2@m">
-                                    <div id="downloadButton" class="uk-margin-top uk-position-absolute uk-position-bottom-right">
+                                    <div id="downloadButton" class="buttonTwo mobile-margin-bottom mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                         <div class="">
                                             <a href="https://drive.google.com/file/d/1pSJi4hN2qTA5by2Rl6VIPb9E2aOyyo6P/view?usp=drive_link" class="remove-decoration download" target="_blank">
                                                 <div class="uk-card uk-card-default submit-button-border" uk-grid>

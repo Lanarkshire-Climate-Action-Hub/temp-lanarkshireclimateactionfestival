@@ -17,7 +17,7 @@ if (empty($images->image_fulltext)) {
     return;
 }
 
-$backgroundImage = 'background-image: url(' . $images->image_fulltext . ');';
+$backgroundImage = 'background-image: url(/' . $images->image_fulltext . ');';
 ?>
 
 <style>
