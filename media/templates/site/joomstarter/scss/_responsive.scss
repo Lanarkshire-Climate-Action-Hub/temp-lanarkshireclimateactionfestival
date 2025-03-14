@@ -27,6 +27,11 @@
     div#engaging-adults {
         display: inline-block;
     }
+    header {
+        .uk-background-primary {
+            padding-top: 15px;
+        }
+    }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -37,6 +42,26 @@
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
     /* Styles */
+}
+
+/* Smartphones (modern) ----------- */
+@media only screen and (max-width: 932px) {
+    header {
+        #top-search {
+            .mod-finder__search {
+                input.js-finder-search-query {
+                    font-size: 2rem;
+                    line-height: 2.5;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    .mod_funding_open {
+        #background {
+            height:50vh !important;
+        }
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -52,6 +77,15 @@
 /* iPads (portrait) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     /* Styles */
+}
+
+/* iPads Pro (portrait and landscape) ----------- */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    /* Styles */
+    header .nav-link {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
 }
 
 /* Desktops and laptops ----------- */
