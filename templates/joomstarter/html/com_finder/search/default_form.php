@@ -40,7 +40,7 @@ if ($this->params->get('show_autosuggest', 1)) {
             </label>
             <div class="input-group">
                 <input type="text" name="q" id="q" class="js-finder-search-query form-control" value="<?php echo $this->escape($this->query->input); ?>">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="uk-button uk-button-primary">
                     <span class="icon-search icon-white" aria-hidden="true"></span>
                     <?php echo Text::_('JSEARCH_FILTER_SUBMIT'); ?>
                 </button>
