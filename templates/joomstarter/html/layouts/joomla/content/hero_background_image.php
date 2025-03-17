@@ -16,7 +16,7 @@ $images  = json_decode($displayData->images);
 if (empty($images->image_fulltext)) {
     return;
 }
-
+ 
 $backgroundImage = 'background-image: url(/' . $images->image_fulltext . ');';
 ?>
 
