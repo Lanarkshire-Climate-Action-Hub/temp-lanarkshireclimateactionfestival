@@ -19,8 +19,9 @@
             <fieldset name="basic">
                 <field name="image" type="accessiblemedia" label="Select an image" directory="" />
                 <field name="date" type="text" label="Enter the date" description="" default="" />
-                <field name="link_title" type="text" label="Enter the link title" description="" default="" />
-                <field name="link" type="menuitem" default="45" label="Select a menu item" description="" />
+                <field name="show_programme" type="checkbox" label="Show programme link" description="" value="0" />
+                <field name="link_title" showon="show_programme:1" type="text" label="Enter the link title" description="" default="" />
+                <field name="link" showon="show_programme:1" type="menuitem" default="45" label="Select a menu item" description="" />
             </fieldset>
         </fields>
     </config>
