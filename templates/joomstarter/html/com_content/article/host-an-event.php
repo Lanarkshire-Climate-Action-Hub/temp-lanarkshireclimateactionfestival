@@ -48,6 +48,8 @@ $funding_title = '';
 $benefitsOfHostingAnEvent = '';
 $benefitsOfHostingAnEvent_title = '';
 $benefitsButtonText = '';
+$enableSubmitEvent = '';
+$enableFundingSection = '';
 
 foreach ($fields as $field) {
     if ($field->id == 38) {
@@ -82,6 +84,12 @@ foreach ($fields as $field) {
     }
     if ($field->id == 46) {
         $benefitsButtonText = $field->value;
+    }
+    if ($field->id == 148) {
+        $enableSubmitEvent = $field->value;
+    }
+    if ($field->id == 149) {
+        $enableFundingSection = $field->value;
     }
 }
 
@@ -126,28 +134,37 @@ foreach ($fields as $field) {
         </div>
     </div>
 
-    <div class="uk-background-primary uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-remove-margin">
-        <div class="uk-margin-large-right uk-margin-large-left mobile-remove-margin" uk-grid>
-            <div class="uk-width-1-2@m uk-margin-large-bottom mobile-remove-padding">
-                <div class="uk-background-peach submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
-                    <h3 class="eighty uk-text-white uk-text-bold border_bottom_white gardein"><?php echo $submitAnEvent_title; ?></h3>
-                    <div class="uk-text-white"><?php echo $submitAnEvent; ?></div>
-                    <div class="uk-position-absolute">
-                        <a href="<?php echo $submitEventLink; ?>" class="uk-button gardein forty submit-button-border hostEvent_buttons_padding submit-button-border uk-button-white"><?php echo $submitAnEvent_title; ?></a>
+    <?php if (($enableSubmitEvent == 'yes') || ($enableFundingSection == 'yes')) : ?>
+
+        <div class="uk-background-primary uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-remove-margin">
+            <div class="uk-margin-large-right uk-margin-large-left mobile-remove-margin" uk-grid>
+                <?php if ($enableSubmitEvent == 'yes') : ?>
+                    <div class="uk-width-1-2@m uk-margin-large-bottom mobile-remove-padding">
+                        <div class="uk-background-peach submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
+                            <h3 class="eighty uk-text-white uk-text-bold border_bottom_white gardein"><?php echo $submitAnEvent_title; ?></h3>
+                            <div class="uk-text-white"><?php echo $submitAnEvent; ?></div>
+                            <div class="uk-position-absolute">
+                                <a href="<?php echo $submitEventLink; ?>" class="uk-button gardein forty submit-button-border hostEvent_buttons_padding submit-button-border uk-button-white"><?php echo $submitAnEvent_title; ?></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="uk-width-1-2@m mobile-remove-padding">
-                <div class="uk-background-default submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
-                    <h3 class="eighty uk-text-primary uk-text-bold border_bottom_white gardein"><?php echo $funding_title; ?></h3>
-                    <div class="uk-text-primary"><?php echo $funding; ?></div>
-                    <div class="uk-position-absolute">
-                        <a href="<?php echo $fundingLink; ?>" class="uk-button gardein forty submit-button-border hostEvent_buttons_padding submit-button-border uk-button-peach">Apply for funding</a>
+                <?php endif; ?>
+                <?php if ($enableFundingSection == 'yes') : ?>
+                    <div class="uk-width-1-2@m mobile-remove-padding">
+                        <div class="uk-background-default submit-button-border uk-padding uk-margin-large-right uk-margin-large-left">
+                            <h3 class="eighty uk-text-primary uk-text-bold border_bottom_white gardein"><?php echo $funding_title; ?></h3>
+                            <div class="uk-text-primary"><?php echo $funding; ?></div>
+                            <div class="uk-position-absolute">
+                                <a href="<?php echo $fundingLink; ?>" class="uk-button gardein forty submit-button-border hostEvent_buttons_padding submit-button-border uk-button-peach">Apply for funding</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
-    </div>
+
+    <?php endif; ?>
+
 
     <div lass="uk-background-default">
         <div class="uk-container-expand">

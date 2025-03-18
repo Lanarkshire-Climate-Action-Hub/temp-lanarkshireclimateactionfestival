@@ -44,6 +44,7 @@ $description3 = '';
 $wasteDescription1 = '';
 $wasteDescription2 = '';
 $wasteDescription3 = '';
+$enableProgrammeSection = '';
 
 foreach ($fields as $field) {
     if ($field->id == 47) {
@@ -68,6 +69,9 @@ foreach ($fields as $field) {
     if ($field->id == 53) {
         $wasteDescription3 = $field->value;
     }
+    if ($field->id == 150) {
+        $enableProgrammeSection = $field->value;
+    }
 }
 
 ?>
@@ -82,17 +86,17 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-
-    <div class="uk-background-yellow uk-padding-large">
-        <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
-            <div class="vertical-center" uk-grid>
-                <div class="uk-width-1-1 uk-text-center">
-                    <a class="uk-button uk-button-white uk-text-primary gardein seventy uk-padding submit-button-border uk-button-large" href="<?php echo $festivalProgrammeUrl; ?>">View the Festival Programme</a>
+    <?php if ($enableProgrammeSection == 'yes') : ?>
+        <div class="uk-background-yellow uk-padding-large">
+            <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
+                <div class="vertical-center" uk-grid>
+                    <div class="uk-width-1-1 uk-text-center">
+                        <a class="uk-button uk-button-white uk-text-primary gardein seventy uk-padding submit-button-border uk-button-large" href="<?php echo $festivalProgrammeUrl; ?>">View the Festival Programme</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    <?php endif; ?>
     <div id="tips" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand uk-margin-large-left uk-margin-xlarge-right mobile-text-full-width">
 

@@ -58,6 +58,7 @@ $downloadTheFestivalLogo = '';
 $downloadTheFestivalLogo_title = '';
 $downloadTheHubLogo = '';
 $downloadTheHubLogo_title = '';
+$enableDownloadSection = '';
 
 foreach ($fields as $field) {
     if ($field->id == 118) {
@@ -112,6 +113,9 @@ foreach ($fields as $field) {
         $newsPapers = $field->value;
         $newsPapers_title = $field->title;
     }
+    if ($field->id == 151) {
+        $enableDownloadSection = $field->value;
+    }
 }
 
 ?>
@@ -159,6 +163,7 @@ foreach ($fields as $field) {
         </div>
     </div>
 
+    <?php if ($enableDownloadSection == 'yes') : ?>
     <div id="weve-made-it-easy" class="uk-background-orange uk-padding-large uk-padding-remove-left uk-padding-remove-right mobile-remove-margin">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
@@ -213,7 +218,7 @@ foreach ($fields as $field) {
             </div>
         </div>
     </div>
-
+<?php endif; ?>
     <div id="faqs" class="uk-background-default uk-padding-large uk-padding-remove-left uk-padding-remove-right">
         <div class="uk-container-expand uk-margin-large-left uk-margin-large-right">
             <div uk-grid>
