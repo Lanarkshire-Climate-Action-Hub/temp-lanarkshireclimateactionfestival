@@ -1,5 +1,5 @@
 //This is where you can edit your CSS, or better yet, create additional scss files and import them.
-//You can compile this to 
+//You can compile this to
 // cd C:\wamp64\www\temp-lanarkshireclimateactionfestival\media\templates\site\joomstarter\scss
 // sass template.scss:..\css\template.min.css --style compressed
 
@@ -1528,6 +1528,10 @@ a.download:hover {
             }
         }
     }
+}
+
+.leaflet-control-attribution {
+    display: none;
 }
 
 //Import Responsive Styles

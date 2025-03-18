@@ -124,8 +124,8 @@
     }
     #talking-climate #engaging-adults .custom-circle {
         top: -48px;
-        width: 150px;
-        height: 150px;
+        width: 125px;
+        height: 125px;
     }
     #talking-climate #engaging-kids #tips div#icon {
         top: 10px;
@@ -181,7 +181,6 @@
                     width: 100%;
                     .event-item {
                         #info {
-
                         }
                     }
                 }
@@ -318,10 +317,36 @@
 
 /* iPads Pro (portrait and landscape) ----------- */
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    html {
+        font-size: 10px;
+    }
     /* Styles */
     header .nav-link {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         line-height: 1.5;
+    }
+    #funding-page {
+        #downloads {
+            .circle {
+                width: 150px;
+                top: 120px;
+            }
+        }
+    }
+    #marketing-promotion {
+        #receivedFunding {
+            .hide-background-mobile {
+                background-size: 45%;
+            }
+        }
+    }
+    #talking-climate {
+        #engaging-adults {
+            .custom-circle {
+                width: 200px;
+                height: 200px;
+            }
+        }
     }
 }
 
