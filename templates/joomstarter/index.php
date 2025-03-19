@@ -100,6 +100,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
+    <script src="https://consent.cookiefirst.com/sites/lanarkshireclimateactionfestival.net-6e909bc3-5f41-45ba-9182-f886423b3562/consent.js"></script>
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
