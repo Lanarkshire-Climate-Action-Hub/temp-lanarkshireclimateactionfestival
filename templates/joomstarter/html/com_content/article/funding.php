@@ -217,7 +217,7 @@ if ($menuItemId > 0) {
             <div class="uk-padding-large mobile-remove-padding mobile-remove-padding-top mobile-remove-margin" uk-grid>
                 <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large mobile-remove-padding">
                     <div class="uk-position-relative">
-                        <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
+                        <div class="uk-background-primary uk-padding-remove-right laptop-padding-left-small download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
                             <?php echo $grantApplicationFormText; ?>
                         </div>
                         <div class="circle uk-background-default uk-text-center uk-margin-large-bottom uk-position-absolute download_button_position">
@@ -231,7 +231,7 @@ if ($menuItemId > 0) {
                 </div>
                 <div class="uk-width-1-1 uk-width-1-2@m uk-padding-large mobile-remove-padding mobile-remove-margin">
                     <div class="uk-position-relative">
-                        <div class="uk-background-primary uk-padding-remove-right download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
+                        <div class="uk-background-primary uk-padding-remove-right laptop-padding-left-small download_border uk-text-left sixty gardein uk-margin-large-bottom uk-padding uk-text-white uk-position-absolute">
                             <?php echo $grantGuidanceText; ?>
                         </div>
                         <div class="circle uk-background-default uk-text-center uk-margin-large-bottom uk-position-absolute download_button_position">

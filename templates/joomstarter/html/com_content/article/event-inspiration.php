@@ -254,7 +254,7 @@ foreach ($fields as $field) {
                     <div class="shape-container">
                         <div class="circle">
                             <div class="rectangle"></div>
-                            <img class="uk-position-absolute uk-padding" src="/images/assets/energy.png" alt="">
+                            <img class="uk-position-absolute mobile-padding-medium" src="/images/assets/energy.png" alt="">
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
@@ -269,7 +269,7 @@ foreach ($fields as $field) {
                     <div class="shape-container">
                         <div class="circle">
                             <div class="rectangle"></div>
-                            <img class="uk-position-absolute uk-padding" src="/images/assets/community.png" alt="">
+                            <img class="uk-position-absolute mobile-padding-medium" src="/images/assets/community.png" alt="">
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
@@ -284,7 +284,7 @@ foreach ($fields as $field) {
                     <div class="shape-container">
                         <div class="circle">
                             <div class="rectangle"></div>
-                            <img class="uk-position-absolute uk-padding" src="/images/assets/circularity.png" alt="">
+                            <img class="uk-position-absolute mobile-padding-medium" src="/images/assets/circularity.png" alt="">
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
@@ -302,7 +302,7 @@ foreach ($fields as $field) {
                     <div class="shape-container">
                         <div class="circle">
                             <div class="rectangle"></div>
-                            <img class="uk-position-absolute uk-padding" src="/images/assets/food-nature.png" alt="">
+                            <img class="uk-position-absolute mobile-padding-medium" src="/images/assets/food-nature.png" alt="">
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">
@@ -317,7 +317,7 @@ foreach ($fields as $field) {
                     <div class="shape-container">
                         <div class="circle">
                             <div class="rectangle"></div>
-                            <img class="uk-position-absolute uk-padding" src="/images/assets/travel.png" alt="">
+                            <img class="uk-position-absolute mobile-padding-medium" src="/images/assets/travel.png" alt="">
                         </div>
                         <div class="shape submit-button-border">
                             <div class="uk-padding uk-text-center">

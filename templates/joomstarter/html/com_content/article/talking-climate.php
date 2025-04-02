@@ -256,7 +256,7 @@ foreach ($fields as $field) {
                             </div>
                             <div id="downloadButton" class="mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                 <div class="">
-                                    <a href="https://drive.google.com/file/d/1bxtChDl6slj5xpVnaGkWCyG-Hl-8tlhi/view?usp=drive_link" class="remove-decoration download" target="_blank">
+                                    <a href="images/downloads/Colour me in - strawberry.pdf" class="remove-decoration download" target="_blank">
                                         <div class="uk-card uk-card-default submit-button-border" uk-grid>
                                             <!-- Text Content -->
                                             <div class="uk-width-expand@s kids_download_sheets_button_padding uk-button-primary submit-button-border">
@@ -335,7 +335,7 @@ foreach ($fields as $field) {
                             </div>
                             <div id="downloadButton" class="mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                 <div class="">
-                                    <a href="https://drive.google.com/file/d/1QXFevSVGan2KyheBCFTjIt7Ynr2OjYO2/view?usp=drive_link" class="remove-decoration download" target="_blank">
+                                    <a href="images/downloads/Climate Commitment Carrot.pdf" class="remove-decoration download" target="_blank">
                                         <div class="uk-card uk-card-default submit-button-border" uk-grid>
                                             <!-- Text Content -->
                                             <div class="uk-width-expand@s kids_download_sheets_button_padding uk-button-primary submit-button-border">
@@ -378,7 +378,7 @@ foreach ($fields as $field) {
                                 <div class="uk-width-1-2@m">
                                     <div id="downloadButton" class="buttonOne mobile-margin-bottom mobile-text-full-width uk-margin-top uk-position-absolute bottom_left">
                                         <div class="">
-                                            <a href="https://drive.google.com/file/d/1UFc5vJULT5KDmbae7SkA7MvABYXx4f8t/view?usp=drive_link" class="remove-decoration download" target="_blank">
+                                            <a href="images/downloads/Climate Action Bingo Sheet - Primary School.pdf" class="remove-decoration download" target="_blank">
                                                 <div class="uk-card uk-card-default submit-button-border" uk-grid>
                                                     <!-- Text Content -->
                                                     <div class="uk-width-expand@s kids_download_bingo_sheets_button_padding uk-button-primary submit-button-border">
@@ -400,7 +400,7 @@ foreach ($fields as $field) {
                                 <div class="uk-width-1-2@m">
                                     <div id="downloadButton" class="buttonTwo mobile-margin-bottom mobile-text-full-width uk-margin-top uk-position-absolute uk-position-bottom-right">
                                         <div class="">
-                                            <a href="https://drive.google.com/file/d/1pSJi4hN2qTA5by2Rl6VIPb9E2aOyyo6P/view?usp=drive_link" class="remove-decoration download" target="_blank">
+                                            <a href="images/downloads/Climate Action Bingo sheet - High School.pdf" class="remove-decoration download" target="_blank">
                                                 <div class="uk-card uk-card-default submit-button-border" uk-grid>
                                                     <!-- Text Content -->
                                                     <div class="uk-width-expand@s kids_download_bingo_sheets_button_padding uk-button-primary submit-button-border">

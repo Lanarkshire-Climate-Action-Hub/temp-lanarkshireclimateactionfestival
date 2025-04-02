@@ -3,6 +3,10 @@
     html {
         font-size: 8px;
     }
+    .navbar-toggler-icon {
+        width: 2.5em;
+        height: 2.5em;
+    }
     /* Styles */
     .bike-position {
         display: none;
@@ -270,6 +274,9 @@
     .mobile-padding-top {
         padding-top: 20px !important;
     }
+    .mobile-padding-medium {
+        padding: 30px !important;
+    }
     .mobile-padding-bottom {
         padding-bottom: 20px !important;
     }
@@ -287,6 +294,20 @@
     }
     .mobile-hide {
         display: none !important;
+    }
+
+    #eventCategories .shape-container .circle img {
+        top: 0;
+    }
+    .mobile-tips-background {
+        background-color: #6aab05 !important;
+        line-height: 1.5;
+        word-break: auto-phrase;
+        width: 100%;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        padding: 15px;
     }
 }
 
@@ -481,31 +502,143 @@
     }
 }
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    //Downloads buttons
-    #downloads {
-        .download_button_position {
-            top: 120px;
-            width: 40%;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            img {
-                width: 50px;
-                height: auto;
+/* laptops ----------- */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+    html {
+        font-size: 10px;
+    }
+    #funding-page {
+        #downloads {
+            .circle {
+                width: 150px;
             }
         }
+    }
+    #eventCategories .shape-container .circle {
+        height: 220px;
+    }
+    .laptop-padding-left-small {
+        padding-left: 10px !important;
+    }
+    .laptop-padding-small {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .laptop-remove-padding-top {
+        padding-top: 0 !important;
+    }
+    .laptop-remove-padding-bottom {
+        padding-bottom: 0 !important;
+    }
+    .laptop-remove-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .laptop-remove-padding-all {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .laptop-reset-button-padding {
+        padding: 0 30px !important;
+    }
+    .laptop-remove-margin-all {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .laptop-remove-margin {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .laptop-remove-margin-left {
+        margin-left: 0 !important;
+    }
+    .laptop-remove-margin-right {
+        margin-right: 0 !important;
+    }
+    .laptop-remove-margin-top {
+        margin-top: 0 !important;
+    }
+    .laptop-remove-margin-bottom {
+        margin-bottom: 0 !important;
+    }
+    .laptop-image-full-width {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .laptop-text-full-width {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .laptop-margin-top {
+        margin-top: 20px !important;
+    }
+    .laptop-margin-bottom {
+        margin-bottom: 20px !important;
+    }
+    .laptop-margin-top-large {
+        margin-top: 40px !important;
+    }
+    .laptop-margin-bottom-large {
+        margin-bottom: 40px !important;
+    }
+    .laptop-margin-top-xlarge {
+        margin-top: 70px !important;
+    }
+    .laptop-margin-bottom-xlarge {
+        margin-bottom: 70px !important;
+    }
+    .laptop-padding-top {
+        padding-top: 20px !important;
+    }
+    .laptop-padding-bottom {
+        padding-bottom: 20px !important;
+    }
+    .laptop-padding-top-large {
+        padding-top: 40px !important;
+    }
+    .laptop-padding-bottom-large {
+        padding-bottom: 40px !important;
+    }
+    .laptop-padding-top-xlarge {
+        padding-top: 70px !important;
+    }
+    .laptop-padding-bottom-xlarge {
+        padding-bottom: 70px !important;
+    }
+    #talking-climate #engaging-adults .custom-circle {
+        right: -40px;
+        width: 200px;
+        height: 200px;
+    }
+    #talking-climate #engaging-kids #downloadButton .circle-container .circle-border {
+        width: 115px;
+        height: 115px;
+    }
+    #talking-climate #engaging-kids #downloadButton.bottom_left {
+        left: 0;
     }
 }
 
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
-    /* Styles */
+    html {
+        font-size: 16px;
+    }
+    #funding-page {
+        #downloads {
+            .circle {
+                width: inherit;
+            }
+        }
+    }
 }
 
 /* iPhone 4 ----------- */

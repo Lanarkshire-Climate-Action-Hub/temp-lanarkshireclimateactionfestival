@@ -160,7 +160,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
         <nav class="navbar uk-background-default navbar-expand-lg">
             <div class="uk-container-expand uk-margin-large-left uk-margin-large-right uk-margin-medium-top uk-margin-medium-bottom uk-padding-top uk-padding-bottom">
                 <div uk-grid>
-                    <div class="uk-width-1-6@m">
+                    <div class="uk-width-1-6@m uk-flex uk-flex-between uk-flex-middle">
                         <a href="" class="navbar-brand"><img src="<?php echo '/images/logo/' . $logo; ?>" alt="logo" /></a>
                         <?php // Update 1.14 - Added support for mobile menu with bootstrap 
                         ?>

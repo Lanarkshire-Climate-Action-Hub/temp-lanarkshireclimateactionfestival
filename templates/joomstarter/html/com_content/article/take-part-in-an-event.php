@@ -102,7 +102,7 @@ foreach ($fields as $field) {
 
             <div uk-grid>
                 <div>
-                    <h2 class="uk-text-white gardein sixty_five uk-margin-bottom"><span class="uk-padding-small uk-background-secondary submit-button-border"><?php echo $tipsForEnjoyingTheFestivalSustainably_title; ?></span></h2>
+                    <h2 class="uk-text-white gardein sixty_five uk-margin-bottom mobile-tips-background"><span class="uk-padding-small uk-background-secondary submit-button-border"><?php echo $tipsForEnjoyingTheFestivalSustainably_title; ?></span></h2>
                     <?php if ($tipsForEnjoyingTheFestivalSustainably) : ?>
                         <div class="uk-width-2-3@m uk-margin-top uk-margin-bottom uk-padding-small">
                             <div class="forty">
