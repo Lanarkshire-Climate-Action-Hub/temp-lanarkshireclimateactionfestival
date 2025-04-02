@@ -357,6 +357,9 @@
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
+    html {
+        font-size: 12px;
+    }
     //Nav dropdown
     .dropdown-menu {
         width: 100%;
@@ -473,6 +476,28 @@
             #visitHub {
                 top: -100px;
                 position: relative;
+            }
+        }
+    }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    //Downloads buttons
+    #downloads {
+        .download_button_position {
+            top: 120px;
+            width: 40%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            img {
+                width: 50px;
+                height: auto;
             }
         }
     }
