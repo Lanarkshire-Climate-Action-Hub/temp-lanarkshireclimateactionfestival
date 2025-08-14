@@ -321,6 +321,18 @@
     /* Styles */
 }
 
+/* Catch All ----------- */
+@media only screen and (min-width: 482px) and (max-width: 959px) {
+    /* Styles */
+    html {
+        font-size: 10px;
+    }
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     /* Styles */
@@ -334,6 +346,59 @@
 /* iPads (portrait) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     /* Styles */
+}
+
+/* iPads Mini (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 768px) and (orientation: portrait) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* iPads Mini (landscape) ----------- */
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* iPads Air (portrait) ----------- */
+@media only screen and (min-width: 820px) and (max-width: 820px) and (orientation: portrait) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1023px) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* iPads Air (landscape) ----------- */
+@media only screen and (min-width: 1180px) and (max-width: 1180px) and (orientation: landscape) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1199px) {
+    .circle-border {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* iPads Pro (portrait and landscape) ----------- */

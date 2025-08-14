@@ -112,7 +112,7 @@ foreach ($fields as $field) {
                     <?php endif; ?>
                     <div class="uk-padding-small">
                         <h2 class="uk-text-primary gardein sixty_five uk-margin-top">How you travel to the festival matters</h2>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
@@ -130,7 +130,7 @@ foreach ($fields as $field) {
                             </div>
                         </div>
                         <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
@@ -148,7 +148,7 @@ foreach ($fields as $field) {
                             </div>
                         </div>
                         <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
@@ -170,7 +170,7 @@ foreach ($fields as $field) {
 
                     <div class="uk-padding-small uk-margin-top">
                         <h2 class="uk-text-red gardein sixty_five">Avoid waste</h2>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-large-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
@@ -188,7 +188,7 @@ foreach ($fields as $field) {
                             </div>
                         </div>
                         <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">
@@ -207,7 +207,7 @@ foreach ($fields as $field) {
                         </div>
 
                         <div class="uk-width-1-3@m"></div>
-                        <div class="uk-width-2-3@m">
+                        <div class="uk-width-2-3@m laptop-padding-bottom-large">
                             <div class="mobile-remove-margin uk-card uk-card-default uk-grid-collapse uk-margin uk-margin-xlarge-top uk-margin-large-bottom uk-margin-large-left uk-border-rounded custom-card" uk-grid>
                                 <!-- Circular Image Container -->
                                 <div class="circle-container">

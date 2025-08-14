@@ -41,7 +41,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 <div class="com-content-category-blog getinvolved uk-background-yellow uk-height-match" uk-grid>
     <div class="uk-width-1-3@m uk-width-1-1 uk-flex uk-flex-middle uk-text-center">
         <?php if ($this->params->get('show_category_title', 1)) : ?>
-            <<?php echo $htag; ?> class="mobile-padding-medium oneHundred uk-text-primary">
+            <<?php echo $htag; ?> class="mobile-padding-medium oneHundred uk-text-primary uk-padding-small">
                 <?php echo $this->category->title; ?>
             </<?php echo $htag; ?>>
         <?php endif; ?>
