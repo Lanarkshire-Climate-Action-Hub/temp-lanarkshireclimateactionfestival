@@ -441,108 +441,114 @@ $categoryItemIds = [
                 <?php foreach ($groupedArticles as $date => $articles) : ?>
                     <?php $formattedDate = HTMLHelper::_('date', $date, 'l j F'); ?>
                     <h3 class="gardein uk-text-bold eighty uk-text-muted uk-text-left uk-margin-left uk-margin-right uk-padding-large uk-padding-remove-left uk-padding-remove-right"><?php echo htmlspecialchars($formattedDate, ENT_QUOTES, 'UTF-8'); ?></h3>
+                    <div uk-slider>
+                        <div class="uk-position-relative">
+                            <div class="uk-slider-container">
+                                <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
+                                    <?php foreach ($articles as $article) : ?>
+                                        <div>
+                                            <div class="uk-panel uk-padding-small event-item"
+                                                data-category="<?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-location="<?php echo htmlspecialchars(is_array($article['location']) ? implode(', ', $article['location']) : $article['location'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-date="<?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-options="<?php echo htmlspecialchars(implode(',', $article['event_options']), ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-title="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-latitude="<?php echo htmlspecialchars($article['latitude'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-longitude="<?php echo htmlspecialchars($article['longitude'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                data-wheelchair="<?php echo in_array('wheelchair', $article['event_options']) ? 'true' : 'false'; ?>"
+                                                data-family="<?php echo in_array('family', $article['event_options']) ? 'true' : 'false'; ?>">
 
+                                                <?php if (!empty($article['image'])) : ?>
 
-                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
-                        <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
-                            <?php foreach ($articles as $article) : ?>
-                                <div>
-                                    <div class="uk-panel uk-padding-small event-item"
-                                        data-category="<?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-location="<?php echo htmlspecialchars(is_array($article['location']) ? implode(', ', $article['location']) : $article['location'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-date="<?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-options="<?php echo htmlspecialchars(implode(',', $article['event_options']), ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-title="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-latitude="<?php echo htmlspecialchars($article['latitude'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-longitude="<?php echo htmlspecialchars($article['longitude'], ENT_QUOTES, 'UTF-8'); ?>"
-                                        data-wheelchair="<?php echo in_array('wheelchair', $article['event_options']) ? 'true' : 'false'; ?>"
-                                        data-family="<?php echo in_array('family', $article['event_options']) ? 'true' : 'false'; ?>">
+                                                    <div class="uk-position-relative">
+                                                        <!-- Circle Pin with Category Class -->
+                                                        <div id="marker">
+                                                            <div class="uk-position-z-index uk-position-absolute circle <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background" style="top: 10px; left: 10px;">
+                                                                <div class="circle-pin"></div>
+                                                            </div>
+                                                        </div>
+                                                        <img
+                                                            src="<?php echo htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                            alt="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                            class="signpost_border box-shadow" uk-cover>
+                                                        <canvas width="458" height="800"></canvas>
 
-                                        <?php if (!empty($article['image'])) : ?>
+                                                        <!-- Event Icons Overlay -->
+                                                        <?php if (!empty($article['event_options'])) : ?>
+                                                            <div class="uk-position-absolute uk-padding-small uk-flex uk-flex-left uk-flex-middle" style="top: 10px; right: 10px; gap: 8px;">
+                                                                <?php foreach ($article['event_options'] as $option) : ?>
+                                                                    <?php
+                                                                    $iconMap = [
+                                                                        'wheelchair' => 'images/icons/wheelchair_friendly.png',
+                                                                        'family' => 'images/icons/family_friendly.png'
+                                                                    ];
+                                                                    if (isset($iconMap[$option])) :
+                                                                    ?>
+                                                                        <img src="<?php echo $iconMap[$option]; ?>"
+                                                                            alt="<?php echo htmlspecialchars($option, ENT_QUOTES, 'UTF-8'); ?>"
+                                                                            class="event-option-icon"
+                                                                            width="53" height="53" loading="lazy">
+                                                                    <?php endif; ?>
+                                                                <?php endforeach; ?>
+                                                            </div>
+                                                        <?php endif; ?>
 
-                                            <div class="uk-position-relative">
-                                                <!-- Circle Pin with Category Class -->
-                                                <div id="marker">
-                                                    <div class="uk-position-z-index uk-position-absolute circle <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background" style="top: 10px; left: 10px;">
-                                                        <div class="circle-pin"></div>
-                                                    </div>
-                                                </div>
-                                                <img
-                                                    src="<?php echo htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8'); ?>"
-                                                    alt="<?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?>"
-                                                    class="signpost_border box-shadow" uk-cover>
-                                                <canvas width="458" height="800"></canvas>
+                                                        <div class="uk-position-bottom uk-panel">
+                                                        <?php endif; ?>
+                                                        <div class="uk-position-relative">
+                                                            <div class="uk-position-relative" style="bottom:-75px;">
+                                                                <div id="info" style="padding-bottom:75px;" class="uk-background-default uk-padding uk-margin-bottom signpost_border_top_left signpost_border_top_right <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background">
 
-                                                <!-- Event Icons Overlay -->
-                                                <?php if (!empty($article['event_options'])) : ?>
-                                                    <div class="uk-position-absolute uk-padding-small uk-flex uk-flex-left uk-flex-middle" style="top: 10px; right: 10px; gap: 8px;">
-                                                        <?php foreach ($article['event_options'] as $option) : ?>
-                                                            <?php
-                                                            $iconMap = [
-                                                                'wheelchair' => 'images/icons/wheelchair_friendly.png',
-                                                                'family' => 'images/icons/family_friendly.png'
-                                                            ];
-                                                            if (isset($iconMap[$option])) :
-                                                            ?>
-                                                                <img src="<?php echo $iconMap[$option]; ?>"
-                                                                    alt="<?php echo htmlspecialchars($option, ENT_QUOTES, 'UTF-8'); ?>"
-                                                                    class="event-option-icon"
-                                                                    width="53" height="53" loading="lazy">
-                                                            <?php endif; ?>
-                                                        <?php endforeach; ?>
-                                                    </div>
-                                                <?php endif; ?>
+                                                                    <h4 class="forty gardein"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
+                                                                    <div uk-grid class="uk-width-child-auto">
+                                                                        <div class="twenty_three"><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                        <?php
+                                                                        $locationString = is_array($article['location']) ? implode(', ', $article['location']) : $article['location'];
+                                                                        ?>
+                                                                        <div class="twenty_three"><?php echo htmlspecialchars($locationString, ENT_QUOTES, 'UTF-8'); ?></div>
 
-                                                <div class="uk-position-bottom uk-panel">
-                                                <?php endif; ?>
-                                                <div class="uk-position-relative">
-                                                    <div class="uk-position-relative" style="bottom:-75px;">
-                                                        <div id="info" style="padding-bottom:75px;" class="uk-background-default uk-padding uk-margin-bottom signpost_border_top_left signpost_border_top_right <?php echo htmlspecialchars($article['category_class'], ENT_QUOTES, 'UTF-8'); ?>-original-background">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-position-relative" style="bottom:-0;">
+                                                                <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted twenty_four">
+                                                                    <div class="uk-margin-large-bottom uk-text-muted twenty_four mobile-margin-bottom-xlarge">
+                                                                        <?php
+                                                                        $text = strip_tags($article['about']); // Remove HTML
+                                                                        echo htmlspecialchars(mb_substr($text, 0, $maxLength) . (mb_strlen($text) > $maxLength ? '...' : ''), ENT_QUOTES, 'UTF-8');
+                                                                        ?>
+                                                                    </div>
 
-                                                            <h4 class="forty gardein"><?php echo htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
-                                                            <div uk-grid class="uk-width-child-auto">
-                                                                <div class="twenty_three"><?php echo htmlspecialchars($article['time'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                </div>
                                                                 <?php
-                                                                $locationString = is_array($article['location']) ? implode(', ', $article['location']) : $article['location'];
+                                                                $menuItemId = isset($categoryItemIds[$article['category_id']]) ? '&Itemid=' . $categoryItemIds[$article['category_id']] : '';
+                                                                $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . (int) $article['article_id'] . $menuItemId);
                                                                 ?>
-                                                                <div class="twenty_three"><?php echo htmlspecialchars($locationString, ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                <div class="uk-position-bottom-right uk-padding">
+                                                                    <a href="<?php echo $articleUrl; ?>"
+                                                                        class="mobile-reset-button-padding uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
+                                                                        Details
+                                                                    </a>
+                                                                </div>
 
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="uk-position-relative" style="bottom:-0;">
-                                                        <div id="description" class="uk-background-default uk-padding signpost_border uk-text-muted twenty_four">
-                                                            <div class="uk-margin-large-bottom uk-text-muted twenty_four mobile-margin-bottom-xlarge">
-                                                                <?php
-                                                                $text = strip_tags($article['about']); // Remove HTML
-                                                                echo htmlspecialchars(mb_substr($text, 0, $maxLength) . (mb_strlen($text) > $maxLength ? '...' : ''), ENT_QUOTES, 'UTF-8');
-                                                                ?>
-                                                            </div>
-
                                                         </div>
-                                                        <?php
-                                                        $menuItemId = isset($categoryItemIds[$article['category_id']]) ? '&Itemid=' . $categoryItemIds[$article['category_id']] : '';
-                                                        $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . (int) $article['article_id'] . $menuItemId);
-                                                        ?>
-                                                        <div class="uk-position-bottom-right uk-padding">
-                                                            <a href="<?php echo $articleUrl; ?>"
-                                                                class="mobile-reset-button-padding uk-button uk-button-primary download_border twenty_six event_details_button_padding uk-margin-small-top">
-                                                                Details
-                                                            </a>
-                                                        </div>
-
                                                     </div>
-                                                </div>
-                                                </div>
                                             </div>
-                                    </div>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                            </div>
 
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
+
+                            <a class="uk-position-center-left-out uk-position-small" href uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right-out uk-position-small" href uk-slider-item="next"></a>
+                        </div>
+
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
